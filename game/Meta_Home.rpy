@@ -17,11 +17,10 @@ label meta_home:
     menu:
         "Exit":
             if started_before:
-                "See you later..."
-                return
+                "Hey! Time is precious, don't waste it!"
             else:
                 "You should probably check out what the device does."
-                jump select
+            jump select
         "Course Select":
             call course_select
             jump meta_home
