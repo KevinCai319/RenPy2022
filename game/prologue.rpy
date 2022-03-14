@@ -65,7 +65,8 @@ label pressButton:
     chief "So you are the one."
     chief "Tell me what you see."
     call meta_home
-    
-    #continue conversation with chief
+    #continue unique conversation with chief
 
+
+    call end_day.summary
     return
