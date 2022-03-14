@@ -21,8 +21,20 @@ default started_before = False
 default diary_unlock_level = 0
 default actions_done_for_day = 0
 default MAX_ACTIONS_PER_DAY = 2
+
+#Course variables
+default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare", 5, 4, True)
+default englishPoetry = Course("English Poetry", 8, 4, True)
+default circuitsAndElectronics = Course("Circuits and Electronics", 20, 18, True)
+default socialMediaMarketing = Course("Social Media Marketing", 12, 1, True)
+default cadAndDigital = Course("cadAndDigital", 20, 18, True)
+
+
+
 # The game starts here.
 label start:
+    $ animalBehaviorAndWelfare.progressClass(3)
+    "[animalBehaviorAndWelfare.currentClass]"
     jump prologue
     return
     #rest of this is demo code for future reference.
@@ -55,11 +67,11 @@ label start:
     # show Hoshino Yumemi at center
     # Yumemi "Bye."
     # return
-    
+
 #implies local scope.
 # label choose_end:
 #     Yumemi "Hey, you eneded the game! You pressed the button [value] times!"
-#     return 
+#     return
 
 # label choose_continue:
 #     show Hoshino Yumemi happy at right with dissolve

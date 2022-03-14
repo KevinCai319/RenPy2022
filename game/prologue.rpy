@@ -21,7 +21,7 @@ label prologue:
     "You are now called upon the chief -- it's your turn to try."
 
     #scene throneRoom
-    #show galati
+    #show chief
     chief "What's your name?"
     menu:
         "Lynx":
@@ -65,7 +65,7 @@ label pressButton:
     chief "So you are the one."
     chief "Tell me what you see."
     call meta_home
-    
+
     #continue conversation with chief
 
     return

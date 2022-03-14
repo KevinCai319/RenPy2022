@@ -1,34 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/prologue.rpy", line 41, in script call
-    call pressButton
-  File "game/prologue.rpy", line 68, in script call
-    call meta_home
-  File "game/Meta_Home.rpy", line 24, in script call
-    call course_select
-  File "game/Course_Select.rpy", line 7, in script
-    jump course_end
-ScriptError: could not find label 'course_end'.
+  File "renpy/common/00start.rpy", line 184, in script call
+    label _start:
+  File "renpy/common/00start.rpy", line 94, in script
+    python hide:
+  File "renpy/common/00start.rpy", line 94, in <module>
+    python hide:
+  File "renpy/common/00start.rpy", line 97, in _execute_python_hide
+    i()
+  File "renpy/common/00console.rpy", line 864, in watch_after_load
+    if config.developer and traced_expressions:
+NameError: global name 'traced_expressions' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/prologue.rpy", line 41, in script call
-    call pressButton
-  File "game/prologue.rpy", line 68, in script call
-    call meta_home
-  File "game/Meta_Home.rpy", line 24, in script call
-    call course_select
-  File "game/Course_Select.rpy", line 7, in script
-    jump course_end
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/ast.py", line 1757, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/script.py", line 918, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'course_end'.
+  File "renpy/common/00start.rpy", line 184, in script call
+    label _start:
+  File "renpy/common/00start.rpy", line 94, in script
+    python hide:
+  File "renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00start.rpy", line 94, in <module>
+    python hide:
+  File "renpy/common/00start.rpy", line 97, in _execute_python_hide
+    i()
+  File "renpy/common/00console.rpy", line 864, in watch_after_load
+    if config.developer and traced_expressions:
+NameError: global name 'traced_expressions' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 RenPy22 1.0
-Mon Mar 14 17:04:42 2022
+Mon Mar 14 17:43:51 2022
