@@ -3,6 +3,7 @@
 define yumemi = Character("Hoshino Yumemi")
 define david = Character("David Sigmund")
 define lynx = Character("Lynx")
+define chief = Character("chief")
 
 
 # World Variables
@@ -16,9 +17,12 @@ default purifier_success = False
 default weapons_success = False
 # Values stored in Meta device.
 default started_before = False
-
+default diary_unlock_level = 0
+default actions_done_for_day = 0
+default MAX_ACTIONS_PER_DAY = 2
 # The game starts here.
 label start:
+    jump prologue
     return
     #rest of this is demo code for future reference.
     # Show a background. This uses a placeholder by default, but you can

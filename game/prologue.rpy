@@ -2,8 +2,8 @@
 label prologue:
 
     #scene bombing
-    "The sound of the air raid sirins throbs in your ears as you watch your entire town scramble towards the nearest fallout shelter."
-    "In the corner of your eye, you see a child crying out to his parents. But no one hears him."
+    "The sound of the air raid sirens fill the air as an entire town scramble towards the nearest fallout shelter."
+    "In a desolate corner, a child cries out to his parents. But no one hears him."
     "It's every man for himself now."
     #scene now
     "AA (After Apocalypse) Year 22:"
