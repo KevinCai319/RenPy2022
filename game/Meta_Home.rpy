@@ -1,11 +1,13 @@
-
-
 label meta_home:
-    "Welcome to the Metaverse. What would you like to do?"
-    
+    scene bg meadow
+    if started_before:
+        "Welcome back to the Metaverse! What would you like to do?"
+    else:
+        ""
     menu:
         "Exit":
-            "See you later. We hope to see you soon."
+            "See you later..."
+    return
 
     #courses
     #dating sim
