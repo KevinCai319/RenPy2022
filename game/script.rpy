@@ -25,6 +25,16 @@ default MAX_ACTIONS_PER_DAY = 2
 label start:
     jump prologue
     return
+#Day end, reset 
+label day_end:
+    $power_left-=1
+    if power_left <= 0:
+        #game over!
+        "<GAME OVER SCENE>"
+    else:
+        #reset battery life of device.
+        actions_done_for_day = 0;
+    return
     #rest of this is demo code for future reference.
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
