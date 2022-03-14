@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 53, in script
+    jump loop
+ScriptError: could not find label 'loop'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 53, in script
+    jump loop
+  File "renpy/ast.py", line 1757, in execute
+    rv = renpy.game.script.lookup(target)
+  File "renpy/script.py", line 918, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'loop'.
+
+Windows-10-10.0.19041
+Ren'Py 7.4.11.2266
+RenPy22 1.0
+Mon Mar 14 14:45:45 2022
