@@ -1,31 +1,29 @@
 label meta_home:
     #scene bg meta_homescreen
     #check if running out of power..
+    if actions_done_for_day >= MAX_ACTIONS_PER_DAY:
+        "The battery is too low... cannot continue... shutting down"
+        if started_before:
+            $started_before = True
+        return
+    
     if started_before:
         "Welcome back to the Metaverse! What would you like to do?"
     else:
-        "Welcome back to the Metaverse!"
+        "Welcome back to the Metaverse, "
         "It has been a long time since you last logged in ..."
         "What would you like to do?"
+    label .select:
     menu:
         "Exit":
-            "See you later..."
-            return
+            if started_before:
+                "See you later..."
+                return
+            else:
+                "You should probably check out what the device does."
+                jump select
         "Course Select":
-            if action_done_for_day < MAX_ACTIONS_PER_DAY:
-                #call course_select
-                "<PLALCEHOLDER SCENE>"
-            else:
-                "You are feeling too tried for the day."
-                "Maybe it is time to stop using the device."
-            jump meta_home
-        "Dating":
-            if action_done_for_day < MAX_ACTIONS_PER_DAY:
-                #call dating_sim
-                "<PLALCEHOLDER SCENE>"
-            else:
-                "You are feeling too tried for dating."
-                "Maybe it is time to stop using the device."
+            call course_select
             jump meta_home
         "Read Diary":
             #check if diary is unlocked

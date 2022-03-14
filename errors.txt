@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/Course_Select.rpy", line 6: expected statement.
-    actions_done_for_day+=1
-                        ^
+File "game/Meta_Home.rpy", line 25: indentation mismatch.
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Mar 14 16:43:42 2022
+Mon Mar 14 17:03:15 2022

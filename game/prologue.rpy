@@ -1,6 +1,5 @@
 
 label prologue:
-
     #scene bombing
     "The sound of the air raid sirens fill the air as an entire town scramble towards the nearest fallout shelter."
     "In a desolate corner, a child cries out to his parents. But no one hears him."
@@ -65,4 +64,8 @@ label pressButton:
     "To everyone's surprise, the screen turns on."
     chief "So you are the one."
     chief "Tell me what you see."
+    call meta_home
+    
+    #continue conversation with chief
+
     return

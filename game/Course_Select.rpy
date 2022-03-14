@@ -1,9 +1,11 @@
 label course_select:
-    "What would you like to learn today?"
+    
+    "What would you like to do today?"
     menu:
         "Electrical ":
-            "<PLACEHOLDER SCENE>"
-            $actions_done_for_day+=1
-            return
-    return
+            "<EE PLACEHOLDER SCENE>"
+        "Dating":
+            "<DATING PLACEHOLDER SCENE>"
+    $actions_done_for_day+=1
+    return 
     #courses(local labels)

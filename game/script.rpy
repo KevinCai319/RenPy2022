@@ -1,6 +1,7 @@
 ﻿
+
 # a bit too obvious that we are copying lol
-define yumemi = Character("Hoshino Yumemi")
+define yumemi = Character("yumemi")
 define david = Character("David Sigmund")
 define lynx = Character("Lynx")
 define chief = Character("chief")
