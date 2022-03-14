@@ -22,13 +22,20 @@ default diary_unlock_level = 0
 default actions_done_for_day = 0
 default MAX_ACTIONS_PER_DAY = 2
 
-#Course variables
+#Course objects
 default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare", 5, 4, True)
 default englishPoetry = Course("English Poetry", 8, 4, True)
 default circuitsAndElectronics = Course("Circuits and Electronics", 20, 18, True)
 default socialMediaMarketing = Course("Social Media Marketing", 12, 1, True)
-default cadAndDigital = Course("cadAndDigital", 20, 18, True)
-
+default cadAndDigital = Course("CAD And Digital", 20, 18, True)
+default calc1 = Course("Calculus I", 100, 100)
+default calc2 = Course("Calculus II", 100, 100)
+default calc3 = Course("Calculus III", 100, 100)
+default theoreticalPhysics = Course("Introduction to Theoretical Physics", 10, 10)
+default modernChem = Course("Modern Chemistry", 10, 9)
+default foodAndBeverage = Course("Food & Beverage Management", 9, 7)
+default diplomacy = Course("Diplomacy in the Modern World", 12, 9)
+default romanArch = Course("Roman Architecture", 4, 4)
 
 
 # The game starts here.
@@ -37,7 +44,7 @@ label start:
     "[animalBehaviorAndWelfare.currentClass]"
     jump prologue
     return
-#Day end, reset 
+#Day end, reset
 label day_end:
     $power_left-=1
     if power_left <= 0:
