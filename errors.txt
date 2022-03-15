@@ -2,13 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/Course_Select.rpy", line 23: expected statement.
-    course.progressClass()
-                          ^
+File "game/dating_sim.rpy", line 110: expected statement.
+    actions_done_for_day+=1
+                        ^
 
-File "game/Course_Select.rpy", line 24: expected statement.
-    course = 0
-           ^
+File "game/dating_sim.rpy", line 2: unexpected EOF while parsing
+    false;
+          ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Mar 15 00:20:32 2022
+Tue Mar 15 16:16:33 2022
