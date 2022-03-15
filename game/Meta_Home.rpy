@@ -8,22 +8,29 @@ label meta_home:
         return
     
     if started_before:
-        "Welcome back to the Metaverse! What would you like to do?"
+        "Welcome back to the Metaverse, [MC] !"
     else:
-        "Welcome back to the Metaverse, "
-        "It has been a long time since you last logged in ..."
-        "What would you like to do?"
+        "Welcome back to the Metaverse, It has been a long time since you last logged in ..."
+        "..."
+        "......"
+        "........."
+        "...[MC] !"
     label .select:
+        "What would you like to do?"
     menu:
         "Exit":
             if started_before:
-                "Hey! Time is precious, don't waste it!"
+                "Hey! Your time here is {i}precious{/i}, don't waste it!"
             else:
-                "You should probably check out what the device does."
-            jump select
+                "You should probably check out what the device does before leaving."
+            jump meta_home.select
+            return
         "Course Select":
+            
             call course_select
+            $started_before = True
             jump meta_home
+            return
         "Read Diary":
             #check if diary is unlocked
             if diary_unlock_level == 0:
@@ -31,6 +38,7 @@ label meta_home:
             else:
                 "<PLALCEHOLDER SCENE>"
                 #call diary
-            jump meta_home
+            jump meta_home.select
+            return
     return
     

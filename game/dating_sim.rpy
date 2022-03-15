@@ -1,0 +1,5 @@
+#SHOULD ALWAYS RETURN, DO NOT CALL LABELS OUTSIDE OF FILE!
+label dating_sim:
+    "<DATING SIM>"
+    "<END DATING SIM>"
+    return

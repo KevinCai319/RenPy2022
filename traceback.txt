@@ -1,38 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 184, in script call
-    label _start:
-  File "renpy/common/00start.rpy", line 94, in script
-    python hide:
-  File "renpy/common/00start.rpy", line 94, in <module>
-    python hide:
-  File "renpy/common/00start.rpy", line 97, in _execute_python_hide
-    i()
-  File "renpy/common/00console.rpy", line 864, in watch_after_load
-    if config.developer and traced_expressions:
-NameError: global name 'traced_expressions' is not defined
+  File "game/Course_Select.rpy", line 23, in script
+    $course = null
+  File "game/Course_Select.rpy", line 23, in <module>
+    $course = null
+NameError: name 'null' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 184, in script call
-    label _start:
-  File "renpy/common/00start.rpy", line 94, in script
-    python hide:
-  File "renpy/ast.py", line 928, in execute
+  File "game/Course_Select.rpy", line 23, in script
+    $course = null
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/ast.py", line 928, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2245, in py_exec_bytecode
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/python.py", line 2245, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/00start.rpy", line 94, in <module>
-    python hide:
-  File "renpy/common/00start.rpy", line 97, in _execute_python_hide
-    i()
-  File "renpy/common/00console.rpy", line 864, in watch_after_load
-    if config.developer and traced_expressions:
-NameError: global name 'traced_expressions' is not defined
+  File "game/Course_Select.rpy", line 23, in <module>
+    $course = null
+NameError: name 'null' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 RenPy22 1.0
-Mon Mar 14 17:43:51 2022
+Mon Mar 14 20:58:53 2022

@@ -38,7 +38,6 @@ label prologue:
             jump onlyKeyWord #end program
         "You see a button on the side":
             call pressButton
-
     return
 
 label onlyKeyWord:
@@ -65,13 +64,9 @@ label pressButton:
     chief "So you are the one."
     chief "Tell me what you see."
     call meta_home
-<<<<<<< HEAD
 
     #continue conversation with chief
-=======
-    #continue unique conversation with chief
->>>>>>> 237701e073d13eb34fa89bf9963ab38498f9b901
-
+    chief "Welcome back, "
 
     call end_day.summary
     return
