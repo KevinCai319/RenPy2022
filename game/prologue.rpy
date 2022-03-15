@@ -38,6 +38,7 @@ label prologue:
             jump onlyKeyWord #end program
         "You see a button on the side":
             call pressButton
+
     return
 
 label onlyKeyWord:
@@ -63,7 +64,9 @@ label pressButton:
     "To everyone's surprise, the screen turns on."
     chief "So you are the one."
     chief "Tell me what you see."
+
     call meta_home
+
 
     #continue conversation with chief
     chief "Welcome back, [MC], what did you see?"

@@ -4,7 +4,8 @@ __pycache__/
 *$py.class
 
 *.save
-saves/
+game/saves/
+game/cache/
 log.txt
 
 # C extensions
