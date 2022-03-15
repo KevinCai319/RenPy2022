@@ -10,11 +10,11 @@ label course_select:
         if canPrint:
             $options.append((Course.course_listing[count].name,count))
         $count+=1
-    $options.append(("Dating", "dating_sim"))
+    $options.append(("Dating", "dating_prologue"))
     $options.append(("Ping Pong", "ping_pong"))
     $choice = renpy.display_menu(options)
-    if choice == "dating_sim":
-        call dating_sim
+    if choice == "dating_prologue":
+        call dating_prologue
         jump course_select.event_done
     if choice == "ping_pong":
         call ping_pong

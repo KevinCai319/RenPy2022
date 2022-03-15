@@ -8,6 +8,7 @@ game/saves/
 game/cache/
 log.txt
 errors.txt
+traceback.txt
 # C extensions
 *.so
 
