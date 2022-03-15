@@ -48,6 +48,7 @@ default romanArch = Course("Roman Architecture","architecture_course", 4, 4,True
 # The game starts here.
 label start:
     call prologue
+    call day_reset
     label .day_cycle:
         call day_start
         "Time to login"
