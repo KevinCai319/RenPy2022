@@ -12,6 +12,8 @@ define chief = Character("chief")
 
 # World Variables
 default day = 0
+#lose(0/1)/good(2)/best ending(3) (0/1/2/3)
+default end_state = 0
 #TODO: add a time where winter starts.
 default WINTER_DAY = 10
 # Generator Variables
@@ -45,10 +47,19 @@ default romanArch = Course("Roman Architecture","architecture_course", 4, 4,True
 
 # The game starts here.
 label start:
-    jump course_select
+    call prologue
+    label .day_cycle:
+        call day_start
+        "Time to login"
+        call meta_home
+        "I think it's time to report to chief."
+        call end_day
+        #scene transition
+        call day_reset
+        jump start.day_cycle
     return
 #Day end, reset
-label day_end:
+label day_reset:
     $power_left-=1
     if power_left <= 0:
         #game over!
@@ -58,7 +69,10 @@ label day_end:
         #reset battery life of device.
         $actions_done_for_day = 0
         $daily_summary = ""
+        $day+=1
     "The sun rises again... DAY [day]"
+    return
+label game_end:
     return
     #rest of this is demo code for future reference.
     # Show a background. This uses a placeholder by default, but you can

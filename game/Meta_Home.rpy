@@ -3,7 +3,7 @@ label meta_home:
     #check if running out of power..
     if actions_done_for_day >= MAX_ACTIONS_PER_DAY:
         "The battery is too low... cannot continue... shutting down"
-        if started_before:
+        if not started_before:
             $started_before = True
         return
     
