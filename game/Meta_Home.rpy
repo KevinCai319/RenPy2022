@@ -15,6 +15,7 @@ label meta_home:
         "......"
         "........."
         "...[MC] !"
+        # TODO: add text here
     label .select:
         "What would you like to do?"
     menu:

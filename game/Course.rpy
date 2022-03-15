@@ -7,14 +7,13 @@ init python:
 
     class Course:
         course_listing = []
-        def __init__(self, name, label, numClasses, numRequiredComplete, lectureContent, unlocked,extra = "looks like an interesting course..."):
+        def __init__(self, name, label,numRequiredComplete, lectureContent, unlocked,extra = "looks like an interesting course..."):
             self.name = name
             self.label = label
-            self.numClasses = numClasses
+            self.numClasses = len(lectureContent)
             self.numRequiredComplete = numRequiredComplete
             self.lectureContent = lectureContent
-            assert numClasses > len(lectureContent), "Number of content is less than number of total classes"
-            assert numRequiredComplete > numClasses, "Number of classes for completion is more than number of total classes"
+            assert numRequiredComplete <= numClasses, "Number of classes for completion is more than number of total classes"
             self.unlocked = unlocked
             self.currentClass = 1
             self.extra = extra
