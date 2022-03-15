@@ -1,29 +1,21 @@
 label course_select:
     "What would you like to do today, [MC] ?"
-    $limit = len(Course.course_listing)
-    $count = 0
-    $options = []
-    $extras = []
-    while count < limit:
-        $canPrint = Course.course_listing[count].unlocked
-        $extras.append((Course.course_listing[count].label,Course.course_listing[count].extra))
-        if canPrint:
-            $options.append((Course.course_listing[count].name,count))
-        $count+=1
-    $options.append(("Dating", "dating_sim"))
-    $options.append(("Ping Pong", "ping_pong"))
-    $choice = renpy.display_menu(options)
-    if choice == "dating_sim":
-        call dating_sim
+    call screen course_select_menu
+    $course_select_choice = _return[1]
+    if course_select_choice == "dating_prologue":
+        call dating_prologue
         jump course_select.event_done
-    if choice == "ping_pong":
+    if course_select_choice == "ping_pong":
         call ping_pong
         jump course_select.event_done
-    $tple = extras[choice][1]
-    "[tple]"
-    $course = Course.course_listing[choice]
-    $renpy.call(extras[choice][0])
+    $extras = _return[2]
+    $tple = extras[course_select_choice]
+    "[tple[1]]"
+    $course = Course.course_listing[course_select_choice]
+    call courseIntro
+    $renpy.call(tple[0])
     label .course_done:
+        call courseOutro
         $course.progressClass()
         jump course_select.event_done
     label .event_done:
@@ -31,20 +23,18 @@ label course_select:
         return
 #courses!!
 #Use keyword 'course' to refer to the course variable!!
-#
+#TODO: replace placeholder text.
 #ELECTRONICS
 label animal_course:
-    call courseIntro
-
+    lynx "This class doesn't seem to be very interesting"
     return
 
 label english_course:
-    call courseIntro
-
+    lynx "This class doesn't seem to be very interesting"
     return
 
 label circuits_course:
-    call courseIntro
+    lynx "This class doesn't seem to be very interesting"
 
     return
 
@@ -72,46 +62,38 @@ label ee_course:
         yumemi "Eureka! To increase the power of the CPU, I could chain them together, since the property of their computational power follows an additive relation if done correctly."
         $waterCheck_milestone4 = True
         $daily_summary += "I have the solution to the water purifier!"
-
     return
 
 label media_course:
-    call courseIntro
-
+    lynx "This class doesn't seem to be very interesting"
     return
 
 label cad_course:
-    call courseIntro
-
+    lynx "This class doesn't seem to be very interesting"
     return
 
 label math1_course:
-    call courseIntro
+    lynx "This class doesn't seem to be very interesting"
     return
 
 label math2_course:
-    call courseIntro
-
+    lynx "This class doesn't seem to be very interesting"
     return
 
 label math3_course:
-    call courseIntro
-
+    lynx "This class doesn't seem to be very interesting"
     return
 
 label physics_course:
-    call courseIntro
-
+    lynx "This class doesn't seem to be very interesting"
     return
 
 label chem_course:
-    call courseIntro
-
+    lynx "This class doesn't seem to be very interesting"
     return
 
 label food_course:
-    call courseIntro
-
+    lynx "This class doesn't seem to be very interesting"
     return
 
 label courseIntro:
@@ -119,5 +101,12 @@ label courseIntro:
     "This will be lecture [course.currentClass] out of [course.numClasses]."
     $content = course.lectureContent[course.currentClass-1]
     "Todays topic: [content]"
-    "..."
+    return
+label courseOutro:
+    if(course.currentClass+1 >= course.numClasses):
+        "Congratulations on finishing course [course.name]. I wish you all the best"
+        #completed courses cannot be taken again.
+        $course.unlocked = False
+    else:
+        "That is all for today. I hope to see you next class."
     return

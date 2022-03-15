@@ -234,6 +234,13 @@ style choice_button is default:
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
 
+style course_select_button is button
+style course_select_button_text is button_text
+
+style course_select_button is default:
+    properties gui.button_properties("course_select_button")
+style course_select_button_text is default:
+    properties gui.button_text_properties("course_select_button")
 
 ## Quick Menu screen ###########################################################
 ##

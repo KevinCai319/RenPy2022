@@ -214,6 +214,20 @@ define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitive_color = "#444444"
 
 
+
+## Course Select Buttons ##############################################################
+define gui.course_select_button_width = 1185
+define gui.course_select_button_borders = Borders(150, 8, 150, 8)
+define gui.course_select_button_text_font = gui.text_font
+define gui.course_select_button_text_size = gui.text_size
+define gui.course_select_button_height = None
+define gui.course_select_button_xalign = 0.5
+define gui.course_select_button_text_size = 45
+define gui.course_select_button_text_idle_color = "#cccccc"
+define gui.course_select_button_text_hover_color = "#ffffff"
+define gui.course_select_button_text_insensitive_color = "#444444"
+
+
 ## File Slot Buttons ###########################################################
 ##
 ## A file slot button is a special kind of button. It contains a thumbnail
@@ -444,6 +458,9 @@ init python:
 
         gui.choice_button_width = 1860
         gui.choice_button_text_size = 45
+
+        gui.course_select_button_width = 1860
+        gui.course_select_button_size = 45
 
         gui.navigation_spacing = 30
         gui.pref_button_spacing = 15

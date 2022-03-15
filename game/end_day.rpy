@@ -10,7 +10,6 @@ label end_day:
         if len(daily_summary) > 0:
             lynx "[daily_summary]"
             #adjust penalty based on certain key words in daily summary.
-
             #this is a special dialogue for when you acheive milestone 2 of water check
             if daily_summary.find("I think we can fix the purifier now") != -1:
                 call waterMilestone2FixAttemptFail
@@ -19,7 +18,7 @@ label end_day:
                 call waterMilestone4FixAttemptSuccess
                 $purifier_success = True
 
-            #TODO: change chief response based on keywords that are found.
+                #TODO: change chief response based on keywords that are found.
         else:
             lynx "Nothing of note."
             #chief gets more pissed if nothing happened
