@@ -27,19 +27,27 @@ default MAX_ACTIONS_PER_DAY = 2
 default daily_summary = ""
 default course = 0
 
-#Course variables
-default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 5, 4, True)
+#Course objects
+default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 5, 4, True, "Not sure how much I'll get out of this...")
 default englishPoetry = Course("English Poetry","english_course", 8, 4, True)
-default circuitsAndElectronics = Course("Circuits and Electronics","ee_course", 20, 18, True, "Electrical Engineering seems pretty useful...")
+default circuitsAndElectronics = Course("Circuits and Electronics","ee_course", 20, 18, True, "Electrical engineering can be helpful for fixing things...")
 default socialMediaMarketing = Course("Social Media Marketing","media_course", 12, 1, True)
-default cadAndDigital = Course("cadAndDigital","CAD_course", 20, 18, True)
+default cadAndDigital = Course("CAD And Digital", "cad_course",20, 18, True)
+default calc1 = Course("Calculus I", "math1_course",100, 100)
+default calc2 = Course("Calculus II", "math2_course",100, 100)
+default calc3 = Course("Calculus III", "math3_course",100, 100)
+default theoreticalPhysics = Course("Introduction to Theoretical Physics", "physics_course",10, 10)
+default modernChem = Course("Modern Chemistry","chem_course", 10, 9)
+default foodAndBeverage = Course("Food & Beverage Management","food_course", 9, 7)
+default diplomacy = Course("Diplomacy in the Modern World","diplomacy_course" 12, 9)
+default romanArch = Course("Roman Architecture","architecture_course" 4, 4)
 
 
 # The game starts here.
 label start:
     jump course_select
     return
-#Day end, reset 
+#Day end, reset
 label day_end:
     $power_left-=1
     if power_left <= 0:
