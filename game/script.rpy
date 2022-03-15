@@ -39,11 +39,13 @@ default calc1 = Course("Calculus I", "math1_course", 10, math1_course_content, T
 default calc2 = Course("Calculus II", "math2_course", 10, math2_course_content, False)
 default calc3 = Course("Calculus III", "math3_course", 10, math3_course_content, False)
 default theoreticalPhysics = Course("Introduction to Theoretical Physics", "physics_course", 10, physics_course_content, True)
-default modernChem = Course("Modern Chemistry","chem_course", 8, chem_course_content, True)
+# default modernChem = Course("Modern Chemistry","chem_course", 8, chem_course_content, True)
 default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, food_course_content, True)
 
 # The game starts here.
 label start:
+    # show screen course_select_menu
+    # return
     call prologue
     call day_reset
     label .day_cycle:
