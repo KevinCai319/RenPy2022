@@ -30,16 +30,18 @@ label course_select:
 #Use keyword 'course' to refer to the course variable!!
 #
 #ELECTRONICS
-label ee_course:
-    "[course.name]"
-    "Welcome to Meta University's introduction to EE course!"
-    "This will be lecture [course.currentClass]."
-
-    jump course_select.course_done
+label circuits_course:
+    call courseIntro
+    #course.courseContent[course.currentCourse]
     return
-
 
 
 label media_course:
+    call courseIntro
+
     jump course_select.course_done
     return
+
+label courseIntro:
+    "Welcome to Meta University's [course.name]!"
+    "This will be lecture [course.currentClass]."

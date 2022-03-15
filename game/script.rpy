@@ -13,7 +13,7 @@ define chief = Character("chief")
 # World Variables
 default day = 0
 #TODO: add a time where winter starts.
-default WINTER_DAY = 10
+default WINTER_DAY = 16
 # Generator Variables
 default power_left = 100
 default generator_success = False
@@ -30,17 +30,16 @@ default course = 0
 #Course objects
 default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 5, 4, True, "Not sure how much I'll get out of this...")
 default englishPoetry = Course("English Poetry","english_course", 8, 4, True)
-default circuitsAndElectronics = Course("Circuits and Electronics","ee_course", 20, 18, True, "Electrical engineering can be helpful for fixing things...")
+default circuitsAndElectronics = Course("Circuits and Electronics","circuits_course", 10, 9, True)
+default electricEngeering = Course("Electric Engineering","ee_course", 16, 14, True, "Electrical engineering can be helpful for fixing things...")
 default socialMediaMarketing = Course("Social Media Marketing","media_course", 12, 1, True)
-default cadAndDigital = Course("CAD And Digital", "cad_course",20, 18, True)
-default calc1 = Course("Calculus I", "math1_course",100, 100,True)
-default calc2 = Course("Calculus II", "math2_course",100, 100,False)
-default calc3 = Course("Calculus III", "math3_course",100, 100,False)
+default cadAndDigital = Course("CAD And Digital", "cad_course", 12, 10, True)
+default calc1 = Course("Calculus I", "math1_course",10, 10,True)
+default calc2 = Course("Calculus II", "math2_course",10, 10,False)
+default calc3 = Course("Calculus III", "math3_course",10, 10,False)
 default theoreticalPhysics = Course("Introduction to Theoretical Physics", "physics_course",10, 10,True)
 default modernChem = Course("Modern Chemistry","chem_course", 10, 9,True)
 default foodAndBeverage = Course("Food & Beverage Management","food_course", 9, 7,True)
-default diplomacy = Course("Diplomacy in the Modern World","diplomacy_course", 12, 9,True)
-default romanArch = Course("Roman Architecture","architecture_course", 4, 4,True)
 
 
 # The game starts here.
