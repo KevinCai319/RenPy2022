@@ -34,12 +34,10 @@ label ee_course:
     "[course.name]"
     "Welcome to Meta University's introduction to EE course!"
     "This will be lecture [course.currentClass]."
-
-    jump course_select.course_done
     return
 
 
 
 label media_course:
-    jump course_select.course_done
+
     return

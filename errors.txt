@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/Course_Select.rpy", line 34: expected statement.
-    course.progressCourse()
-                           ^
+File "game/end_day.rpy", line 22: expected ':' not found.
+    else if score <= chief_neutral:
+         ^
+
+File "game/end_day.rpy", line 25: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Mar 14 21:18:43 2022
+Mon Mar 14 21:59:38 2022

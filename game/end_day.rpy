@@ -1,6 +1,6 @@
-default chief_neutral 5
-default chief_happy 2
-default chief_very_angry 7
+default chief_neutral = 5
+default chief_happy = 2
+default chief_very_angry = 7
 label end_day:
     chief "So what happened today?"
     label .summary:
@@ -10,7 +10,7 @@ label end_day:
             lynx "[daily_summary]"
         else:
             lynx "Nothing of note."
-            penalty = 2
+            $penalty = 2
         #TODO: Check of either of the 3 objectives are done.
         lynx "That is all."
         #Chief cares about time since beginning of game, updates on one of the 3 objectives
@@ -19,7 +19,7 @@ label end_day:
         if score <= chief_happy:
             chief "Good work today! I hope for the best tomorrow."
             lynx "Thank you chief."
-        else if score <= chief_neutral:
+        elif score <= chief_neutral:
             chief "Winter is drawing near, I hope you have spent your time well."
             lynx "I'll try my best."
         else:
