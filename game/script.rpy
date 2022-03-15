@@ -30,8 +30,8 @@ default course = 0
 
 #Course objects
 default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 4, animal_course_content, True, "Not sure how much I'll get out of this...")
-default englishPoetry = Course("English Poetry","english_course", english_course_content, 4, True)
-default circuitsAndElectronics = Course("Circuits and Electronics","circuits_course", circuits_course_content, 9, True)
+default englishPoetry = Course("English Poetry","english_course", 4,english_course_content, True)
+default circuitsAndElectronics = Course("Circuits and Electronics","circuits_course",  9,circuits_course_content, True)
 default electricEngeering = Course("Electric Engineering","ee_course", 14, ee_course_content, True, "Electrical engineering can be helpful for fixing things...")
 default socialMediaMarketing = Course("Social Media Marketing","media_course", 1, media_course_content, False)
 default cadAndDigital = Course("CAD And Digital", "cad_course", 10, cad_course_content, True)

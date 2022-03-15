@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/day_start.rpy", line 16: reached end of line when expecting ':'.
-    if (WINTER_DAY-end_state)/3
-                               ^
+File "game/script.rpy", line 33: invalid syntax
+    Course("English Poetry","english_course", 4,english_course_content True)
+                                                                           ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Mar 15 00:33:40 2022
+Tue Mar 15 15:33:04 2022

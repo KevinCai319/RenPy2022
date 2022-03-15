@@ -9,7 +9,11 @@ label end_day:
         if len(daily_summary) > 0:
             lynx "[daily_summary]"
             #adjust penalty based on certain key words in daily summary.
-            $daily_summary.find("<KEYWORD>")
+            $fixed_generator = daily_summary.find("<>")
+            if fixed_generator:
+                #placehodler text
+                chief "That is very good news. Go fix the generator"
+            
             #TODO: change chief response based on keywords that are found.
         else:
             lynx "Nothing of note."
@@ -20,17 +24,6 @@ label end_day:
             lynx "Everything is fully operational!"
             chief "<YOU WIN GAME>"
             return
-        #Check if all 3 objectives are done, or only 2 of the 3.
-        if (weapons_success and purifier_success):
-            chief "Wow, that is amazing news!."
-            chief "With weapons and the water purifier working, our tribe can still survive the winter."
-            jump good_success
-        if (weapons_success and generator_success):
-            chief "Wow, that is amazing news!. Do you want to continue?"
-            jump good_success
-        if(purifier_success and generator_success):
-            chief "Wow, that is amazing news!. Do you want to continue?"
-            jump good_success
         #Check of either of the 3 objectives are done.
         if generator_success:
             lynx "The generator is curerently working."
