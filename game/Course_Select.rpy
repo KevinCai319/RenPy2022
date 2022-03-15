@@ -33,3 +33,8 @@ label ee_course:
     "[course.name]"
     jump course_select.course_done
     return
+
+
+label media_course:
+    jump course_select.course_done
+    return

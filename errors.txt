@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/Course_Select.rpy", line 16: expected statement.
-    running_course = Course.course_listing[choice]
-                   ^
+File "game/script.rpy", line 42: invalid syntax
+    Course("Diplomacy in the Modern World","diplomacy_course" 12, 9)
+                                                                ^
+
+File "game/script.rpy", line 43: invalid syntax
+    Course("Roman Architecture","architecture_course" 4, 4)
+                                                       ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Mar 14 20:50:27 2022
+Mon Mar 14 21:03:32 2022

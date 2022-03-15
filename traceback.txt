@@ -1,26 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Course_Select.rpy", line 23, in script
-    $course = null
-  File "game/Course_Select.rpy", line 23, in <module>
-    $course = null
-NameError: name 'null' is not defined
+  File "renpy/common/00start.rpy", line 189, in script
+    python:
+  File "renpy/common/00start.rpy", line 190, in <module>
+    renpy.execute_default_statement(True)
+  File "game/script.rpy", line 36, in set_default
+    default calc1 = Course("Calculus I", "math1_course",100, 100)
+  File "game/script.rpy", line 36, in <module>
+    default calc1 = Course("Calculus I", "math1_course",100, 100)
+TypeError: __init__() takes at least 6 arguments (5 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/Course_Select.rpy", line 23, in script
-    $course = null
+  File "renpy/common/00start.rpy", line 189, in script
+    python:
   File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/ast.py", line 928, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/python.py", line 2245, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/Course_Select.rpy", line 23, in <module>
-    $course = null
-NameError: name 'null' is not defined
+  File "renpy/common/00start.rpy", line 190, in <module>
+    renpy.execute_default_statement(True)
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/exports.py", line 3753, in execute_default_statement
+    i.set_default(start)
+  File "game/script.rpy", line 36, in set_default
+    default calc1 = Course("Calculus I", "math1_course",100, 100)
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/python.py", line 2269, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 36, in <module>
+    default calc1 = Course("Calculus I", "math1_course",100, 100)
+TypeError: __init__() takes at least 6 arguments (5 given)
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 RenPy22 1.0
-Mon Mar 14 20:58:53 2022
+Mon Mar 14 21:03:46 2022
