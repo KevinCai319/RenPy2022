@@ -19,8 +19,8 @@ init python:
             Course.course_listing.append(self)
 
         def progressClass(self):
-            if (unlocked):
-                if(currentClass < numClasses):
+            if (self.unlocked):
+                if(self.currentClass < self.numClasses):
                     self.currentClass += 1
-                if(currentClass >= numRequiredComplete):
+                if(self.currentClass >= self.numRequiredComplete):
                     self.complete = True;
