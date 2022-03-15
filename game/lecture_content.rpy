@@ -72,9 +72,18 @@ default media_course_content = [
 default cad_course_content[
 
 ]
-
+#https://www.math.stonybrook.edu/MAT131
 default math1_course[
-
+    "Limits of Functions",
+    "Continuous Functions and Intermediate Value Theorem",
+    "Derivatives, Tangent Lines, and Rates of Change",
+    "Rules for Computing Derivatives",
+    "Derivatives of Exponential, Logarithmic, Trigonometric, and Inverse Trigonometric Functions",
+    "Maximum and Minimum Value and Optimization Problems",
+    "L'Hospital's Rule",
+    "Antiderivatives",
+    "The Definite Integral",
+    "Fundamental Theorem of Calculus"
 ]
 default cad_course_content[
 

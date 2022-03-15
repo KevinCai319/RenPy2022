@@ -9,7 +9,7 @@ label end_day:
         if len(daily_summary) > 0:
             lynx "[daily_summary]"
             #adjust penalty based on certain key words in daily summary.
-
+            $daily_summary.find("")
         else:
             lynx "Nothing of note."
             $penalty = 2
@@ -20,7 +20,9 @@ label end_day:
             return
         #Check if all 3 objectives are done, or only 2 of the 3.
         if (weapons_success and purifier_success):
-            chief "Wow, that is amazing news!. Do you want to continue?"
+            chief "Wow, that is amazing news!."
+            chief "With weapons and the water purifier working, our tribe can still survive the winter."
+            chief "Do you want to continue?"
             return
         if (weapons_success and generator_success):
             chief "Wow, that is amazing news!. Do you want to continue?"
