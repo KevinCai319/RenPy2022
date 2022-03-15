@@ -69,33 +69,100 @@ default media_course_content = [
     "E-marketing communication: earned media"
 ]
 
-default cad_course_content[
-
-]
-#https://www.math.stonybrook.edu/MAT131
-default math1_course[
-    "Limits of Functions",
-    "Continuous Functions and Intermediate Value Theorem",
-    "Derivatives, Tangent Lines, and Rates of Change",
-    "Rules for Computing Derivatives",
-    "Derivatives of Exponential, Logarithmic, Trigonometric, and Inverse Trigonometric Functions",
-    "Maximum and Minimum Value and Optimization Problems",
-    "L'Hospital's Rule",
-    "Antiderivatives",
-    "The Definite Integral",
-    "Fundamental Theorem of Calculus"
-]
-default cad_course_content[
-
+#https://umaine.edu/mechanical-engineering-mee120/syllabus/
+default cad_course_content = [
+    "Machine setup, templates, sketching, geometric relations"
+    "Patterning, Extrude-cuts, exercises"
+    "Revolved parts, hole wizard, symbolic threads, Fillets, chamfers, applying materials"
+    "Patterning features, measuring parts, suppressing features"
+    "Sweeps, planes, shelling"
+    "Use of calipers, part creation exercises"
+    "Set up for making blueprints"
+    "Adding views, dimensioning, centerlines, centermarks"
+    "Detail views, Broken views, sheet metal prints, purchased part prints"
+    "Hand drawn isometric views."
+    "Features at the assembly level, machining castings, welding"
+    "Tracking design changes, drawing revisions"
 ]
 
-default cad_course_content[
-
+#https://www.khanacademy.org/math/calculus-1
+default math1_course_content = [
+    "Limits and continuity",
+    "Derivatives and differentiability",
+    "Sum, Power, Product, and Quotient rule",
+    "Applications of derivatives",
+    "Mean value theorem",
+    "Concavity and Inflection",
+    "Optimization",
+    "Differential equations",
+    "Slope fields",
+    "Applications of integrals"
 ]
 
-default cad_course_content[
-
+#https://www.khanacademy.org/math/calculus-2
+default math2_course_content = [
+    "Reimann sums and summation notation",
+    "Simple definite and indefinite integrals",
+    "Integration by techniques",
+    "Euler's method",
+    "Exponential and logistic models",
+    "Average value of a function",
+    "Volume: disc and washer method",
+    "Parametric and polar functions",
+    "Convergent and divergent infinite series"
+    "Taylor and Maclaurin polynomials"
 ]
-default cad_course_content[
+
+#https://home.adelphi.edu/~stemkoski/courses/M243-S09/topics-hw.html
+default math3_course_content = [
+    "Vectors and vector operations",
+    "Tangent lines and parametric curves",
+    "Conic sections and Quadric surfaces",
+    "Partial derivatives and the gradient",
+    "Double integrals, averages, and center of mass",
+    "Triple integrals",
+    "Fundamental Theorem of Calculus 3",
+    "Green's theorem",
+    "Surface integrals",
+    "Stoke's theorem"
+]
+
+#https://canvas.harvard.edu/courses/59787/assignments/syllabus
+default physics_course_content = [
+    "Classical kinematics",
+    "Chaos",
+    "Oscillation and resonance",
+    "Wave phenomena",
+    "Lagrangian formulation of classical physics",
+    "Einstein’s theory of general relativity",
+    "Hamiltonian formulation of classical physics",
+    "Special relativity: time dilation, Lorentz transformations, hyperbolic geometry of spacetime, fourvectors, relativistic dynamics",
+    "Early quantum theory: blackbody radiation, Heisenberg matrix mechanics, Schrodinger wave mechanics",
+    "Modern quantum theory: bra-ket notation, Hilbert spaces, Dirac-von Neumann axioms, Schrodinger equation, uncertainty principle, quantization of energy"
+]
+
+#http://www.chem.cmu.edu/courses/09-106/info/syllabus.pdf
+default chem_course_content = [
+    "Thermochemistry",
+    "Second Law of Thermodynamics",
+    "Chemical Equilibrium",
+    "Acids and Bases Equilibria",
+    "Heterogeneous Equilibria",
+    "Chemical Kinetics",
+    "Electrochemistry",
+    "Condensed Phases and Solutions"
+]
+
+#https://www.fgcu.edu/cob/syllabi/2017fa/81825__HFT3806__2017fall.pdf
+default food_course_content = [
+    "Developing a process for success",
+    "Management Triangle",
+    "Review of Ritz Carlton case studies",
+    "Food and beverage operational settings",
+    "Designing the guest experience",
+    "Delivering the guest experience",
+    "Supervising food production",
+    "Delivering a return to investors",
+    "Franchising and corporate chains"
 
 ]

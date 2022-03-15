@@ -2,41 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/lecture_content.rpy", line 72: expected '=' not found.
-    default cad_course_content[
-                              ^
-    
-    ]
-
-File "game/lecture_content.rpy", line 76: expected '=' not found.
-    default math1_course[
-                        ^
-    
-    ]
-
-File "game/lecture_content.rpy", line 79: expected '=' not found.
-    default cad_course_content[
-                              ^
-    
-    ]
-
-File "game/lecture_content.rpy", line 83: expected '=' not found.
-    default cad_course_content[
-                              ^
-    
-    ]
-
-File "game/lecture_content.rpy", line 87: expected '=' not found.
-    default cad_course_content[
-                              ^
-    
-    ]
-
-File "game/lecture_content.rpy", line 90: expected '=' not found.
-    default cad_course_content[
-                              ^
-    
-    ]
+File "game/day_start.rpy", line 16: reached end of line when expecting ':'.
+    if (WINTER_DAY-end_state)/3
+                               ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Mar 15 00:10:50 2022
+Tue Mar 15 00:33:40 2022

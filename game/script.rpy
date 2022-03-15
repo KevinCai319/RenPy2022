@@ -30,19 +30,18 @@ default daily_summary = ""
 default course = 0
 
 #Course objects
-default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 5, 4, True, "Not sure how much I'll get out of this...")
-default englishPoetry = Course("English Poetry","english_course", 8, 4, True)
-default circuitsAndElectronics = Course("Circuits and Electronics","circuits_course", 10, 9, True)
-default electricEngeering = Course("Electric Engineering","ee_course", 16, 14, True, "Electrical engineering can be helpful for fixing things...")
-default socialMediaMarketing = Course("Social Media Marketing","media_course", 12, 1, True)
-default cadAndDigital = Course("CAD And Digital", "cad_course", 12, 10, True)
-default calc1 = Course("Calculus I", "math1_course",10, 10,True)
-default calc2 = Course("Calculus II", "math2_course",10, 10,False)
-default calc3 = Course("Calculus III", "math3_course",10, 10,False)
-default theoreticalPhysics = Course("Introduction to Theoretical Physics", "physics_course",10, 10,True)
-default modernChem = Course("Modern Chemistry","chem_course", 10, 9,True)
-default foodAndBeverage = Course("Food & Beverage Management","food_course", 9, 7,True)
-
+default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 5, 4, animal_course_content, True, "Not sure how much I'll get out of this...")
+default englishPoetry = Course("English Poetry","english_course", english_course_content, 8, 4, True)
+default circuitsAndElectronics = Course("Circuits and Electronics","circuits_course", circuits_course_content, 10, 9, True)
+default electricEngeering = Course("Electric Engineering","ee_course", 16, 14, ee_course_content, True, "Electrical engineering can be helpful for fixing things...")
+default socialMediaMarketing = Course("Social Media Marketing","media_course", 12, 1, media_course_content, True)
+default cadAndDigital = Course("CAD And Digital", "cad_course", 12, 10, cad_course_content, True)
+default calc1 = Course("Calculus I", "math1_course",10, 10, math1_course_content, True)
+default calc2 = Course("Calculus II", "math2_course",10, 10, math2_course_content, False)
+default calc3 = Course("Calculus III", "math3_course",10, 10, math3_course_content, False)
+default theoreticalPhysics = Course("Introduction to Theoretical Physics", "physics_course",10, 10, physics_course_content, True)
+default modernChem = Course("Modern Chemistry","chem_course", 8, 8, chem_course_content, True)
+default foodAndBeverage = Course("Food & Beverage Management","food_course", 9, 7, food_course_content, True)
 
 # The game starts here.
 label start:
@@ -73,6 +72,12 @@ label day_reset:
     "The sun rises again... DAY [day]"
     return
 label game_end:
+    if end_state < 2:
+        "DEAD"
+    elif end_state == 2:
+        "OK ENDING"
+    else:
+        "GOOD ENDING, GOOD JOB"
     return
     #rest of this is demo code for future reference.
     # Show a background. This uses a placeholder by default, but you can
