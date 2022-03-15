@@ -1,7 +1,4 @@
-﻿
-
-# a bit too obvious that we are copying lol
-
+﻿# a bit too obvious that we are copying lol
 define MC_str = "yumemi"
 default MC = MC_str
 define yumemi = Character(MC_str)

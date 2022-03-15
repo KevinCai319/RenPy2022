@@ -1,5 +1,7 @@
+image course_select_background = "Backgrounds/Meta_University.png"
 label course_select:
     "What would you like to do today, [MC] ?"
+    show course_select_background
     call screen course_select_menu
     $course_select_choice = _return[1]
     if course_select_choice == "dating_prologue":
@@ -11,6 +13,7 @@ label course_select:
     $extras = _return[2]
     $tple = extras[course_select_choice]
     "[tple[1]]"
+    hide course_select_background
     $course = Course.course_listing[course_select_choice]
     call courseIntro
     $renpy.call(tple[0])
