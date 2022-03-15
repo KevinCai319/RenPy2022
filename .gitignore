@@ -7,7 +7,7 @@ __pycache__/
 game/saves/
 game/cache/
 log.txt
-error.txt
+errors.txt
 # C extensions
 *.so
 
