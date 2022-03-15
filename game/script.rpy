@@ -28,11 +28,31 @@ default MAX_ACTIONS_PER_DAY = 2
 default daily_summary = ""
 default course = 0
 
+#Variables for generator complete
+default generatorCheck_pingPongClubChat = False
+default generatorCheck_youtubeVideoDiscovered = False #when you hear about it, but you don't know how to get it
+   #some stuff that will tell you to take social media
+default generatorCheck_youtubeVideoObtained = False #once you take course 5 of social media and marketing
+
+#Variables for water purifier complete
+#these variables are rather useless, but we'll keep them for consistency
+default waterCheck_milestone1 = False #this is when he begins to feel like the course is useful. Course 1
+default waterCheck_milestone2 = False #this and milestone 1 are checked for first attempt to fix. Course 6
+default waterCheck_milestone3 = False #here, Lynx will be running out of patience as he searched for alternatives. Course 11
+default waterCheck_milestone4 = False #Finally, he figures the replacement out. Course 16
+
+#Variables for weapons complete
+default weaponsCheck_posterBegin = False #course 4 of animal behavior
+default weaponsCheck_3dModelFromPoster = False #course 5 of animal behavior
+default weaponsCheck_askChiefAbout3dModel = False #adventurer will receive information that he has to get a blueprint
+default weaponsCheck_obtainBlueprint = False #from CAD course 7
+
+
 #Course objects
 default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 4, animal_course_content, True, "Not sure how much I'll get out of this...")
 default englishPoetry = Course("English Poetry","english_course", 4,english_course_content, True)
 default circuitsAndElectronics = Course("Circuits and Electronics","circuits_course",  9,circuits_course_content, True)
-default electricEngeering = Course("Electric Engineering","ee_course", 14, ee_course_content, True, "Electrical engineering can be helpful for fixing things...")
+default electricEngeering = Course("Electric Engineering","ee_course", 16, ee_course_content, True, "Electrical engineering can be helpful for fixing things...")
 default socialMediaMarketing = Course("Social Media Marketing","media_course", 1, media_course_content, False)
 default cadAndDigital = Course("CAD And Digital", "cad_course", 10, cad_course_content, True)
 default calc1 = Course("Calculus I", "math1_course", 10, math1_course_content, True)
@@ -43,7 +63,7 @@ default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, 
 
 # The game starts here.
 label start:
-    call prologue
+    #call prologue
     call day_reset
     label .day_cycle:
         call day_start

@@ -4,15 +4,16 @@ init python:
     "Foraging and feeding behavior",
     "Improving animal welfare",
     "Human Animal Interaction",
-    "Project Presentations 1", #here, there will some story with perparing the poster and finding the gun model
-    "Project Presentations 2"
+    "Project work", #here, you will be paired up with another student for poster
+    "Project work 2", #you will find out that student has model of gun
+    "Project Presentations"
     ]
 
     #https://web-app.usc.edu/soc/syllabus/20183/32872.pdf
     english_course_content = [
     "Introduction, What is poetry?",
     "Modes and voices of poetry",
-    "Imagery, Metaphors, Similes, Figures of Speech"
+    "Imagery, Metaphors, Similes, Figures of Speech",
     "Rhythm and Meters",
     "Life of William Shakespeare",
     "Shakespeare's Sonnets",
@@ -26,7 +27,7 @@ init python:
         "Basic circuit analysis method",
         "Inside the digital gate",
         "Dependent sources and amplifiers",
-        "Small signal circuits"
+        "Small signal circuits",
         "Capacitors and first-order systems",
         "Second-order systems",
         "Operational amplifier circuits",
@@ -36,22 +37,22 @@ init python:
 
     #https://www.stonybrook.edu/commcms/eeonline/academics/curriculum.php
     ee_course_content = [
-        "Digital Logic Design",
+        "Digital Logic Design",#1
         "Object Oriented Programming for Electrical and Computer Engineers",
         "Technical Communications for Electrical Engineers",
         "Signals and Systems",
         "Digital Signal Processing",
-        "Engineering Ethics and Societal Impacts",
+        "Engineering Ethics and Societal Impacts", #6
         "Random Signals",
         "Electronic Instrumentation & Operational Amplifiers",
         "Electronics and Electromagnetics",
-        "Engineering Design"
-        "Semiconductor Devices",
+        "Engineering Design",
+        "Semiconductor Devices",#11
         "MOS Transistor Modeling",
         "Computer Communications",
         "Design using Programmable Mixed-Signal Systems-on-Chip",
         "Integrated Electronic Devices",
-        "Electric Machinery and Energy Conversion"
+        "Electric Machinery and Energy Conversion"#16
     ]
 
     #https://www.westga.edu/share/documents/syllabi_new/MKTG-3810_2016-3_E01.pdf
@@ -60,7 +61,7 @@ init python:
         "Strategic e-marketing and performance metrics",
         "The e-marketing plan",
         "Ethical and legal issues",
-        "Connnected consumers online", #you will take up to this for YouTube
+        "**Connnected consumers online", #you will take up to this for YouTube
         "Segmentation, targeting, differentiation, and positioning strategies",
         "E-marketing for management",
         "Product: the online offer; Price: the online value",
@@ -78,7 +79,7 @@ init python:
         "Patterning features, measuring parts, suppressing features",
         "Sweeps, planes, shelling",
         "Use of calipers, part creation exercises",
-        "Set up for making blueprints",
+        "Set up for making blueprints", #Here, you will ask professor for blueprints
         "Adding views, dimensioning, centerlines, centermarks",
         "Detail views, Broken views, sheet metal prints, purchased part prints",
         "Hand drawn isometric views.",
@@ -110,7 +111,7 @@ init python:
         "Average value of a function",
         "Volume: disc and washer method",
         "Parametric and polar functions",
-        "Convergent and divergent infinite series"
+        "Convergent and divergent infinite series",
         "Taylor and Maclaurin polynomials"
     ]
 

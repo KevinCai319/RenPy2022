@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/end_day.rpy", line 18: reached end of line when expecting ':'.
+    if daily_summary.find("I have the solution to the water purifier!") != -1
+                                                                             ^
+
+Ren'Py Version: Ren'Py 7.4.11.2266
+Tue Mar 15 18:33:03 2022

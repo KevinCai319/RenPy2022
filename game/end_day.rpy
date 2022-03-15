@@ -1,6 +1,7 @@
 default chief_neutral = 0.6
 default chief_happy = 0.3
 default chief_very_angry = 0.8
+
 label end_day:
     chief "So what happened today?"
     label .summary:
@@ -9,17 +10,21 @@ label end_day:
         if len(daily_summary) > 0:
             lynx "[daily_summary]"
             #adjust penalty based on certain key words in daily summary.
-            $fixed_generator = daily_summary.find("<>")
-            if fixed_generator:
-                #placehodler text
-                chief "That is very good news. Go fix the generator"
-            
+
+            #this is a special dialogue for when you acheive milestone 2 of water check
+            if daily_summary.find("I think we can fix the purifier now") != -1:
+                call waterMilestone2FixAttemptFail
+            #if, in case you finish multiple in a day
+            if daily_summary.find("I have the solution to the water purifier!") != -1:
+                call waterMilestone4FixAttemptSuccess
+                $purifier_success = True
+
             #TODO: change chief response based on keywords that are found.
         else:
             lynx "Nothing of note."
             #chief gets more pissed if nothing happened
             $penalty = 2
-        
+
         if(weapons_success and purifier_success and generator_success):
             lynx "Everything is fully operational!"
             chief "<YOU WIN GAME>"
@@ -29,15 +34,15 @@ label end_day:
             lynx "The generator is curerently working."
             $penalty -=2
         if purifier_success:
-            lynx "The water purifer is operational."
+            #lynx "The water purifer is operational."
             $penalty -=2
         if weapons_success:
             lynx "We currently have weapons"
             $penalty -=2
 
-        lynx "That is all."
+        #lynx "That is all."
         #Chief cares about time since beginning of game, updates on one of the 3 objectives
-        chief "..."
+        chief "..." #perhaps we can remove this line because it's kinda just stalling
         $score = day+penalty
         #sentimment of chief is based on # days that are left, and if any notable things happen.
         if score <= WINTER_DAY * chief_happy or score >= 2:
@@ -62,4 +67,3 @@ label good_success:
             lynx "I have had enough. I want to relax"
             chief "Alright. We should have enough to continue our tribe for quite a while."
     jump game_end
-            
