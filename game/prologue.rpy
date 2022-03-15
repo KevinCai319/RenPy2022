@@ -66,7 +66,6 @@ label pressButton:
     call meta_home
 
     #continue conversation with chief
-    chief "Welcome back, "
-
+    chief "Welcome back, [MC], what did you see?"
     call end_day.summary
     return
