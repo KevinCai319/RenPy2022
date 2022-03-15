@@ -30,7 +30,7 @@ label course_select:
 #Use keyword 'course' to refer to the course variable!!
 #
 #ELECTRONICS
-label circuits_course:
+label ee_course:
     call courseIntro
     #course.courseContent[course.currentCourse]
     return

@@ -69,5 +69,6 @@ label pressButton:
 
 
     #continue conversation with chief
-
+    chief "Welcome back, [MC], what did you see?"
+    call end_day.summary
     return

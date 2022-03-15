@@ -1,32 +1,64 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+  File "game/script.rpy", line 50, in script call
+    call prologue
+  File "game/prologue.rpy", line 40, in script call
+    call pressButton
+  File "game/prologue.rpy", line 68, in script call
+    call meta_home
+  File "game/meta_home.rpy", line 30, in script call
+    call course_select
   File "game/Course_Select.rpy", line 21, in script call
     $renpy.call(extras[choice][0])
+  File "game/script.rpy", line 50, in script call
+    call prologue
+  File "game/prologue.rpy", line 40, in script call
+    call pressButton
+  File "game/prologue.rpy", line 68, in script call
+    call meta_home
+  File "game/meta_home.rpy", line 30, in script call
+    call course_select
   File "game/Course_Select.rpy", line 21, in script call
     $renpy.call(extras[choice][0])
-ScriptError: could not find label 'math1_course'.
+ScriptError: could not find label 'diplomacy_course'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 331, in bootstrap
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/bootstrap.py", line 331, in bootstrap
     renpy.main.main()
-  File "renpy/main.py", line 662, in main
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/main.py", line 662, in main
     run(restart)
-  File "renpy/main.py", line 148, in run
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/main.py", line 148, in run
     renpy.execution.run_context(True)
-  File "renpy/execution.py", line 922, in run_context
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/execution.py", line 922, in run_context
     context.run()
+  File "game/script.rpy", line 50, in script call
+    call prologue
+  File "game/prologue.rpy", line 40, in script call
+    call pressButton
+  File "game/prologue.rpy", line 68, in script call
+    call meta_home
+  File "game/meta_home.rpy", line 30, in script call
+    call course_select
   File "game/Course_Select.rpy", line 21, in script call
     $renpy.call(extras[choice][0])
+  File "game/script.rpy", line 50, in script call
+    call prologue
+  File "game/prologue.rpy", line 40, in script call
+    call pressButton
+  File "game/prologue.rpy", line 68, in script call
+    call meta_home
+  File "game/meta_home.rpy", line 30, in script call
+    call course_select
   File "game/Course_Select.rpy", line 21, in script call
     $renpy.call(extras[choice][0])
-  File "renpy/script.py", line 918, in lookup
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/script.py", line 918, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'math1_course'.
+ScriptError: could not find label 'diplomacy_course'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 RenPy22 1.0
-Mon Mar 14 21:19:07 2022
+Mon Mar 14 22:50:50 2022
