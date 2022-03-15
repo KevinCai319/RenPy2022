@@ -1,31 +1,21 @@
 label course_select:
     "What would you like to do today, [MC] ?"
-    $limit = len(Course.course_listing)
-    $count = 0
-    $options = []
-    $extras = []
-    while count < limit:
-        $canPrint = Course.course_listing[count].unlocked
-        $extras.append((Course.course_listing[count].label,Course.course_listing[count].extra))
-        if canPrint:
-            $options.append((Course.course_listing[count].name,count))
-        $count+=1
-    $options.append(("Dating", "dating_prologue"))
-    $options.append(("Ping Pong", "ping_pong"))
-    $choice = renpy.display_menu(options)
-    if choice == "dating_prologue":
+    call screen course_select_menu
+    $course_select_choice = _return[1]
+    if course_select_choice == "dating_prologue":
         call dating_prologue
         jump course_select.event_done
-    if choice == "ping_pong":
+    if course_select_choice == "ping_pong":
         call ping_pong
-        jump course_select.event_done 
-    $tple = extras[choice][1]
-    "[tple]"
-    $course = Course.course_listing[choice]
+        jump course_select.event_done
+    $extras = _return[2]
+    $tple = extras[course_select_choice]
+    "[tple[1]]"
+    $course = Course.course_listing[course_select_choice]
     call courseIntro
-    $renpy.call(extras[choice][0])
+    $renpy.call(tple[0])
     label .course_done:
-        call coruseOutro
+        call courseOutro
         $course.progressClass()
         jump course_select.event_done
     label .event_done:
@@ -90,7 +80,7 @@ label courseIntro:
     $content = course.lectureContent[course.currentClass-1]
     "Todays topic: [content]"
     return
-label coruseOutro:
+label courseOutro:
     if(course.currentClass+1 >= course.numClasses):
         "Congratulations on finishing course [course.name]. I wish you all the best"
         #completed courses cannot be taken again.

@@ -9,10 +9,9 @@ label end_day:
         if len(daily_summary) > 0:
             lynx "[daily_summary]"
             #adjust penalty based on certain key words in daily summary.
-            $fixed_generator = daily_summary.find("<>")
-            if fixed_generator:
+            $fixed_generator = daily_summary.find("fixed generator ")
+            # if fixed_generator:
                 #placehodler text
-                chief "That is very good news. Go fix the generator"
             
             #TODO: change chief response based on keywords that are found.
         else:

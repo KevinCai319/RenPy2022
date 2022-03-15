@@ -44,6 +44,9 @@ default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, 
 
 # The game starts here.
 label start:
+    # call course_select
+    # "finish!"
+    # return
     # show screen course_select_menu
     # return
     call prologue
