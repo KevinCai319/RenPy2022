@@ -15,6 +15,7 @@ label meta_home:
         "......"
         "........."
         "...[MC] !"
+        # TODO: add text here
     label .select:
         "What would you like to do?"
     menu:
@@ -26,7 +27,7 @@ label meta_home:
             jump meta_home.select
             return
         "Course Select":
-            
+            #Go to course select screen.    
             call course_select
             $started_before = True
             jump meta_home

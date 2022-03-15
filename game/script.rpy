@@ -11,13 +11,12 @@ define chief = Character("chief")
 
 
 # World Variables
-default day = 0
+default day = 1
 #lose(0/1)/good(2)/best ending(3) (0/1/2/3)
 default end_state = 0
 #TODO: add a time where winter starts.
 default WINTER_DAY = 16
 # Generator Variables
-default power_left = 100
 default generator_success = False
 default purifier_success = False
 default weapons_success = False
@@ -30,18 +29,17 @@ default daily_summary = ""
 default course = 0
 
 #Course objects
-default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 5, 4, animal_course_content, True, "Not sure how much I'll get out of this...")
-default englishPoetry = Course("English Poetry","english_course", english_course_content, 8, 4, True)
-default circuitsAndElectronics = Course("Circuits and Electronics","circuits_course", circuits_course_content, 10, 9, True)
-default electricEngeering = Course("Electric Engineering","ee_course", 16, 14, ee_course_content, True, "Electrical engineering can be helpful for fixing things...")
-default socialMediaMarketing = Course("Social Media Marketing","media_course", 12, 1, media_course_content, True)
-default cadAndDigital = Course("CAD And Digital", "cad_course", 12, 10, cad_course_content, True)
-default calc1 = Course("Calculus I", "math1_course",10, 10, math1_course_content, True)
-default calc2 = Course("Calculus II", "math2_course",10, 10, math2_course_content, False)
-default calc3 = Course("Calculus III", "math3_course",10, 10, math3_course_content, False)
-default theoreticalPhysics = Course("Introduction to Theoretical Physics", "physics_course",10, 10, physics_course_content, True)
-default modernChem = Course("Modern Chemistry","chem_course", 8, 8, chem_course_content, True)
-default foodAndBeverage = Course("Food & Beverage Management","food_course", 9, 7, food_course_content, True)
+default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 4, animal_course_content, True, "Not sure how much I'll get out of this...")
+default englishPoetry = Course("English Poetry","english_course", 4,english_course_content, True)
+default circuitsAndElectronics = Course("Circuits and Electronics","circuits_course",  9,circuits_course_content, True)
+default electricEngeering = Course("Electric Engineering","ee_course", 14, ee_course_content, True, "Electrical engineering can be helpful for fixing things...")
+default socialMediaMarketing = Course("Social Media Marketing","media_course", 1, media_course_content, False)
+default cadAndDigital = Course("CAD And Digital", "cad_course", 10, cad_course_content, True)
+default calc1 = Course("Calculus I", "math1_course", 10, math1_course_content, True)
+default calc2 = Course("Calculus II", "math2_course", 10, math2_course_content, False)
+default calc3 = Course("Calculus III", "math3_course", 10, math3_course_content, False)
+default theoreticalPhysics = Course("Introduction to Theoretical Physics", "physics_course", 10, physics_course_content, True)
+default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, food_course_content, True)
 
 # The game starts here.
 label start:
@@ -59,11 +57,12 @@ label start:
     return
 #Day end, reset
 label day_reset:
-    $power_left-=1
-    if power_left <= 0:
-        #game over!
-        "<GAME OVER SCENE>"
-        return
+    if day >= WINTER_DAY:
+        #game ends.
+        $day+=1
+        "The sun rises again... DAY [day]"
+        "Winter has arrived. The enemy tribe has come to attack."
+        jump game_end
     else:
         #reset battery life of device.
         $actions_done_for_day = 0
@@ -72,6 +71,26 @@ label day_reset:
     "The sun rises again... DAY [day]"
     return
 label game_end:
+    if end_state == 0:
+        "After all the time spent in the Metaverse, nothing of value was gained"
+    elif end_state == 1:
+        if weapons_success:
+            "Your tribemen are ill, the battle is very unsuccessful. Although your tribe eliminated the enemy, they destroied the facilities"
+    elif end_state == 2:
+        #Check if all 3 objectives are done, or only 2 of the 3.
+        #TODO: edit dialogue
+        if (weapons_success and purifier_success):
+            "The damaged generator has stopped working."
+            "Huge sacrifice was made. You lost your leg. But your tribe control the enemy tribe’s facilities"
+            #chief "With weapons and the water purifier working, our tribe can still survive the winter."
+        if (weapons_success and generator_success):
+            "Huge sacrifice was made. You lost your leg. But your tribe control the enemy tribe’s facilities"
+        if(purifier_success and generator_success):
+            "Being greedy on your tribe’s winter reservation, the enemy tribe launched a raid. Your tribe hardly defended the besiege. People cannot get out for food. Many people might die during the winter"
+        "OK ENDING"
+    else:
+        "You tribe has enough reservation for the winter and defend well against enemy tribe. You decide to slaughter the tribe or not"
+        "GOOD ENDING"
     return
     #rest of this is demo code for future reference.
     # Show a background. This uses a placeholder by default, but you can

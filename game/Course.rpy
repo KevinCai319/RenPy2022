@@ -7,18 +7,18 @@ init python:
 
     class Course:
         course_listing = []
-        def __init__(self, name, label, numClasses, numRequiredComplete, lectureContent, unlocked,extra = "looks like an interesting course..."):
+        def __init__(self, name, label,numRequiredComplete, lectureContent, unlocked,extra = "looks like an interesting course..."):
             self.name = name
             self.label = label
-            self.numClasses = numClasses
             self.numRequiredComplete = numRequiredComplete
             self.lectureContent = lectureContent
+            self.numClasses = len(self.lectureContent)
+            assert numRequiredComplete <= numClasses, "Number of classes for completion is more than number of total classes"
             self.unlocked = unlocked
             self.currentClass = 1
             self.extra = extra
             self.complete = False
             Course.course_listing.append(self)
-
 
         def progressClass(self):
             if (self.unlocked):
