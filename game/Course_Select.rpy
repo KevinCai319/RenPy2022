@@ -21,7 +21,9 @@ label course_select:
     $renpy.call(extras[choice][0])
     label .course_done:
         $course.progressClass()
-        $course = 0
+        #$course = 0 Some errors with this, where the compiler thinks course is an integer.
+        #probably cuz of the nature of python, it converts course to int before it can progress class
+
         jump course_select.event_done
     label .event_done:
         $actions_done_for_day+=1
@@ -30,18 +32,68 @@ label course_select:
 #Use keyword 'course' to refer to the course variable!!
 #
 #ELECTRONICS
-label ee_course:
+label animal_course:
     call courseIntro
-    #course.courseContent[course.currentCourse]
-    return
-
-
-label media_course:
-    call courseIntro
-
     jump course_select.course_done
     return
 
+label english_course:
+    call courseIntro
+    jump course_select.course_done
+    return
+
+label circuits_course:
+    call courseIntro
+    jump course_select.course_done
+    return
+
+label ee_course:
+    call courseIntro
+    jump course_select.course_done
+    return
+
+label media_course:
+    call courseIntro
+    jump course_select.course_done
+    return
+
+label cad_course:
+    call courseIntro
+    jump course_select.course_done
+    return
+
+label math1_course:
+    call courseIntro
+    jump course_select.course_done
+    return
+
+label math2_course:
+    call courseIntro
+    jump course_select.course_done
+    return
+
+label math3_course:
+    call courseIntro
+    jump course_select.course_done
+    return
+
+label physics_course:
+    call courseIntro
+    jump course_select.course_done
+    return
+
+label chem_course:
+    call courseIntro
+    jump course_select.course_done
+    return
+
+label food_course:
+    call courseIntro
+    jump course_select.course_done
+    return
+    
 label courseIntro:
     "Welcome to Meta University's [course.name]!"
     "This will be lecture [course.currentClass]."
+    $content = course.lectureContent[course.currentClass-1]
+    "Todays topic: [content]"

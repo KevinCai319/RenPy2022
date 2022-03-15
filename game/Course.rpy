@@ -12,6 +12,7 @@ init python:
             self.label = label
             self.numClasses = numClasses
             self.numRequiredComplete = numRequiredComplete
+            self.lectureContent = lectureContent
             self.unlocked = unlocked
             self.currentClass = 1
             self.extra = extra
@@ -20,8 +21,8 @@ init python:
 
 
         def progressClass(self):
-            if (unlocked):
-                if(currentClass < numClasses):
+            if (self.unlocked):
+                if(self.currentClass < self.numClasses):
                     self.currentClass += 1
-                if(currentClass >= numRequiredComplete):
+                if(self.currentClass >= self.numRequiredComplete):
                     self.complete = True;
