@@ -35,7 +35,6 @@ label english_course:
 
 label circuits_course:
     lynx "This class doesn't seem to be very interesting"
-
     return
 
 label ee_course:
