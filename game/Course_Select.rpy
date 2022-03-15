@@ -14,13 +14,16 @@ label course_select:
     $choice = renpy.display_menu(options)
     if choice == "dating_sim":
         call dating_sim
-        jump course_select.course_done
+        jump course_select.event_done
     $tple = extras[choice][1]
     "[tple]"
     $course = Course.course_listing[choice]
     $renpy.call(extras[choice][0])
     label .course_done:
+        $course.progressClass()
         $course = 0
+        jump course_select.event_done
+    label .event_done:
         $actions_done_for_day+=1
         return
 #courses!!
