@@ -1,38 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 189, in script
-    python:
-  File "renpy/common/00start.rpy", line 190, in <module>
-    renpy.execute_default_statement(True)
-  File "game/script.rpy", line 36, in set_default
-    default calc1 = Course("Calculus I", "math1_course",100, 100)
-  File "game/script.rpy", line 36, in <module>
-    default calc1 = Course("Calculus I", "math1_course",100, 100)
-TypeError: __init__() takes at least 6 arguments (5 given)
+  File "game/Course_Select.rpy", line 21, in script call
+    $renpy.call(extras[choice][0])
+  File "game/Course_Select.rpy", line 21, in script call
+    $renpy.call(extras[choice][0])
+ScriptError: could not find label 'math1_course'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 189, in script
-    python:
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/ast.py", line 928, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/python.py", line 2245, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00start.rpy", line 190, in <module>
-    renpy.execute_default_statement(True)
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/exports.py", line 3753, in execute_default_statement
-    i.set_default(start)
-  File "game/script.rpy", line 36, in set_default
-    default calc1 = Course("Calculus I", "math1_course",100, 100)
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/python.py", line 2269, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 36, in <module>
-    default calc1 = Course("Calculus I", "math1_course",100, 100)
-TypeError: __init__() takes at least 6 arguments (5 given)
+  File "renpy/bootstrap.py", line 331, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 662, in main
+    run(restart)
+  File "renpy/main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "renpy/execution.py", line 922, in run_context
+    context.run()
+  File "game/Course_Select.rpy", line 21, in script call
+    $renpy.call(extras[choice][0])
+  File "game/Course_Select.rpy", line 21, in script call
+    $renpy.call(extras[choice][0])
+  File "renpy/script.py", line 918, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'math1_course'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 RenPy22 1.0
-Mon Mar 14 21:03:46 2022
+Mon Mar 14 21:19:07 2022

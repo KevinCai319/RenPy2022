@@ -22,17 +22,19 @@ label course_select:
     label .course_done:
         $course = 0
         $actions_done_for_day+=1
-        return 
+        return
 #courses!!
 #Use keyword 'course' to refer to the course variable!!
 #
 #ELECTRONICS
 label ee_course:
-    "Welcome to Meta University's introduction to EE course!"
-    "well this is the end for now"
     "[course.name]"
+    "Welcome to Meta University's introduction to EE course!"
+    "This will be lecture [course.currentClass]."
+
     jump course_select.course_done
     return
+
 
 
 label media_course:
