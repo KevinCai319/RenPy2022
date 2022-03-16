@@ -116,28 +116,28 @@ label prologue:
 
     chief "Lynx...Now you are 18. It's time to see if you will be the one chosen by metaverse"
     show lynx_img at right
-    lynx "Metaverse, what was that?"
-    chief "That's a place worshiped by ancient people."
-    chief "It's a place they create."
+    lynx "Metaverse. What is that?"
+    chief "It's a place worshiped by ancient people."
+    chief "It's a place where they create."
     chief "It's where they create food that cannot be eaten."
     chief "It's where they create weapons that cannot harm enemies."
     chief "It's where they create shelters that cannot keep you warm through the winter."
     menu:
         "Then it's totally useless. I don't want to go to the metaverse.":
             chief "No, you don't understand ancient people."
-            chief "Their power comes from Create."
+            chief "Their power comes from creation."
         "So that's the purpose of metaverse?":
-            chief "Create"
-    chief "Lynx, listen. Deep inside the metaverse, buries knowledge how ancient things are created."
+            chief "Creation"
+    chief "Lynx, listen. Deep inside the metaverse lies knowledge of how ancient technologies are created."
     lynx "Does it means we can know how to fix the generator and make ancient firearms?"
-    chief "Yes. Lynx, you always learn things fast."
+    chief "Yes. Lynx, you are always so quick to learn."
     menu:
-        "Then what to wait? Let's go to the metaverse.":
+        "Then what's to wait? Let's go to the metaverse.":
             pass
-        "Has anyone explored metaverse yet?":
+        "Has anyone explored the metaverse yet?":
             pass
     chief "No one has been to that place yet."
-    chief "The metaverse chose people by their voice. Only the chosen one has the voice, that can activate the metaverse."
+    chief "The metaverse chose people by their voice. Only with the chosen voice can one activate the metaverse."
     hide chief_img
     hide lynx_img
     show chief_img at right
@@ -146,7 +146,7 @@ label prologue:
     hide lynx_img
     "{FADE TO BLACK}"
     "You pick up the device and examine it."
-    "The device is smooth like a whole, there is no visible stitch, just like other ancient artifacts, but at the right side of the device, there is a small bulge."
+    "The finish on the device is as smooth as silk, there are no visible stitches. Perfect, just like other the other ancient artifacts.\n But at the right side of the device, there is a small bulge."
 label meta_activation:
     chief "Don't touch anything. Just say the word."
     menu:
@@ -172,7 +172,6 @@ label meta_activation_success:
     "*click*"
     hide chief_room with FAST_FADE
     hide chief_img
-    "TODO"
             
             
             
