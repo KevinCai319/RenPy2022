@@ -1,25 +1,22 @@
 image course_select_background = "Backgrounds/Meta_University.png"
 label course_select:
     play music campus
-    show course_select_background with fade
+    scene course_select_background with fade
     call screen course_select_menu
     $course_select_choice = _return[1]
     if course_select_choice == "dating_prologue":
         stop music fadeout 0.5
         call dating_prologue
-        hide course_select_background with fade
         jump course_select.event_done
     if course_select_choice == "ping_pong":
         stop music fadeout 0.5
         call ping_pong
-        hide course_select_background with fade
         jump course_select.event_done
     $extras = _return[2]
     $tple = extras[course_select_choice]
     $course = Course.course_listing[course_select_choice]
     if course.currentClass <= 1:
         "[tple[1]]"
-    hide course_select_background with fade
     call courseIntro
     $renpy.call(tple[0])
     label .course_done:
@@ -139,7 +136,7 @@ label food_course:
     return
 
 label courseIntro:
-    show classroom with FAST_FADE
+    scene classroom with FAST_FADE
     "Welcome to Meta University's [course.name]!"
     "This will be lecture [course.currentClass] out of [course.numClasses]."
     $content = course.lectureContent[course.currentClass-1]
@@ -156,5 +153,4 @@ label courseOutro:
         $course.unlocked = False
     else:
         "That is all for today. I hope to see you next class."
-    hide classroom with FAST_FADE
     return
