@@ -1,54 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-<<<<<<< HEAD
-  File "game/script.rpy", line 73, in script call
-    call meta_home
-  File "game/meta_home.rpy", line 31, in script call
-    call course_select
-  File "game/Course_Select.rpy", line 9, in script call
-    call ping_pong
-  File "game/ping_pong.rpy", line 7, in script
-    if (pingPongAttendance == 1):
-SyntaxError: invalid syntax (ping_pong.rpy, line 9)
-=======
-  File "game/script.rpy", line 69, in script call
-<<<<<<< HEAD
+  File "game/script.rpy", line 70, in script call
     call course_select
   File "game/Course_Select.rpy", line 5, in script
     call screen course_select_menu
   File "renpy/common/000statements.rpy", line 569, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-WindowsError: [Error 32] The process cannot access the file because it is being used by another process: u'C:\\Users\\k1029\\AppData\\Roaming/RenPy/RenPy22-1647280797\\persistent'
-=======
-    call prologue
-  File "game/prologue.rpy", line 11, in script
-    "AA (After Apocalypse) Year 22:"
-IOError: Couldn't find file 'audio/Strong-Wind-Blowing.ogg'.
->>>>>>> d5a090192b1e2e064f20e9cced0ffd9109c6438e
->>>>>>> 61ff6ca868acad7f55d2aa560849de1f02f22e11
+  File "game/course_select_screen.rpy", line 2, in execute
+    screen course_select_menu():
+  File "game/course_select_screen.rpy", line 2, in execute
+    screen course_select_menu():
+  File "game/course_select_screen.rpy", line 36, in execute
+    add battery xalign 0.8 yalign 0.0
+  File "game/course_select_screen.rpy", line 36, in <module>
+    add battery xalign 0.8 yalign 0.0
+NameError: name 'battery' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-<<<<<<< HEAD
-  File "game/script.rpy", line 73, in script call
-    call meta_home
-  File "game/meta_home.rpy", line 31, in script call
-    call course_select
-  File "game/Course_Select.rpy", line 9, in script call
-    call ping_pong
-  File "game/ping_pong.rpy", line 7, in script
-    if (pingPongAttendance == 1):
-  File "renpy/ast.py", line 1898, in execute
-    if renpy.python.py_eval(condition):
-  File "renpy/python.py", line 2274, in py_eval
-    code = py_compile(code, 'eval')
-  File "renpy/python.py", line 835, in py_compile
-    raise e
-SyntaxError: invalid syntax (ping_pong.rpy, line 9)
-=======
-  File "game/script.rpy", line 69, in script call
+  File "game/script.rpy", line 70, in script call
     call course_select
   File "game/Course_Select.rpy", line 5, in script
     call screen course_select_menu
@@ -66,52 +38,33 @@ SyntaxError: invalid syntax (ping_pong.rpy, line 9)
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/core.py", line 3325, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-<<<<<<< HEAD
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/core.py", line 3962, in interact_core
-    self.idle_frame(can_block, expensive)
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/core.py", line 3451, in idle_frame
-    renpy.persistent.check_update()
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/persistent.py", line 358, in check_update
-    update()
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/persistent.py", line 395, in update
-    save()
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/persistent.py", line 411, in save
-    renpy.loadsave.location.save_persistent(data)
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/savelocation.py", line 496, in save_persistent
-    l.save_persistent(data)
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/savelocation.py", line 351, in save_persistent
-    safe_rename(fn_new, fn)
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/loadsave.py", line 304, in safe_rename
-    os.unlink(new)
-WindowsError: [Error 32] The process cannot access the file because it is being used by another process: u'C:\\Users\\k1029\\AppData\\Roaming/RenPy/RenPy22-1647280797\\persistent'
-=======
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/core.py", line 4025, in interact_core
-    renpy.audio.audio.periodic()
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/audio/audio.py", line 1162, in periodic
-    raise_(exc[0], exc[1], exc[2])
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/audio/audio.py", line 1140, in periodic_thread_main
-    periodic_pass()
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/audio/audio.py", line 1082, in periodic_pass
-    c.periodic()
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/audio/audio.py", line 518, in periodic
-    topf = load(filename)
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/audio/audio.py", line 69, in load
-    rv = renpy.loader.load(fn)
-  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/loader.py", line 798, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'audio/Strong-Wind-Blowing.ogg'.
->>>>>>> d5a090192b1e2e064f20e9cced0ffd9109c6438e
->>>>>>> 61ff6ca868acad7f55d2aa560849de1f02f22e11
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/core.py", line 3737, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/screen.py", line 436, in visit_all
+    callback(self)
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/core.py", line 3737, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/screen.py", line 447, in per_interact
+    self.update()
+  File "C:\Users\k1029\Desktop\Coding\renpy-7.4.11-sdk/renpy/display/screen.py", line 637, in update
+    self.screen.function(**self.scope)
+  File "game/course_select_screen.rpy", line 2, in execute
+    screen course_select_menu():
+  File "game/course_select_screen.rpy", line 2, in execute
+    screen course_select_menu():
+  File "game/course_select_screen.rpy", line 36, in execute
+    add battery xalign 0.8 yalign 0.0
+  File "game/course_select_screen.rpy", line 36, in <module>
+    add battery xalign 0.8 yalign 0.0
+NameError: name 'battery' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 RenPy22 1.0
-<<<<<<< HEAD
-Tue Mar 15 21:55:31 2022
-=======
-<<<<<<< HEAD
-Tue Mar 15 21:56:23 2022
-=======
-Tue Mar 15 20:14:23 2022
->>>>>>> d5a090192b1e2e064f20e9cced0ffd9109c6438e
->>>>>>> 61ff6ca868acad7f55d2aa560849de1f02f22e11
+Tue Mar 15 22:33:42 2022

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/course_select_screen.rpy", line 25: u'padding' is not a keyword argument or valid child for the vpgrid statement.
-    padding (0,100)
-           ^
+File "game/course_select_screen.rpy", line 19: text expects a non-empty block.
+    text "[batt_left] %":
+                         ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Mar 15 22:00:04 2022
+Tue Mar 15 22:31:54 2022

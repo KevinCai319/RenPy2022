@@ -1,7 +1,6 @@
 image course_select_background = "Backgrounds/Meta_University.png"
 label course_select:
     show course_select_background with fade
-    "What would you like to do today, [MC] ?"
     call screen course_select_menu
     $course_select_choice = _return[1]
     if course_select_choice == "dating_prologue":
