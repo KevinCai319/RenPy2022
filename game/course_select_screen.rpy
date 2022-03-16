@@ -12,19 +12,22 @@ screen course_select_menu():
             count+=1
         options.append(("Dating", "dating_prologue"))
         options.append(("Ping Pong", "ping_pong"))
-        gridHeight = (limit/2)+1
+        gridHeight = limit+2
     frame:
-        xalign 0.5
+        xalign 1.0
         yalign 0.5
+        background "#00000098"
         vpgrid:
-            rows 10
-            cols 2
+            rows gridHeight
+            cols 1
             scrollbars "vertical"
             spacing 20
-            xalign 0.25
-            yalign 0.1
+            top_margin 200
             for i in options:
                 button:
+                    text i[0]:
+                        xalign 0.5
+                        yalign 0.5
                     style "choice_button"
-                    text i[0]
+                    xmaximum 600
                     action Return((i[0],i[1], extras))

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/prologue.rpy", line 28: end of line expected.
-    show chief_img at right center
-                            ^
+File "game/course_select_screen.rpy", line 25: u'padding' is not a keyword argument or valid child for the vpgrid statement.
+    padding (0,100)
+           ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Mar 15 19:31:07 2022
+Tue Mar 15 22:00:04 2022
