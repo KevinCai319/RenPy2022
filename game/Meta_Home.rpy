@@ -60,8 +60,7 @@ label meta_home:
         "{b}{i}[MC]"
         hide mc_img
         with fade
-        yumemi "[MC]. So this is [MC]'s VR headset. This is [MC]'s world. This is [MC]'s room."
-        yumemi "I {i}am{/i} [MC]! And this must be the metaverse."
+        yumemi "[MC]. So this is [MC]'s metaverse. This is [MC]'s room. This is [MC]'s world."
 
         "You turn your head towards the right and see an odd reflection in the mirror."
         "Who is that?"
