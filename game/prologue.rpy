@@ -1,11 +1,10 @@
 
-
 label prologue:
     #scene bombing
     "The sound of the air raid sirens fill the air as an entire town scramble towards the nearest fallout shelter."
     "In a desolate corner, a child cries out to his parents. But no one hears him."
     "It's every man for himself now."
-    show irl_background with fade
+    show irl_background with SLOW_FADE
     play music "audio/music/Strong-Wind-Blowing.ogg"
     #scene now
     "AA (After Apocalypse) Year 22:"
@@ -19,12 +18,15 @@ label prologue:
     "The harsh winter is just around the corner and to make matters worse, the shelter is on nearing the end of its food and supply."
     hide irl_background with fade
     "But there is hope."
+    stop music fadeout 1.0
     #scene vrDevice
+    show headset at truecenter
     "A relic of the ancient civilization."
     "Ever since it's discovery, numerous people have attempted to turn it on, but to no avail."
     "You are now called upon the chief -- it's your turn to try."
-    stop music fadeout 1.0
+    hide headset
     #scene throneRoom
+    show chief_room with SLOW_FADE
     show chief_img at center
     chief "What's your name?"
     menu:
@@ -58,19 +60,25 @@ label pressButton:
     menu:
         "Say the key word and press the button.":
             "You secrelty place your hand on the button. Fortunately, it's on the side facing away from the chief."
-
-    lynx "Hello Meta"
     "*click*"
+    "You put on the headset. It is quite bulky."
+    hide chief_room with FAST_FADE 
+    hide chief_img
+    lynx "Hello Meta"
     "You wait in suspense, but the screen doesn't respond."
     chief "If it doesn't work, it doesn't work."
     "You grudingly take the device off of your head...and"
+    show chief_room
     show chief_img at right
     #scene vrDeviceOn
     "To everyone's surprise, the screen turns on."
-    chief "So you are the one."
+    chief "Oh! So you are the one."
     chief "Tell me what you see."
     hide chief_img
+    hide chief_room with FAST_FADE 
     call meta_home
+    #since it is first run through, make fade a bit more slow.
+    show chief_room with SLOW_FADE
     show chief_img at right
     #continue conversation with chief
     chief "Welcome back, [MC], what did you see?"

@@ -3,6 +3,7 @@ default chief_happy = 0.3
 default chief_very_angry = 0.8
 
 label end_day:
+    show chief_room with fade
     show chief_img with fade
     chief "So what happened today?"
     label .summary:
@@ -54,4 +55,5 @@ label end_day:
             lynx "Sorry chief, I will try harder tomorrow."
     label .end:
         hide chief_img with fade
+        hide chief_room
         return

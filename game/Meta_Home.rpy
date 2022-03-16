@@ -17,7 +17,15 @@ label meta_home:
         "......"
         "........."
         "...[MC] !"
-        # TODO: add text here
+
+        # TODO: add Lynx's monologue 
+
+        
+
+
+
+
+        
     label .select:
         "What would you like to do?"
     menu:

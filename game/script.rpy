@@ -5,6 +5,8 @@ define yumemi = Character(MC_str)
 define david = Character("David Sigmund")
 define lynx = Character("Lynx")
 define chief = Character("chief")
+define FAST_FADE = Fade(0.25,0.0,0.0)
+define SLOW_FADE = Fade(0.75,0.0,0.0)
 image chief_img = im.Scale("images/Chief/chief.PNG",600,800)
 image lynx_img = im.Scale("images/Lynx/lynx.PNG",600,800)
 image david_img = im.Scale("images/David/david.PNG",600,800)
@@ -12,6 +14,9 @@ image mc_img = im.Scale("images/MC/mc.PNG",500,800)
 
 image irl_background = "Backgrounds/Post_apocalyptic_world.png"
 image meta_room = "Backgrounds/mc_Room.png"
+image chief_room = "Backgrounds/Chief_Room.png"
+
+image headset = "VR_Headset.png"
 image battery = "Battery.png"
 # World Variables
 default day = 1
