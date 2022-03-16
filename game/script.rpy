@@ -19,10 +19,10 @@ image meta_room = "Backgrounds/mc_Room.png"
 image chief_room = "Backgrounds/Chief_Room.png"
 image classroom = "Backgrounds/Classroom.png"
 
-image broken_generator = "Backgrounds/Generator_damaged.png"
-image fixed_generator = "Backgrounds/Generator_fixed.png"
-image broken_water_purifier = "Backgrounds/Water_Purifier_damaged.png"
-image fixed_water_purifier = "Backgrounds/Water_Purifier_fixed.png"
+image Generator_damaged = "Backgrounds/Generator_damaged.png"
+image Generator_fixed = "Backgrounds/Generator_fixed.png"
+image Water_Purifier_damaged = "Backgrounds/Water_Purifier_damaged.png"
+image Water_Purifier_fixed = "Backgrounds/Water_Purifier_fixed.png"
 
 image headset = "VR_Headset.png"
 image headset_glowing = im.MatrixColor("VR_Headset.png",im.matrix.brightness(0.8) * im.matrix.tint(0.8, 0.8, 1.0))

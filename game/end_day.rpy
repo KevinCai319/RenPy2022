@@ -5,7 +5,7 @@ default chief_very_angry = 0.8
 label end_day:
     show chief_room
     show chief_img at right
-    show lynx at left with fade
+    show lynx_img at left with fade
     chief "So what happened today?"
     label .summary:
         lynx "Here's a summary of what happened:"
@@ -85,4 +85,5 @@ label end_day:
     label .end:
         hide chief_img
         hide chief_room
+        hide lynx_img
         return
