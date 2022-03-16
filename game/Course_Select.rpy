@@ -11,9 +11,10 @@ label course_select:
         jump course_select.event_done
     $extras = _return[2]
     $tple = extras[course_select_choice]
-    "[tple[1]]"
-    hide course_select_background with fade
     $course = Course.course_listing[course_select_choice]
+    if course.currentClass <= 1:
+        "[tple[1]]"
+    hide course_select_background with fade
     call courseIntro
     $renpy.call(tple[0])
     label .course_done:
