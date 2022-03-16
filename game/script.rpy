@@ -105,9 +105,8 @@ label start:
         call day_start
         "Time to login"
         call meta_home
-        show irl_background with fade
+        scene irl_background with fade
         "I think it's time to report to chief."
-        hide irl_background with fade
         call end_day
         #scene transition
         call day_reset
@@ -115,42 +114,42 @@ label start:
     return
 #Day end, reset
 label day_reset:
-    if day >= WINTER_DAY:
-        #game ends.
-        $day+=1
-        "The sun rises again... DAY [day]"
-        "Winter has arrived. The enemy tribe has come to attack."
-        jump game_end
-    else:
-        #reset battery life of device.
-        $actions_done_for_day = 0
-        $daily_summary = ""
-        $day+=1
-    "The sun rises again... DAY [day]"
-    return
+   if day >= WINTER_DAY:
+      #game ends.
+      $day+=1
+      "The sun rises again... DAY [day]"
+      "Winter has arrived. The enemy tribe has come to attack."
+      jump game_end
+   else:
+      #reset battery life of device.
+      $actions_done_for_day = 0
+      $daily_summary = ""
+      $day+=1
+   "The sun rises again... DAY [day]"
+   return
 label game_end:
-    if end_state == 0:
-        show irl_background with SLOW_FADE
-        "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
-    elif end_state == 1:
-        show irl_background with SLOW_FADE
-        if weapons_success:
-            "Your tribemen are ill, the battle is very unsuccessful. Although your tribe eliminated the enemy, they destroied the facilities"
-        else:
-            "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
-    elif end_state == 2:
-        #Check if all 3 objectives are done, or only 2 of the 3.
-        #TODO: edit dialogue
-        if (weapons_success and purifier_success):
-            "The damaged generator has stopped working."
-            "Huge sacrifice was made. You lost your leg. But your tribe control the enemy tribe’s facilities"
-            #chief "With weapons and the water purifier working, our tribe can still survive the winter."
-        if (weapons_success and generator_success):
-            "Huge sacrifice was made. You lost your leg. But your tribe control the enemy tribe’s facilities"
-        if(purifier_success and generator_success):
-            "Being greedy on your tribe’s winter reservation, the enemy tribe launched a raid. Your tribe hardly defended the besiege. People cannot get out for food. Many people might die during the winter"
-        "OK ENDING"
-    else:
-        "You tribe has enough reservation for the winter and defend well against enemy tribe. You decide to slaughter the tribe or not"
-        "GOOD ENDING"
-    return
+   if end_state == 0:
+      show irl_background with SLOW_FADE
+      "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
+   elif end_state == 1:
+      show irl_background with SLOW_FADE
+      if weapons_success:
+         "Your tribemen are ill, the battle is very unsuccessful. Although your tribe eliminated the enemy, they destroied the facilities"
+      else:
+         "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
+   elif end_state == 2:
+      #Check if all 3 objectives are done, or only 2 of the 3.
+      #TODO: edit dialogue
+      if (weapons_success and purifier_success):
+         "The damaged generator has stopped working."
+         "Huge sacrifice was made. You lost your leg. But your tribe control the enemy tribe’s facilities"
+         #chief "With weapons and the water purifier working, our tribe can still survive the winter."
+      if (weapons_success and generator_success):
+         "Huge sacrifice was made. You lost your leg. But your tribe control the enemy tribe’s facilities"
+      if(purifier_success and generator_success):
+         "Being greedy on your tribe’s winter reservation, the enemy tribe launched a raid. Your tribe hardly defended the besiege. People cannot get out for food. Many people might die during the winter"
+         "OK ENDING"
+   else:
+      "You tribe has enough reservation for the winter and defend well against enemy tribe. You decide to slaughter the tribe or not"
+      "GOOD ENDING"
+   return

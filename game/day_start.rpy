@@ -1,6 +1,7 @@
 label day_start:
-    show irl_background 
-    show lynx_img at left with fade
+    scene irl_background 
+    show lynx_img at left
+    with fade
     play music "audio/music/Strong-Wind-Blowing.ogg"
     lynx "It's a start of a new day. Better go visit Chief again."
 
@@ -13,12 +14,12 @@ label day_start:
     else:
         lynx "..."
     stop music
-    hide lynx_img
-    hide irl_background
-    show chief_room
-    show chief_img at left
+
     #<Lynx arrives at the Chief's place>
-    show lynx_img at right with fade
+    scene chief_room
+    show chief_img at left
+    show lynx_img at right
+    with fade
     lynx "Hello chief, how are you today?"
 
     #Chief gives additional text based on the day.
@@ -50,12 +51,11 @@ label day_start:
         else:
             # in this case already done 2/3, so you technically already won something.
             chief "Doing great, hope you're doing well."
-        
-    chief "It's time to enter the Metaverse."
-    hide lynx_img 
-    hide chief_img
-    hide chief_room
     show headset_glowing at truecenter with fade
+    chief "It's time to enter the Metaverse."
+    hide headset_glowing
+    
+    show blank at truecenter with moveintop
     #scene vrDevice
     lynx "Hello Meta"
     hide headset_glowing

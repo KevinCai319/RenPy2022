@@ -7,7 +7,6 @@ label meta_home:
         scene meta_room with fade
     if actions_done_for_day >= MAX_ACTIONS_PER_DAY:
         "The battery is too low... cannot continue... shutting down"
-        hide meta_room with fade
         if not started_before:
             $started_before = True
         return
