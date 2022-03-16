@@ -18,20 +18,7 @@ screen course_select_menu():
     frame:
         xalign 1.0
         yalign 0.5
-<<<<<<< HEAD
-        vpgrid:
-            rows 10
-            cols 2
-            scrollbars "vertical"
-            spacing 20
-            xalign 0.25
-            yalign 0.1
-            for i in options:
-                button:
-                    style "choice_button"
-                    text i[0]
-                    action Return((i[0],i[1], extras))
-=======
+
         background "#00000098"
         frame:
             top_margin 200
@@ -55,4 +42,3 @@ screen course_select_menu():
         xalign 0.99
         size 80
         bold True
->>>>>>> 0938c336664ee4f3f88ba47bdb7bf8f3bd00a7d7

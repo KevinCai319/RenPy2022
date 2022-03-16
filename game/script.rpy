@@ -47,12 +47,12 @@ default waterCheck_milestone4 = False #Finally, he figures the replacement out. 
 #Variables for weapons complete
 default weaponsCheck_posterBegin = False #course 4 of animal behavior
 default weaponsCheck_3dModelFromPoster = False #course 5 of animal behavior
-default weaponsCheck_askChiefAbout3dModel = False #adventurer will receive information that he has to get a blueprint
-default weaponsCheck_obtainBlueprint = False #from CAD course 7
+#default weaponsCheck_askChiefAbout3dModel = False #adventurer will receive information that he has to get a blueprint
+default weaponsCheck_obtainBlueprint = False #from CAD course 3
 
 
 #Course objects
-default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 4, animal_course_content, True, "Not sure how much I'll get out of this...")
+default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 4, animal_course_content, True)
 default englishPoetry = Course("English Poetry","english_course", 4,english_course_content, True)
 default circuitsAndElectronics = Course("Circuits and Electronics","circuits_course",  9,circuits_course_content, True)
 default electricEngeering = Course("Electric Engineering","ee_course", 16, ee_course_content, True, "Electrical engineering can be helpful for fixing things...")

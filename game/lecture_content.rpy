@@ -74,15 +74,15 @@ init python:
     #https://umaine.edu/mechanical-engineering-mee120/syllabus/
     cad_course_content = [
         "Machine setup, templates, sketching, geometric relations",
+        "Hand drawn isometric views.",
+        "Set up for making blueprints", #Here, you will ask professor for blueprints
         "Patterning, Extrude-cuts, exercises",
         "Revolved parts, hole wizard, symbolic threads, Fillets, chamfers, applying materials",
         "Patterning features, measuring parts, suppressing features",
         "Sweeps, planes, shelling",
         "Use of calipers, part creation exercises",
-        "Set up for making blueprints", #Here, you will ask professor for blueprints
         "Adding views, dimensioning, centerlines, centermarks",
         "Detail views, Broken views, sheet metal prints, purchased part prints",
-        "Hand drawn isometric views.",
         "Features at the assembly level, machining castings, welding",
         "Tracking design changes, drawing revisions"
     ]

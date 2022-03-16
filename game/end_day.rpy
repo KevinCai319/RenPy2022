@@ -17,10 +17,12 @@ label end_day:
             #if, in case you finish multiple in a day
             if daily_summary.find("I have the solution to the water purifier!") != -1:
                 call waterMilestone4FixAttemptSuccess
-                $purifier_success = True
             if daily_summary.find("I beleive I can fix the generator!") != -1:
                 call fixGenerator
-                $generator_success = True
+            if daily_summary.find("We might be able to construct weapons.") != -1:
+                call weaponsModelFound
+            if daily_summary.find("I have converted the 3D model to a blueprint.") != -1:
+                call weaponsComplete
 
         else:
             lynx "Nothing of note."
