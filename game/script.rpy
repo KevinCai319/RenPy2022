@@ -98,7 +98,6 @@ default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, 
 
 # The game starts here.
 label start:
-   call course_select
    call prologue
    if not started_before:
       "Unfortunately, you were not the chosen one."
