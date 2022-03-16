@@ -45,11 +45,11 @@ screen course_select_menu():
     if not (goal_generator or goal_purifier or goal_weapons):
         $goals += "-None for now."
     else:
-        if goal_generator:
+        if goal_generator and (not generator_success):
             $goals += "-Find a way to restore generator.\n"
-        if goal_purifier:
+        if goal_purifier and (not purifier_success):
             $goals += "-Find a way to restore the purifier.\n"
-        if goal_weapons:
+        if goal_weapons and (not weapons_success):
             $goals += "-Find a way to help produce weapons.\n"
     frame:
         xalign 0.0

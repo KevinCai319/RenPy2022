@@ -59,5 +59,5 @@ label day_start:
     #scene vrDevice
     lynx "Hello Meta"
     "*click*"
-    hide headset
+    hide headset_glowing
     return
