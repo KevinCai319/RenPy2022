@@ -13,17 +13,23 @@ image lynx_img = im.Scale("images/Lynx/lynx.PNG",600,800)
 image david_img = im.Scale("images/David/david.PNG",600,800)
 image mc_img = im.Scale("images/MC/mc.PNG",500,800)
 
+
 image irl_background = "Backgrounds/Post_apocalyptic_world.png"
 image meta_room = "Backgrounds/mc_Room.png"
 image chief_room = "Backgrounds/Chief_Room.png"
 image classroom = "Backgrounds/Classroom.png"
+
+image broken_generator = "Backgrounds/Generator_damaged.png"
+image fixed_generator = "Backgrounds/Generator_fixed.png"
+image broken_water_purifier = "Backgrounds/Water_Purifier_damaged.png"
+image fixed_water_purifier = "Backgrounds/Water_Purifier_fixed.png"
 
 image headset = "VR_Headset.png"
 image headset_glowing = im.MatrixColor("VR_Headset.png",im.matrix.brightness(0.8) * im.matrix.tint(0.8, 0.8, 1.0))
 image battery = "Battery.png"
 define audio.irl = "audio/music/Strong-Wind-Blowing.ogg"
 define audio.campus = "audio/music/Campus_Music.ogg"
-
+define audio.fixing = "audio/music/Fixing.ogg"
 # World Variables
 default day = 1
 #lose(0/1)/good(2)/best ending(3) (0/1/2/3)
@@ -82,6 +88,11 @@ default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, 
 # The game starts here.
 label start:
     call prologue
+    if not started_before:
+        "Unfortunately, you were not the chosen one."
+        show irl_background with SLOW_FADE
+        "[WINTER_DAY] days later, winter arrives, and your tribe freezes to death."
+        return
     call day_reset
     label .day_cycle:
         call day_start
@@ -112,10 +123,10 @@ label day_reset:
     return
 label game_end:
     if end_state == 0:
-        show irl_background with fade
+        show irl_background with SLOW_FADE
         "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
     elif end_state == 1:
-        show irl_background with fade
+        show irl_background with SLOW_FADE
         if weapons_success:
             "Your tribemen are ill, the battle is very unsuccessful. Although your tribe eliminated the enemy, they destroied the facilities"
         else:

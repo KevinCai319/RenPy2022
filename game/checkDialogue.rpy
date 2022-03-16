@@ -20,6 +20,8 @@ label waterMilestone4FixAttemptSuccess:
     #Scene purifier
     "The CPU fits in."
     lynx "And now, the moment of truth..."
+    hide Water_Purifier_damaged
+    show Water_Purifier_fixed with fade
     "The system slowly comes back to life as it takes in water from the nearby river."
     "Before you knew it, the output tank begins to fill with crystal clear water."
     "You did it."
@@ -38,6 +40,8 @@ label fixGenerator:
     "Time to repair!"
     "You recall the steps from the YouTube video: Coolant, Fuel Levels, Oil Levels, Shutoff Valve, and Air Filter."
     "You check and repair each of the components."
+    hide Generator_damaged
+    show Generator_fixed with fade
     "After some additional simple wiring, the generator sputters back to life."
     chief "Now, we will have energy for years to come. We all owe you one, Lynx."
     $generator_success = True
@@ -57,7 +61,9 @@ label weaponsModelFound:
     return
 
 label weaponsComplete:
+    show blueprint at truecenter
     "You hand the blueprints over to the chief"
+    hide blueprint
     chief "Perfect. With this new design, we will be able to protect our tribe from neighboring agressors."
     chief "Your contributions are truly invaluable."
     $end_state+=1

@@ -47,12 +47,19 @@ label prologue:
     return
 
 label onlyKeyWord:
+    "You put on the headset."
+    hide chief_room 
+    hide chief_img with FAST_FADE 
     lynx "Hello Meta"
     "You wait in suspense, but the screen remains blank."
     chief "If it doesn't work, it doesn't work. Thanks for trying."
+    "You grudingly take the device off of your head."
+    show chief_room
+    show chief_img at right with fade
     "You leave and think to yourself:"
     "{i}There must be another way"
     hide chief_img
+    hide chief_room
     return
 
 label pressButton:
@@ -62,8 +69,8 @@ label pressButton:
             "You secrelty place your hand on the button. Fortunately, it's on the side facing away from the chief."
     "*click*"
     "You put on the headset. It is quite bulky."
-    hide chief_room with FAST_FADE 
-    hide chief_img
+    hide chief_room
+    hide chief_img with FAST_FADE
     lynx "Hello Meta"
     "You wait in suspense, but the screen doesn't respond."
     chief "If it doesn't work, it doesn't work."

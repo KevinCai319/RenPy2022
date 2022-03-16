@@ -3,8 +3,9 @@ default chief_happy = 0.3
 default chief_very_angry = 0.8
 
 label end_day:
-    show chief_room with fade
-    show chief_img with fade
+    show chief_room
+    show chief_img at right
+    show lynx at left with fade
     chief "So what happened today?"
     label .summary:
         lynx "Here's a summary of what happened:"
@@ -19,17 +20,38 @@ label end_day:
             #adjust penalty based on certain key words in daily summary.
             #this is a special dialogue for when you acheive milestone 2 of water check
             if daily_summary.find("I think we can fix the purifier now") != -1:
+                hide chief_room
+                show Water_Purifier_damaged with fade
+                play music fixing
                 call waterMilestone2FixAttemptFail
+                stop music
+                hide Water_Purifier_damaged
+                show chief_room with fade
             #if, in case you finish multiple in a day
             if daily_summary.find("I have the solution to the water purifier!") != -1:
+                hide chief_room
+                show Water_Purifier_damaged with fade
+                play music fixing
                 call waterMilestone4FixAttemptSuccess
+                stop music
+                hide Water_Purifier_fixed
+                show chief_room with fade
             if daily_summary.find("I beleive I can fix the generator!") != -1:
+                hide chief_room
+                show Generator_damaged with fade
+                play music fixing
                 call fixGenerator
+                stop music
+                hide Generator_fixed
+                show chief_room with fade
             if daily_summary.find("We might be able to construct weapons.") != -1:
+                hide chief_room
                 call weaponsModelFound
+                show chief_room
             if daily_summary.find("I have converted the 3D model to a blueprint.") != -1:
+                hide chief_room
                 call weaponsComplete
-
+                show chief_room
         else:
             lynx "Nothing of note."
             #chief gets more pissed if nothing happened
