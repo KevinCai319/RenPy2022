@@ -37,7 +37,6 @@ label end_day:
         if purifier_success:
             $penalty -=2
         if weapons_success:
-            lynx "We currently have weapons"
             $penalty -=2
 
         #lynx "That is all."

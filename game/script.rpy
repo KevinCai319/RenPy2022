@@ -12,6 +12,7 @@ image mc_img = im.Scale("images/MC/mc.PNG",500,800)
 
 image irl_background = "Backgrounds/Post_apocalyptic_world.png"
 image meta_room = "Backgrounds/mc_Room.png"
+image battery = "Battery.png"
 # World Variables
 default day = 1
 #lose(0/1)/good(2)/best ending(3) (0/1/2/3)
@@ -66,7 +67,7 @@ default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, 
 
 # The game starts here.
 label start:
-    #call prologue
+    call prologue
     call day_reset
     label .day_cycle:
         call day_start
