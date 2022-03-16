@@ -8,12 +8,9 @@ label meta_home:
         if not started_before:
             $started_before = True
         return
-<<<<<<< HEAD
 
-=======
     if actions_done_for_day == 0:
         play sound "audio/VR_startup.ogg"
->>>>>>> 28376ee9fa5a39064e7e4594d6018cafa195b63b
     if started_before:
         "Welcome back to the Metaverse, [MC] !"
     else:
@@ -22,34 +19,45 @@ label meta_home:
         "......"
         "........."
         "...[MC] !"
-<<<<<<< HEAD
-        "Small pixels on the screen materialize ot life, and you make out a bright enclosed space."
-        "What am I seeing?"
-        "Standing in front of you are three animals in front you in the purest of white."
+        yumemi "Huh? Who's [MC]?"
+
+        "Small pixels on the screen materialize, and you make out a brightly open space."
+        "Standing in front of you are three animals in the purest of white."
         "The elephant in the room catches your attention; {i}but why is it so small?" # a pun 
-        "An unfamiliar feeling of peace and rest falls upon you as you take in the room further."
-        "Is this what they call heaven?"
-        "No, this can't be."
+        "An unfamiliar feeling of peace and freedom falls upon you as you take in the serene atmosphere of the room."
+        yumemi "Is this what they call heaven?"
+        yumemi "No, this can't be."
         "You feel for the head straps and take the headset off."
-        #switch scene to chief for and then on next click, switch back to the VR room
-        show 
+        label .takeHeadSetOff:
+            scene chief_room with fade
+            show chief_img
+            ""
+        label .putHeadSetOn:
+            scene meta_room with fade
+        yumemi "{i}Okay, I'm still alive."
+        "You decide to walk around a bit and investigate the room further."
+        yumemi "Everything is so pink and jovial."
+        "The bookshelf seems intriguing. You approach it with anticipation."
+        "..."
+        "Most of the books seem standard, but you pick up one up anyway."
+        "Opening the cover, you see the name again:."
+        "{b}{i}[MC]"
+        yumemi "[MC]. So this is [MC]'s VR headset. This is [MC]'s world. This is [MC]'s room."
+        yumemi "I {i}am{/i} [MC]! And this must be the metaverse."
+        "You see two doors and decide to open the one on the left."
+        "..."
+        "It leads to an empty closet."
+        yumemi "{i}That's weird."
+        "You close it and go through the other door."
+        "..."
 
         # He's a girl now, am I in heaven? How do I
-=======
 
-        # TODO: add Lynx's monologue 
-
-        #Lynx is confused on why he is in a girls's room
-        #is Lynx in heaven?
-        #
-
-        #Lynx realizes he is girl
-
-
-
->>>>>>> 28376ee9fa5a39064e7e4594d6018cafa195b63b
     label .select:
         "What would you like to do?"
+        if !started_before
+            "Oh?"
+
     menu:
         "Exit":
             if started_before:
