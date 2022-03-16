@@ -55,7 +55,7 @@ label meta_home:
         "..."
         "Most of the books seem standard, but you pick up one up anyway."
         "Opening the cover, you see the name again:."
-        show mc_img at middle
+        show mc_img at center
         with fade
         "{b}{i}[MC]"
         hide mc_img
