@@ -56,6 +56,6 @@ label end_day:
             chief "Winter is quickly approaching, and the generator is losing energy, you better step it up!"
             lynx "Sorry chief, I will try harder tomorrow."
     label .end:
-        hide chief_img with fade
+        hide chief_img
         hide chief_room
         return

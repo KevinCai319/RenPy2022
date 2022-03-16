@@ -5,9 +5,11 @@ label course_select:
     $course_select_choice = _return[1]
     if course_select_choice == "dating_prologue":
         call dating_prologue
+        hide course_select_background with fade
         jump course_select.event_done
     if course_select_choice == "ping_pong":
         call ping_pong
+        hide course_select_background with fade
         jump course_select.event_done
     $extras = _return[2]
     $tple = extras[course_select_choice]
@@ -20,10 +22,8 @@ label course_select:
     label .course_done:
         call courseOutro
         $course.progressClass()
-        jump course_select.event_done
     label .event_done:
         $actions_done_for_day+=1
-        hide course_select_background with fade
         return
 #courses!!
 #Use keyword 'course' to refer to the course variable!!
@@ -103,8 +103,9 @@ label cad_course:
         if weaponsCheck_3dModelFromPoster:
             "{i}Blueprints! This is what the chief needs!"
             $daily_summary += "I have converted the 3D model to a blueprint.\n"
-
-
+        else:
+            "{i}Those Blueprints might be helpful."
+    lynx "This CAD class seems pretty interesting ..."
     return
 
 label math1_course:
@@ -132,6 +133,7 @@ label food_course:
     return
 
 label courseIntro:
+    show classroom with FAST_FADE
     "Welcome to Meta University's [course.name]!"
     "This will be lecture [course.currentClass] out of [course.numClasses]."
     $content = course.lectureContent[course.currentClass-1]
@@ -148,4 +150,5 @@ label courseOutro:
         $course.unlocked = False
     else:
         "That is all for today. I hope to see you next class."
+    hide classroom with FAST_FADE
     return

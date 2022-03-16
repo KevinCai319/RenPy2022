@@ -15,8 +15,10 @@ image mc_img = im.Scale("images/MC/mc.PNG",500,800)
 image irl_background = "Backgrounds/Post_apocalyptic_world.png"
 image meta_room = "Backgrounds/mc_Room.png"
 image chief_room = "Backgrounds/Chief_Room.png"
+image classroom = "Backgrounds/Classroom.png"
 
 image headset = "VR_Headset.png"
+image headset_glowing = im.MatrixColor("VR_Headset.png",im.matrix.brightness(0.8) * im.matrix.tint(0.8, 0.8, 1.0))
 image battery = "Battery.png"
 # World Variables
 default day = 1
@@ -28,6 +30,9 @@ default WINTER_DAY = 16
 default generator_success = False
 default purifier_success = False
 default weapons_success = False
+default goal_generator = False
+default goal_purifier = False
+default goal_weapons = False
 # Values stored in Meta device.
 default started_before = False
 default diary_unlock_level = 0

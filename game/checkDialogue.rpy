@@ -50,8 +50,8 @@ label weaponsModelFound:
         "..."
         $weaponsCheck_obtainBlueprint = True
         call weaponsComplete #directly call this if you already can make the blue print
-
-    "{i}In what class would I find information about a blueprint?"
+    else:
+        "{i}In what class would I find information about a blueprint?"
     return
 
 label weaponsComplete:

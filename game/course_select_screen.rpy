@@ -41,3 +41,29 @@ screen course_select_menu():
         xalign 0.99
         size 80
         bold True
+    $goals = ""
+    if not (goal_generator or goal_purifier or goal_weapons):
+        $goals += "-None for now."
+    else:
+        if goal_generator:
+            $goals += "-Find a way to restore generator.\n"
+        if goal_purifier:
+            $goals += "-Find a way to restore the purifier.\n"
+        if goal_weapons:
+            $goals += "-Find a way to help produce weapons.\n"
+    frame:
+        xalign 0.0
+        yalign 0.8
+        background "#00000098"
+        vbox:
+            text "{u}Goals{/u}":
+                color "#7df0ff"
+                bold True
+                size 60 
+            text goals:
+                xalign 0.0
+                yalign 0.75
+                color "#7df0ff"
+                size 50
+
+        

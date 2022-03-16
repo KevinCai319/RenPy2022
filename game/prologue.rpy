@@ -5,7 +5,7 @@ label prologue:
     "In a desolate corner, a child cries out to his parents. But no one hears him."
     "It's every man for himself now."
     show irl_background with SLOW_FADE
-    play music "audio/music/Strong-Wind-Blowing.ogg"
+    play music "audio/music/Strong-Wind-Blowing.ogg" volume 1.0
     #scene now
     "AA (After Apocalypse) Year 22:"
     "The entire world is decimated."
@@ -71,11 +71,14 @@ label pressButton:
     show chief_room
     show chief_img at right
     #scene vrDeviceOn
+    show headset_glowing at truecenter
     "To everyone's surprise, the screen turns on."
     chief "Oh! So you are the one."
     chief "Tell me what you see."
+    hide headset_glowing
     hide chief_img
     hide chief_room with FAST_FADE 
+    "You put the device back on."
     call meta_home
     #since it is first run through, make fade a bit more slow.
     show chief_room with SLOW_FADE
