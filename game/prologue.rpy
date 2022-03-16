@@ -6,7 +6,7 @@ label prologue:
     "In a desolate corner, a child cries out to his parents. But no one hears him."
     "It's every man for himself now."
     show irl_background with fade
-    play music "audio/Strong-Wind-Blowing.wav"
+    play music "audio/music/Strong-Wind-Blowing.ogg"
     #scene now
     "AA (After Apocalypse) Year 22:"
     "The entire world is decimated."
