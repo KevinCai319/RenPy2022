@@ -3,7 +3,10 @@ default davidKnows = False
 
 label dating_prologue:
     $askedWhoIsHe = False #just for some future dialogue in truth, that's about it for this variable's usage
-
+    show david_img at left with fade
+    show mc_img at right
+    
+    
     david "Hey, [MC]! Over here!"
     "You see a boy smiling across the road, waving his hand."
     "He seems to be about your age, with glasses that perfectly frame his face to suggest a sense of maturity mixed with youthfulness."
@@ -104,7 +107,8 @@ label truth:
     $davidAffinity -= 4
     $davidKnows = True
     #so if you do both, you will have -5
-
+    hide david with fade
+    hide mc_img
     return
 
 label playAlong:
@@ -117,7 +121,8 @@ label playAlong:
 
     $davidAffinity += 3
     #You will either have 2 or 3 affinity at this point
-
+    hide img_david with fade
+    hide mc_img
     return
 label decline:
     yumemi "I have had to deal with too much homework recently. I actually have to finish up two papers before tomorrow..."
@@ -128,4 +133,6 @@ label decline:
 
     $davidAffinity -= 1
     #You will either have 0 or -1 by this point
+    hide img_david with fade
+    hide mc_img
     return

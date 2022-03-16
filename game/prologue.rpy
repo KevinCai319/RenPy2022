@@ -25,7 +25,7 @@ label prologue:
     "You are now called upon the chief -- it's your turn to try."
     stop music fadeout 1.0
     #scene throneRoom
-    show chief_img at right
+    show chief_img at center
     chief "What's your name?"
     menu:
         "Lynx":

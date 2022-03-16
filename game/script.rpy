@@ -8,7 +8,7 @@ define chief = Character("chief")
 image chief_img = im.Scale("images/Chief/chief.PNG",600,800)
 image lynx_img = im.Scale("images/Lynx/lynx.PNG",600,800)
 image david_img = im.Scale("images/David/david.PNG",600,800)
-image mc_img = im.Scale("images/MC/mc.PNG",600,800)
+image mc_img = im.Scale("images/MC/mc.PNG",500,800)
 
 image irl_background = "Backgrounds/Post_apocalyptic_world.png"
 image meta_room = "Backgrounds/mc_Room.png"

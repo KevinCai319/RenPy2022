@@ -23,6 +23,7 @@ label course_select:
         jump course_select.event_done
     label .event_done:
         $actions_done_for_day+=1
+        hide course_select_background with fade
         return
 #courses!!
 #Use keyword 'course' to refer to the course variable!!
