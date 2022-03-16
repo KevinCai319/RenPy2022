@@ -8,12 +8,8 @@ label meta_home:
         if not started_before:
             $started_before = True
         return
-<<<<<<< HEAD
-
-=======
     if actions_done_for_day == 0:
         play sound "audio/VR_startup.ogg"
->>>>>>> 28376ee9fa5a39064e7e4594d6018cafa195b63b
     if started_before:
         "Welcome back to the Metaverse, [MC] !"
     else:
@@ -22,7 +18,6 @@ label meta_home:
         "......"
         "........."
         "...[MC] !"
-<<<<<<< HEAD
         "Small pixels on the screen materialize ot life, and you make out a bright enclosed space."
         "What am I seeing?"
         "Standing in front of you are three animals in front you in the purest of white."
@@ -32,22 +27,7 @@ label meta_home:
         "No, this can't be."
         "You feel for the head straps and take the headset off."
         #switch scene to chief for and then on next click, switch back to the VR room
-        show 
-
         # He's a girl now, am I in heaven? How do I
-=======
-
-        # TODO: add Lynx's monologue 
-
-        #Lynx is confused on why he is in a girls's room
-        #is Lynx in heaven?
-        #
-
-        #Lynx realizes he is girl
-
-
-
->>>>>>> 28376ee9fa5a39064e7e4594d6018cafa195b63b
     label .select:
         "What would you like to do?"
     menu:

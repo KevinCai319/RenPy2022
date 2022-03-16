@@ -23,6 +23,9 @@ image Generator_damaged = "Backgrounds/Generator_damaged.png"
 image Generator_fixed = "Backgrounds/Generator_fixed.png"
 image Water_Purifier_damaged = "Backgrounds/Water_Purifier_damaged.png"
 image Water_Purifier_fixed = "Backgrounds/Water_Purifier_fixed.png"
+image blank = "Backgrounds/black.jpg"
+
+
 
 image headset = "VR_Headset.png"
 image headset_glowing = im.MatrixColor("VR_Headset.png",im.matrix.brightness(0.8) * im.matrix.tint(0.8, 0.8, 1.0))
@@ -50,6 +53,8 @@ default actions_done_for_day = 0
 default MAX_ACTIONS_PER_DAY = 4
 default daily_summary = ""
 default course = 0
+
+#animations
 
 #Variables for generator complete
 default generatorCheck_pingPongClubChat = False
@@ -90,7 +95,7 @@ label start:
     call prologue
     if not started_before:
         "Unfortunately, you were not the chosen one."
-        show irl_background with SLOW_FADE
+        scene irl_background with SLOW_FADE
         "[WINTER_DAY] days later, winter arrives, and your tribe freezes to death."
         return
     call day_reset
