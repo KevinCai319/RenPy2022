@@ -5,8 +5,13 @@ define yumemi = Character(MC_str)
 define david = Character("David Sigmund")
 define lynx = Character("Lynx")
 define chief = Character("chief")
+image chief_img = im.Scale("images/Chief/chief.PNG",600,800)
+image lynx_img = im.Scale("images/Lynx/lynx.PNG",600,800)
+image david_img = im.Scale("images/David/david.PNG",600,800)
+image mc_img = im.Scale("images/MC/mc.PNG",600,800)
 
-
+image irl_background = "Backgrounds/Post_apocalyptic_world.png"
+image meta_room = "Backgrounds/mc_Room.png"
 # World Variables
 default day = 1
 #lose(0/1)/good(2)/best ending(3) (0/1/2/3)
@@ -67,7 +72,9 @@ label start:
         call day_start
         "Time to login"
         call meta_home
+        show irl_background with fade
         "I think it's time to report to chief."
+        hide irl_background with fade
         call end_day
         #scene transition
         call day_reset
@@ -90,10 +97,14 @@ label day_reset:
     return
 label game_end:
     if end_state == 0:
-        "After all the time spent in the Metaverse, nothing of value was gained"
+        show irl_background with fade
+        "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
     elif end_state == 1:
+        show irl_background with fade
         if weapons_success:
             "Your tribemen are ill, the battle is very unsuccessful. Although your tribe eliminated the enemy, they destroied the facilities"
+        else:
+            "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
     elif end_state == 2:
         #Check if all 3 objectives are done, or only 2 of the 3.
         #TODO: edit dialogue

@@ -1,7 +1,7 @@
 image course_select_background = "Backgrounds/Meta_University.png"
 label course_select:
+    show course_select_background with fade
     "What would you like to do today, [MC] ?"
-    show course_select_background
     call screen course_select_menu
     $course_select_choice = _return[1]
     if course_select_choice == "dating_prologue":
@@ -13,7 +13,7 @@ label course_select:
     $extras = _return[2]
     $tple = extras[course_select_choice]
     "[tple[1]]"
-    hide course_select_background
+    hide course_select_background with fade
     $course = Course.course_listing[course_select_choice]
     call courseIntro
     $renpy.call(tple[0])
@@ -41,7 +41,6 @@ label circuits_course:
     return
 
 label ee_course:
-    call courseIntro
     if course.currentClass == 1:
         yumemi "This course seems to contain just the right information on how to fix the water purifier."
         yumemi "It does seem to be slightly lengthy, though."

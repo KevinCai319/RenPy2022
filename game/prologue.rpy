@@ -1,9 +1,12 @@
 
+
 label prologue:
     #scene bombing
     "The sound of the air raid sirens fill the air as an entire town scramble towards the nearest fallout shelter."
     "In a desolate corner, a child cries out to his parents. But no one hears him."
     "It's every man for himself now."
+    show irl_background with fade
+    play music "audio/Strong-Wind-Blowing.wav"
     #scene now
     "AA (After Apocalypse) Year 22:"
     "The entire world is decimated."
@@ -14,14 +17,15 @@ label prologue:
     #scene mainCharacter
     "As far as you know, your shelter group is the only one that has survived."
     "The harsh winter is just around the corner and to make matters worse, the shelter is on nearing the end of its food and supply."
+    hide irl_background with fade
     "But there is hope."
     #scene vrDevice
     "A relic of the ancient civilization."
     "Ever since it's discovery, numerous people have attempted to turn it on, but to no avail."
     "You are now called upon the chief -- it's your turn to try."
-
+    stop music fadeout 1.0
     #scene throneRoom
-    #show chief
+    show chief_img at right
     chief "What's your name?"
     menu:
         "Lynx":
@@ -29,7 +33,7 @@ label prologue:
 
     chief "Lynx...ID 114 171 156 170"
     chief "Okay Lynx. Put the device on your head and say, \"Hello meta\". If your voice is a match, then the device shall turn on."
-
+    
     "You pick up the device and examine it."
     #scene vrDevice
 
@@ -38,7 +42,6 @@ label prologue:
             jump onlyKeyWord #end program
         "You see a button on the side":
             call pressButton
-
     return
 
 label onlyKeyWord:
@@ -47,6 +50,7 @@ label onlyKeyWord:
     chief "If it doesn't work, it doesn't work. Thanks for trying."
     "You leave and think to yourself:"
     "{i}There must be another way"
+    hide chief_img
     return
 
 label pressButton:
@@ -60,14 +64,14 @@ label pressButton:
     "You wait in suspense, but the screen doesn't respond."
     chief "If it doesn't work, it doesn't work."
     "You grudingly take the device off of your head...and"
+    show chief_img at right
     #scene vrDeviceOn
     "To everyone's surprise, the screen turns on."
     chief "So you are the one."
     chief "Tell me what you see."
-
+    hide chief_img
     call meta_home
-
-
+    show chief_img at right
     #continue conversation with chief
     chief "Welcome back, [MC], what did you see?"
     call end_day.summary

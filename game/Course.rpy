@@ -15,7 +15,7 @@ init python:
             self.numClasses = len(self.lectureContent)
             assert numRequiredComplete <= numClasses, "Number of classes for completion is more than number of total classes"
             self.unlocked = unlocked
-            self.currentClass = 0
+            self.currentClass = 1
             self.extra = extra
             self.complete = False
             Course.course_listing.append(self)

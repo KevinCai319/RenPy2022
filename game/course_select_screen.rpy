@@ -28,22 +28,3 @@ screen course_select_menu():
                     style "choice_button"
                     text i[0]
                     action Return((i[0],i[1], extras))
-    # $choice = renpy.display_menu(options)
-    # if choice == "dating_prologue":
-    #     call dating_prologue
-    #     jump course_select.event_done
-    # if choice == "ping_pong":
-    #     call ping_pong
-    #     jump course_select.event_done 
-    # $tple = extras[choice][1]
-    # "[tple]"
-    # $course = Course.course_listing[choice]
-    # call courseIntro
-    # $renpy.call(extras[choice][0])
-    # label .course_done:
-    #     call coruseOutro
-    #     $course.progressClass()
-    #     jump course_select.event_done
-    # label .event_done:
-    #     $actions_done_for_day+=1
-    #     return
