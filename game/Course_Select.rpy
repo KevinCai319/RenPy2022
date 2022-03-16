@@ -51,7 +51,7 @@ label ee_course:
         yumemi "Hold on, this is exaclty what we need!"
         yumemi "All the sensors have been functioning properly, but the output devices were faulty."
         $waterCheck_milestone2 = True
-        $daily_summary += "I think we can fix the purifier now"
+        $daily_summary += "I think we can fix the purifier now\n"
     if course.currentClass == 11:
         yumemi "Wow, this course has costed me an equivalent of 11 days worth of studying."
         yumemi "{i}That's pretty fast if you ask me{/i}, but time is of the essence."
@@ -63,11 +63,26 @@ label ee_course:
     if course.currentClass == 16:
         yumemi "Eureka! To increase the power of the CPU, I could chain them together, since the property of their computational power follows an additive relation if done correctly."
         $waterCheck_milestone4 = True
-        $daily_summary += "I have the solution to the water purifier!"
+        $daily_summary += "I have the solution to the water purifier!\n"
     return
 
 label media_course:
-    lynx "This class doesn't seem to be very interesting"
+    if course.currentClass == 1:
+        "{i}How do I access the YouTube files though?"
+    if course.currentClass == 2:
+        "Our focus will be specifically on Twitter, Facebook, Reddit, and YouTube."
+        "Today, we will examine the archives belonging in Twitter"
+    elif course.currentClass == 3:
+        "As an adendum to the prior class, we will also be examining the archives belonging in Facebook"
+    elif course.currentClass ==4:
+        "As an adendum to the our 2nd lecture, we will also be examining the archives belonging to Reddit"
+    if course.currentClass == 5:
+        "As an adendum to the our 2nd lecture, we will also be examining the archives belonging to YouTube"
+        "Due to the popularity of Real Engineering in recent weeks, we will be analyzing the techniques he utilizes in his video: \"Repairing a Generator SIMPLIFIED\""
+        "{i}No way this is true. All I have to do is remember the steps and report back to the chief."
+        "This concludes our mini unit on specific social media platforms."
+        $daily_summary += "I beleive I can fix the generator!"
+        $generatorCheck_youtubeVideoObtained = True
     return
 
 label cad_course:
@@ -103,6 +118,10 @@ label courseIntro:
     "This will be lecture [course.currentClass] out of [course.numClasses]."
     $content = course.lectureContent[course.currentClass-1]
     "Todays topic: [content]"
+
+    $summaryAddOn = "I attended the " + course.name + " lecture and learned about " + content + ".\n"
+    $daily_summary += summaryAddOn
+
     return
 label courseOutro:
     if(course.currentClass+1 >= course.numClasses):

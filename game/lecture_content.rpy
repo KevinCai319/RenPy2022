@@ -61,7 +61,7 @@ init python:
         "Strategic e-marketing and performance metrics",
         "The e-marketing plan",
         "Ethical and legal issues",
-        "**Connnected consumers online", #you will take up to this for YouTube
+        "Connnected consumers online", #you will take up to this for YouTube
         "Segmentation, targeting, differentiation, and positioning strategies",
         "E-marketing for management",
         "Product: the online offer; Price: the online value",

@@ -32,7 +32,7 @@ default course = 0
 
 #Variables for generator complete
 default generatorCheck_pingPongClubChat = False
-default generatorCheck_youtubeVideoDiscovered = False #when you hear about it, but you don't know how to get it
+#default generatorCheck_youtubeVideoDiscovered = False #when you hear about it, but you don't know how to get it
    #some stuff that will tell you to take social media
 default generatorCheck_youtubeVideoObtained = False #once you take course 5 of social media and marketing
 

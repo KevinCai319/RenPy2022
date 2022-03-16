@@ -12,6 +12,8 @@ label ping_pong:
     else:
         call pingPongSessionNormal
 
+    $daily_summary += "Attended Table Tennis Club\n"
+
     return
 
 label pingPongPrologue:
@@ -76,5 +78,6 @@ label pingPongSessionSpecial:
 
     yumemi "Honestly, I haven't. I'll check the course out, though."
     "The club member looks at you with a gaze of amazement, but you proceed to rally as usual."
-    $socialMediaMarketing.unlocked = True;
+    $socialMediaMarketing.unlocked = True
+    $generatorCheck_pingPongClubChat = True
     return

@@ -23,5 +23,18 @@ label waterMilestone4FixAttemptSuccess:
     "The system slowly comes back to life as it takes in water from the nearby river."
     "Before you knew it, the output tank begins to fill with crystal clear water."
     "You did it."
-    chief "Congratulations lynx. I never doubted you for a single moment."
+    chief "Congratulations lynx. I might have doubted you for a single moment, but in the end, you did well."
     return
+
+label fixGenerator:
+    chief "That's atronomical news!"
+    lynx "I just so happened to come across the video in my social media marketing class on how to fix a generator."
+    chief "Let's see if you got any value out of it then."
+
+    "You and the chief head over to the generator."
+    "The generator that used to churn with life now lays silent."
+    "Time to repair!"
+    "You recall the steps from the YouTube video: Coolant, Fuel Levels, Oil Levels, Shutoff Valve, and Air Filter."
+    "You check and repair each of the components."
+    "After some additional simple wiring, the generator sputters back to life."
+    chief "Now, we will have energy for years to come. We all owe you one, Lynx."
