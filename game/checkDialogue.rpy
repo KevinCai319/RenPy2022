@@ -16,15 +16,36 @@ label waterMilestone2FixAttemptFail:
 
 label waterMilestone4FixAttemptSuccess:
     chief "Now this is truly some exceptional news. We shall take another shot at the purifier."
+    hide chief_room
+    hide lynx_img
+    hide chief_img
+    show chief_img at right
+    show lynx_img at left
+    show Water_Purifier_damaged with fade
+    play music fixing
     "With a toolkit, and a newly configured CPUs constructed with the original one used by the purifier and spares laying around, you and the chief approach the purifier."
     #Scene purifier
     "The CPU fits in."
     lynx "And now, the moment of truth..."
+    hide Water_Purifier_damaged
+    hide lynx_img
+    hide chief_img
+    show chief_img at right
+    show lynx_img at left
+    show Water_Purifier_fixed with fade
     "The system slowly comes back to life as it takes in water from the nearby river."
     "Before you knew it, the output tank begins to fill with crystal clear water."
     "You did it."
     chief "Congratulations lynx. I might have doubted you for a single moment, but in the end, you did well."
     $purifier_success = True
+    $end_state+=1
+    stop music
+    hide Water_Purifier_fixed
+    hide lynx_img
+    hide chief_img
+    show chief_img at right
+    show lynx_img at left
+    show chief_room with fade
     return
 
 label fixGenerator:
@@ -33,13 +54,34 @@ label fixGenerator:
     chief "Let's see if you got any value out of it then."
 
     "You and the chief head over to the generator."
+    hide lynx_img
+    hide chief_img
+    hide chief_room
+    show Generator_damaged 
+    show chief_img at right
+    show lynx_img at left with fade
+    play music fixing
     "The generator that used to churn with life now lays silent."
     "Time to repair!"
     "You recall the steps from the YouTube video: Coolant, Fuel Levels, Oil Levels, Shutoff Valve, and Air Filter."
     "You check and repair each of the components."
+    hide Generator_damaged
+    hide chief_img
+    hide lynx_img
+    show Generator_fixed 
+    show chief_img at right
+    show lynx_img at left with fade
     "After some additional simple wiring, the generator sputters back to life."
     chief "Now, we will have energy for years to come. We all owe you one, Lynx."
     $generator_success = True
+    $end_state+=1
+    stop music
+    hide Generator_fixed
+    hide chief_img
+    hide lynx_img
+    show chief_room
+    show chief_img at right
+    show lynx_img at left with fade
     return
 
 label weaponsModelFound:
@@ -50,13 +92,16 @@ label weaponsModelFound:
         "..."
         $weaponsCheck_obtainBlueprint = True
         call weaponsComplete #directly call this if you already can make the blue print
-
-    "{i}In what class would I find information about a blueprint?"
+    else:
+        "{i}In what class would I find information about a blueprint?"
     return
 
 label weaponsComplete:
+    show blueprint at truecenter
     "You hand the blueprints over to the chief"
+    hide blueprint
     chief "Perfect. With this new design, we will be able to protect our tribe from neighboring agressors."
     chief "Your contributions are truly invaluable."
+    $end_state+=1
     $weapons_success = True
     return

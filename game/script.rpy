@@ -5,29 +5,49 @@ define yumemi = Character(MC_str)
 define david = Character("David Sigmund")
 define lynx = Character("Lynx")
 define chief = Character("chief")
+define FAST_FADE = Fade(0.25,0.0,0.25)
+define SLOW_FADE = Fade(0.75,0.0,0.75)
+
 image chief_img = im.Scale("images/Chief/chief.PNG",600,800)
 image lynx_img = im.Scale("images/Lynx/lynx.PNG",600,800)
 image david_img = im.Scale("images/David/david.PNG",600,800)
 image mc_img = im.Scale("images/MC/mc.PNG",500,800)
 
+
 image irl_background = "Backgrounds/Post_apocalyptic_world.png"
 image meta_room = "Backgrounds/mc_Room.png"
+image chief_room = "Backgrounds/Chief_Room.png"
+image classroom = "Backgrounds/Classroom.png"
+
+image Generator_damaged = "Backgrounds/Generator_damaged.png"
+image Generator_fixed = "Backgrounds/Generator_fixed.png"
+image Water_Purifier_damaged = "Backgrounds/Water_Purifier_damaged.png"
+image Water_Purifier_fixed = "Backgrounds/Water_Purifier_fixed.png"
+
+image headset = "VR_Headset.png"
+image headset_glowing = im.MatrixColor("VR_Headset.png",im.matrix.brightness(0.8) * im.matrix.tint(0.8, 0.8, 1.0))
 image battery = "Battery.png"
+define audio.irl = "audio/music/Strong-Wind-Blowing.ogg"
+define audio.campus = "audio/music/Campus_Music.ogg"
+define audio.fixing = "audio/music/Fixing.ogg"
 # World Variables
 default day = 1
 #lose(0/1)/good(2)/best ending(3) (0/1/2/3)
 default end_state = 0
 #TODO: add a time where winter starts.
-default WINTER_DAY = 16
+default WINTER_DAY = 12
 # Generator Variables
 default generator_success = False
 default purifier_success = False
 default weapons_success = False
+default goal_generator = False
+default goal_purifier = False
+default goal_weapons = False
 # Values stored in Meta device.
 default started_before = False
 default diary_unlock_level = 0
 default actions_done_for_day = 0
-default MAX_ACTIONS_PER_DAY = 2
+default MAX_ACTIONS_PER_DAY = 4
 default daily_summary = ""
 default course = 0
 
@@ -68,6 +88,11 @@ default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, 
 # The game starts here.
 label start:
     call prologue
+    if not started_before:
+        "Unfortunately, you were not the chosen one."
+        show irl_background with SLOW_FADE
+        "[WINTER_DAY] days later, winter arrives, and your tribe freezes to death."
+        return
     call day_reset
     label .day_cycle:
         call day_start
@@ -98,10 +123,10 @@ label day_reset:
     return
 label game_end:
     if end_state == 0:
-        show irl_background with fade
+        show irl_background with SLOW_FADE
         "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
     elif end_state == 1:
-        show irl_background with fade
+        show irl_background with SLOW_FADE
         if weapons_success:
             "Your tribemen are ill, the battle is very unsuccessful. Although your tribe eliminated the enemy, they destroied the facilities"
         else:
