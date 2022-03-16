@@ -91,8 +91,8 @@ default cadAndDigital = Course("CAD And Digital", "cad_course", 10, cad_course_c
 default calc1 = Course("Calculus I", "math1_course", 10, math1_course_content, True)
 default calc2 = Course("Calculus II", "math2_course", 10, math2_course_content, False)
 default calc3 = Course("Calculus III", "math3_course", 10, math3_course_content, False)
-default theoreticalPhysics = Course("Introduction to Theoretical Physics", "physics_course", 10, physics_course_content, True)
-# default modernChem = Course("Modern Chemistry","chem_course", 8, chem_course_content, True)
+default theoreticalPhysics = Course("Physics", "physics_course", 10, physics_course_content, True)
+default modernChem = Course("Modern Chemistry","chem_course", 8, chem_course_content, True)
 default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, food_course_content, True)
 
 # The game starts here.
