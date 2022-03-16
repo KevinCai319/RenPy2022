@@ -1,13 +1,16 @@
 image course_select_background = "Backgrounds/Meta_University.png"
 label course_select:
+    play music campus
     show course_select_background with fade
     call screen course_select_menu
     $course_select_choice = _return[1]
     if course_select_choice == "dating_prologue":
+        stop music fadeout 0.5
         call dating_prologue
         hide course_select_background with fade
         jump course_select.event_done
     if course_select_choice == "ping_pong":
+        stop music fadeout 0.5
         call ping_pong
         hide course_select_background with fade
         jump course_select.event_done
@@ -21,6 +24,7 @@ label course_select:
     $renpy.call(tple[0])
     label .course_done:
         call courseOutro
+        stop music fadeout 0.5
         $course.progressClass()
     label .event_done:
         $actions_done_for_day+=1
