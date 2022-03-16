@@ -25,6 +25,7 @@ label waterMilestone4FixAttemptSuccess:
     "You did it."
     chief "Congratulations lynx. I might have doubted you for a single moment, but in the end, you did well."
     $purifier_success = True
+    $end_state+=1
     return
 
 label fixGenerator:
@@ -40,6 +41,7 @@ label fixGenerator:
     "After some additional simple wiring, the generator sputters back to life."
     chief "Now, we will have energy for years to come. We all owe you one, Lynx."
     $generator_success = True
+    $end_state+=1
     return
 
 label weaponsModelFound:
@@ -58,5 +60,6 @@ label weaponsComplete:
     "You hand the blueprints over to the chief"
     chief "Perfect. With this new design, we will be able to protect our tribe from neighboring agressors."
     chief "Your contributions are truly invaluable."
+    $end_state+=1
     $weapons_success = True
     return

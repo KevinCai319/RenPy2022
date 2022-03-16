@@ -11,9 +11,8 @@ label ping_pong:
             call pingPongSessionSpecial
     else:
         call pingPongSessionNormal
-
-    $daily_summary += "Attended Table Tennis Club\n"
-
+    if daily_summary.find("Attended Table Tennis Club\n") == -1:
+        $daily_summary += "Attended Table Tennis Club\n"
     return
 
 label pingPongPrologue:

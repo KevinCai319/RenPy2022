@@ -10,7 +10,12 @@ label end_day:
         lynx "Here's a summary of what happened:"
         $penalty = 0
         if len(daily_summary) > 0:
-            lynx "[daily_summary]"
+            $summary_list = daily_summary.split('\n')
+            $summary_length = len(summary_list)
+            while summary_length > 0:
+                $item = summary_list[summary_length-1]
+                lynx "[item]"
+                $summary_length-=1
             #adjust penalty based on certain key words in daily summary.
             #this is a special dialogue for when you acheive milestone 2 of water check
             if daily_summary.find("I think we can fix the purifier now") != -1:

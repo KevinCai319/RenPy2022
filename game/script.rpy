@@ -25,7 +25,7 @@ default day = 1
 #lose(0/1)/good(2)/best ending(3) (0/1/2/3)
 default end_state = 0
 #TODO: add a time where winter starts.
-default WINTER_DAY = 16
+default WINTER_DAY = 12
 # Generator Variables
 default generator_success = False
 default purifier_success = False
@@ -37,7 +37,7 @@ default goal_weapons = False
 default started_before = False
 default diary_unlock_level = 0
 default actions_done_for_day = 0
-default MAX_ACTIONS_PER_DAY = 2
+default MAX_ACTIONS_PER_DAY = 4
 default daily_summary = ""
 default course = 0
 
