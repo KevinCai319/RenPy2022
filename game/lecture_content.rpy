@@ -136,7 +136,7 @@ init python:
         "Oscillation and resonance",
         "Wave phenomena",
         "Lagrangian formulation of classical physics",
-        "Einstein’s theory of general relativity",
+        "Einstein's theory of general relativity",
         "Hamiltonian formulation of classical physics",
         "Special relativity: time dilation, Lorentz transformations, hyperbolic geometry of spacetime, fourvectors, relativistic dynamics",
         "Early quantum theory: blackbody radiation, Heisenberg matrix mechanics, Schrodinger wave mechanics",

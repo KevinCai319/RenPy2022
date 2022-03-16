@@ -27,6 +27,7 @@ image Water_Purifier_fixed = "Backgrounds/Water_Purifier_fixed.png"
 image headset = "VR_Headset.png"
 image headset_glowing = im.MatrixColor("VR_Headset.png",im.matrix.brightness(0.8) * im.matrix.tint(0.8, 0.8, 1.0))
 image battery = "Battery.png"
+image mirror = "Backgrounds/mirrorCG.png"
 define audio.irl = "audio/music/Strong-Wind-Blowing.ogg"
 define audio.campus = "audio/music/Campus_Music.ogg"
 define audio.fixing = "audio/music/Fixing.ogg"
@@ -87,6 +88,7 @@ default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, 
 
 # The game starts here.
 label start:
+   call meta_home
    call prologue
    if not started_before:
       "Unfortunately, you were not the chosen one."

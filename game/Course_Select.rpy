@@ -51,11 +51,13 @@ label animal_course:
     return
 
 label english_course:
-    lynx "This class doesn't seem to be very interesting"
+    if course.currentClass == 1:
+        yumemi "How much do you want to bet we'll read Romeo and Juliet?"
+    if course.currentClass == 1:
+        yumemi "HMmmmmmmm?"
     return
 
 label circuits_course:
-    lynx "This class doesn't seem to be very interesting"
     return
 
 label ee_course:
@@ -109,31 +111,31 @@ label cad_course:
             $daily_summary += "I have converted the 3D model to a blueprint.\n"
         else:
             "{i}Those Blueprints might be helpful."
-    lynx "This CAD class seems pretty interesting ..."
     return
 
 label math1_course:
-    lynx "This class doesn't seem to be very interesting"
-    return
 
+    return
 label math2_course:
-    lynx "This class doesn't seem to be very interesting"
-    return
 
+    return
 label math3_course:
-    lynx "This class doesn't seem to be very interesting"
+
     return
 
 label physics_course:
-    lynx "This class doesn't seem to be very interesting"
+    if course.currentClass == 5:
+        yumemi "Is this course in English?"
+    if course.currentClass == 8:
+        yumemi "This can not be English."
+    if course.currentClass == 10:
+        yumemi "Sprichst du Deutsch?"
     return
 
 label chem_course:
-    lynx "This class doesn't seem to be very interesting"
     return
 
 label food_course:
-    lynx "This class doesn't seem to be very interesting"
     return
 
 label courseIntro:

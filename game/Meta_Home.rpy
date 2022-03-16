@@ -44,18 +44,32 @@ label meta_home:
         "{b}{i}[MC]"
         yumemi "[MC]. So this is [MC]'s VR headset. This is [MC]'s world. This is [MC]'s room."
         yumemi "I {i}am{/i} [MC]! And this must be the metaverse."
-        "You see two doors and decide to open the one on the left."
+
+        "You turn your head towards the right and see an odd reflection in the mirror."
+        "Who is that?"
+        "As you approach mirror, you see a girl wearing a bowtie staring back at you."
+        show mirror with fade
+        yumemi "Is that me?"
+        yumemi "Hold on, I am a girl?"
+        yumemi "I HAVE TO PRETEND TO BE A GIRL?"
+        "{i}**well Lynx, you are the chosen one"
+
+        yumemi "Okay...then."
+        "You scrutinize yourself for a bit longer."
+        yumemi "You know what? I can live with this."
+        hide mirror with fade
+
+        "You shift your gaze to the two doors at the end of the room"
+        "Where do they lead to?"
+        "You open the one on the left"
         "..."
-        "It leads to an empty closet."
+        "It's an empty closet."
         yumemi "{i}That's weird."
         "You close it and go through the other door."
         "..."
-
-        # He's a girl now, am I in heaven? How do I
-
     label .select:
         "What would you like to do?"
-        if !started_before
+        if not started_before:
             "Oh?"
 
     menu:
@@ -73,6 +87,9 @@ label meta_home:
             $started_before = True
             jump meta_home
             return
+        # "Head to Cafe":
+        #     hide meta_room with fade
+
         "Read Diary":
             #check if diary is unlocked
             if diary_unlock_level == 0:

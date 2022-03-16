@@ -9,7 +9,7 @@ screen course_select_menu():
             canPrint = Course.course_listing[count].unlocked
             extras.append((Course.course_listing[count].label,Course.course_listing[count].extra))
             if canPrint:
-                options.append((Course.course_listing[count].name,count))
+                options.append((Course.course_listing[count].name + " " + str(Course.course_listing[count].currentClass-1) + "/" + str(Course.course_listing[count].numClasses),count))
             count+=1
         options.append(("Dating", "dating_prologue"))
         options.append(("Ping Pong", "ping_pong"))

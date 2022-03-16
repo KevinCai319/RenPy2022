@@ -132,3 +132,14 @@ label decline:
     $davidAffinity -= 1
     #You will either have 0 or -1 by this point
     return
+
+label ordinaryDay
+    yumemi "Let's head over to the Cafe to chat!"
+
+
+default currentHeadline = 0
+default newsHeadlines = [
+    "Florida man accused of stealing 18 turtles worth $30,000 from breeder while fixing his fridge",
+    "Florida man calls police to verify his meth is authentic, cops claim",
+
+]
