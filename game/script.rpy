@@ -1,15 +1,17 @@
-﻿
-
-# a bit too obvious that we are copying lol
-
+﻿# a bit too obvious that we are copying lol
 define MC_str = "yumemi"
 default MC = MC_str
 define yumemi = Character(MC_str)
 define david = Character("David Sigmund")
 define lynx = Character("Lynx")
 define chief = Character("chief")
+image chief_img = im.Scale("images/Chief/chief.PNG",600,800)
+image lynx_img = im.Scale("images/Lynx/lynx.PNG",600,800)
+image david_img = im.Scale("images/David/david.PNG",600,800)
+image mc_img = im.Scale("images/MC/mc.PNG",500,800)
 
-
+image irl_background = "Backgrounds/Post_apocalyptic_world.png"
+image meta_room = "Backgrounds/mc_Room.png"
 # World Variables
 default day = 1
 #lose(0/1)/good(2)/best ending(3) (0/1/2/3)
@@ -64,14 +66,15 @@ default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, 
 
 # The game starts here.
 label start:
-
     #call prologue
     call day_reset
     label .day_cycle:
         call day_start
         "Time to login"
         call meta_home
+        show irl_background with fade
         "I think it's time to report to chief."
+        hide irl_background with fade
         call end_day
         #scene transition
         call day_reset
@@ -94,10 +97,14 @@ label day_reset:
     return
 label game_end:
     if end_state == 0:
-        "After all the time spent in the Metaverse, nothing of value was gained"
+        show irl_background with fade
+        "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
     elif end_state == 1:
+        show irl_background with fade
         if weapons_success:
             "Your tribemen are ill, the battle is very unsuccessful. Although your tribe eliminated the enemy, they destroied the facilities"
+        else:
+            "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
     elif end_state == 2:
         #Check if all 3 objectives are done, or only 2 of the 3.
         #TODO: edit dialogue
@@ -114,46 +121,3 @@ label game_end:
         "You tribe has enough reservation for the winter and defend well against enemy tribe. You decide to slaughter the tribe or not"
         "GOOD ENDING"
     return
-    #rest of this is demo code for future reference.
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    # scene bg room
-
-    # # This shows a character sprite. A placeholder is used, but you can
-    # # replace it by adding a file named "eileen happy.png" to the images
-    # # directory.
-
-    # show Hoshino Yumemi happy at left
-
-    # # These display lines of dialogue.
-
-    # Yumemi "Hey, this is a test for branching in the game. "
-
-    # Lynx "Cool. So what should I do?"
-    # #local jump.
-    # label .loop:
-    # Yumemi "If you want to exit the game right now, feel free to. Just select 1, otherwise choose 2."
-
-    # menu:
-    #     "1":#note:call does a jump(pushes function choose_end onto stack, and once it is done, go back here.)
-    #         call choose_end
-    #     "2":
-    #         jump choose_continue
-    # show Hoshino Yumemi at center
-    # Yumemi "Bye."
-    # return
-
-#implies local scope.
-# label choose_end:
-#     Yumemi "Hey, you eneded the game! You pressed the button [value] times!"
-#     return
-
-# label choose_continue:
-#     show Hoshino Yumemi happy at right with dissolve
-#     Yumemi "You have chosen to continue... value has increased by 1.."
-#     $value += 1
-#     #loop is within the scope of start, so use start.loop
-#     jump start.loop
-#     return

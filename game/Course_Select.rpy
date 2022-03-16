@@ -1,4 +1,6 @@
+image course_select_background = "Backgrounds/Meta_University.png"
 label course_select:
+    show course_select_background with fade
     "What would you like to do today, [MC] ?"
     call screen course_select_menu
     $course_select_choice = _return[1]
@@ -11,6 +13,7 @@ label course_select:
     $extras = _return[2]
     $tple = extras[course_select_choice]
     "[tple[1]]"
+    hide course_select_background with fade
     $course = Course.course_listing[course_select_choice]
     call courseIntro
     $renpy.call(tple[0])
@@ -20,6 +23,7 @@ label course_select:
         jump course_select.event_done
     label .event_done:
         $actions_done_for_day+=1
+        hide course_select_background with fade
         return
 #courses!!
 #Use keyword 'course' to refer to the course variable!!
@@ -35,11 +39,9 @@ label english_course:
 
 label circuits_course:
     lynx "This class doesn't seem to be very interesting"
-
     return
 
 label ee_course:
-    call courseIntro
     if course.currentClass == 1:
         yumemi "This course seems to contain just the right information on how to fix the water purifier."
         yumemi "It does seem to be slightly lengthy, though."

@@ -3,6 +3,7 @@ default chief_happy = 0.3
 default chief_very_angry = 0.8
 
 label end_day:
+    show chief_img with fade
     chief "So what happened today?"
     label .summary:
         lynx "Here's a summary of what happened:"
@@ -54,15 +55,5 @@ label end_day:
             chief "Winter is quickly approaching, and the generator is losing energy, you better step it up!"
             lynx "Sorry chief, I will try harder tomorrow."
     label .end:
+        hide chief_img with fade
         return
-
-#When you have reached 2/3 good, this is the prompt that occurs when chief asks if you want to continue.
-label good_success:
-    menu:
-        "I will continue":
-            lynx "I will continue"
-            chief "Alright. I wish you the best. See you tomorrow"
-        "I have had enough. I want to relax":
-            lynx "I have had enough. I want to relax"
-            chief "Alright. We should have enough to continue our tribe for quite a while."
-    jump game_end

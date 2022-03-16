@@ -1,4 +1,5 @@
 label day_start:
+    show irl_background with fade
     lynx "It's a start of a new day. Better go visit Chief again."
 
     "{i} You make your daily trip to the chief's place.{\i}"
@@ -9,7 +10,8 @@ label day_start:
         lynx "... It's a bit colder than usual"
     else:
         lynx "..."
-    
+    hide irl_background with fade
+    show chief_img at left with fade
     #<Lynx arrives at the Chief's place>
     lynx "Hello chief, how are you today?"
 
@@ -41,6 +43,7 @@ label day_start:
             chief "Doing great, hope you're doing well."
         
     chief "Time to enter the Metaverse."
+    hide chief_img with fade
     #scene vrDevice
     lynx "Hello Meta"
     "*click*"
