@@ -20,6 +20,7 @@ image irl_background = "Backgrounds/Post_apocalyptic_world.png"
 image meta_room = "Backgrounds/mc_Room.png"
 image chief_room = "Backgrounds/Chief_Room.png"
 image classroom = "Backgrounds/Classroom.png"
+image cafe_room = "Backgrounds/Cafe.png"
 
 image Generator_damaged = "Backgrounds/Generator_damaged.png"
 image Generator_fixed = "Backgrounds/Generator_fixed.png"

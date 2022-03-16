@@ -10,7 +10,7 @@ label dating_prologue:
 
     david "Hey, [MC]! Over here!"
     "You see a boy smiling across the road, waving his hand."
-    "He seems to be about your age, with glasses that perfectly frame his face to suggest a sense of maturity mixed with youthfulness."
+    "He seems to be about your age, with a complexion that suggests a sense of maturity mixed with youthfulness."
     "You stare at him a litter longer."
     "Is he waving at me?"
     david "[MC]!"
@@ -81,7 +81,7 @@ label whoIsDavid:
     yumemi "Hi, have we met before?"
     david "Yumemi, don't scare me like that."
     "You inspect his profile: "
-    "Name: David \nBirthday: 2049, March 17"
+    "Name: David \n Manufacture date: 2049, March 17"
     "You look farther into his profile"
     "Relationship status: dating [MC]"
     yumemi "{i}Oh, no wonder..."
@@ -138,8 +138,30 @@ label ordinaryDay:
 
 
 default currentHeadline = 0
-default newsHeadlines = [
+
+default floridaHeadlines = [
     "Florida man accused of stealing 18 turtles worth $30,000 from breeder while fixing his fridge",
     "Florida man calls police to verify his meth is authentic, cops claim",
-
+    "Two Florida Women Attack Man With Glitter, Face Felony Charges",
+    "South Florida man allegedly bites off hospital security guard’s finger",
+    "Florida Man Has Growing God Complex",
+    "Florida Man Guilty of Using Twin's ID for Veterans Benefits",
+    "Florida man wins $1M from scratch-off ticket, plans to surprise spouse: 'I haven't even told my wife yet'",
+    "Catch of the day: Florida man, grandson reel in sniper rifles while magnet fishing near Miami",
+    "Florida man steals car; train sends it crashing into house",
+    "Florida man tries to rob a bank wearing a ‘Sonic The Hedgehog’ mask",
+    "Florida man told police he was ‘high and happy’",
+    "Florida man stuffs stolen crossbow down his pants",
+    "Florida Man Unwillingly Faces Drawbrige, Barely Makes It Out",
+    "Florida man blames Putin for why he was speeding during traffic stop",
+    "Florida man breaks beer bottle over his head",
+    "Florida Man Gets Prison For Illegally Shipping Turtles And Snakes",
+    "Florida man crashes stolen police car, takes another one during wild pursuit",
+    "South Florida man frustrated with plastic pollution along our beaches",
+    "Lawn police trim $30,000 from Florida man who violates the 10-inch rule",
+    "UFO sightings on the rise: Florida man describes orbs he caught on camera",
+    "Florida man wrestles alligator to save his dog",
+    "Florida Woman Won't Be Outdone by Florida Man, Leads Cops in Nearly Naked High-Speed Chase",
+    "Florida man buys TV ads in attempt to reopen U.S.-Canada border",
+    "Florida Man Accidentally Buys City Water Tower"
 ]
