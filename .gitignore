@@ -7,7 +7,7 @@ __pycache__/
 *.rpyc
 game/saves/
 game/cache/
-logs.txt
+log.txt
 errors.txt
 traceback.txt
 # C extensions
