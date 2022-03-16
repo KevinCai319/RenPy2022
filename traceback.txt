@@ -2,27 +2,35 @@
 
 While running game code:
   File "game/script.rpy", line 73, in script call
-    call end_day
-  File "game/end_day.rpy", line 14, in script
-    if daily_summary.find(I think we can fix the purifier now) != -1:
-SyntaxError: invalid syntax (end_day.rpy, line 14)
+    call meta_home
+  File "game/meta_home.rpy", line 31, in script call
+    call course_select
+  File "game/Course_Select.rpy", line 9, in script call
+    call ping_pong
+  File "game/ping_pong.rpy", line 7, in script
+    if (pingPongAttendance == 1):
+SyntaxError: invalid syntax (ping_pong.rpy, line 9)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/script.rpy", line 73, in script call
-    call end_day
-  File "game/end_day.rpy", line 14, in script
-    if daily_summary.find(I think we can fix the purifier now) != -1:
+    call meta_home
+  File "game/meta_home.rpy", line 31, in script call
+    call course_select
+  File "game/Course_Select.rpy", line 9, in script call
+    call ping_pong
+  File "game/ping_pong.rpy", line 7, in script
+    if (pingPongAttendance == 1):
   File "renpy/ast.py", line 1898, in execute
     if renpy.python.py_eval(condition):
   File "renpy/python.py", line 2274, in py_eval
     code = py_compile(code, 'eval')
   File "renpy/python.py", line 835, in py_compile
     raise e
-SyntaxError: invalid syntax (end_day.rpy, line 14)
+SyntaxError: invalid syntax (ping_pong.rpy, line 9)
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 RenPy22 1.0
-Tue Mar 15 18:12:15 2022
+Tue Mar 15 21:56:23 2022

@@ -53,7 +53,7 @@ default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_
 default englishPoetry = Course("English Poetry","english_course", 4,english_course_content, True)
 default circuitsAndElectronics = Course("Circuits and Electronics","circuits_course",  9,circuits_course_content, True)
 default electricEngeering = Course("Electric Engineering","ee_course", 16, ee_course_content, True, "Electrical engineering can be helpful for fixing things...")
-default socialMediaMarketing = Course("Social Media Marketing","media_course", 1, media_course_content, False)
+default socialMediaMarketing = Course("Social Media Marketing","media_course", 5, media_course_content, False)
 default cadAndDigital = Course("CAD And Digital", "cad_course", 10, cad_course_content, True)
 default calc1 = Course("Calculus I", "math1_course", 10, math1_course_content, True)
 default calc2 = Course("Calculus II", "math2_course", 10, math2_course_content, False)
@@ -65,7 +65,7 @@ default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, 
 # The game starts here.
 label start:
 
-    call prologue
+    #call prologue
     call day_reset
     label .day_cycle:
         call day_start

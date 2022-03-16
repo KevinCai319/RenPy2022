@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/end_day.rpy", line 18: reached end of line when expecting ':'.
-    if daily_summary.find("I have the solution to the water purifier!") != -1
-                                                                             ^
+File "game/ping_pong.rpy", line 1: expected statement.
+    import $random
+           ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Mar 15 18:33:03 2022
+Tue Mar 15 21:50:55 2022
