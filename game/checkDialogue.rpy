@@ -24,6 +24,7 @@ label waterMilestone4FixAttemptSuccess:
     "Before you knew it, the output tank begins to fill with crystal clear water."
     "You did it."
     chief "Congratulations lynx. I might have doubted you for a single moment, but in the end, you did well."
+    $purifier_success = True
     return
 
 label fixGenerator:
@@ -38,3 +39,24 @@ label fixGenerator:
     "You check and repair each of the components."
     "After some additional simple wiring, the generator sputters back to life."
     chief "Now, we will have energy for years to come. We all owe you one, Lynx."
+    $generator_success = True
+    return
+
+label weaponsModelFound:
+    chief "That's good news, but there is nothing we can do with a 3D model."
+    chief "Do you know what would be usefull? A blueprint."
+    if cadAndDigital.currentClass >= 3:
+        "That I can do, thanks to the blueprint lecture! Give me a moment"
+        "..."
+        $weaponsCheck_obtainBlueprint = True
+        call weaponsComplete #directly call this if you already can make the blue print
+
+    "{i}In what class would I find information about a blueprint?"
+    return
+
+label weaponsComplete:
+    "You hand the blueprints over to the chief"
+    chief "Perfect. With this new design, we will be able to protect our tribe from neighboring agressors."
+    chief "Your contributions are truly invaluable."
+    $weapons_success = True
+    return

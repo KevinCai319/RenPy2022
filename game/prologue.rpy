@@ -37,7 +37,7 @@ label prologue:
     chief "Okay Lynx. Put the device on your head and say, \"Hello meta\". If your voice is a match, then the device shall turn on."
     
     "You pick up the device and examine it."
-    #scene vrDevice
+    #scene vrDevicePutOn
 
     menu:
         "Say the key word":

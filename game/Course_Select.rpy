@@ -30,7 +30,20 @@ label course_select:
 #TODO: replace placeholder text.
 #ELECTRONICS
 label animal_course:
-    lynx "This class doesn't seem to be very interesting"
+    if course.currentClass == 1:
+        if animalSuggestionReceived:
+            "Taking David's advice, you chose to begin the course."
+
+    if course.currentClass == 4:
+        "Now that you have gained significant insight into behavior of animals and their interactions with humans, you will be put into pairs to complete a poster on any subject that we covered in class."
+        $weaponsCheck_posterBegin = True;
+    if course.currentClass == 5:
+        "You should all have a fresh draft of the poster. You will continue while receiving peer feedback."
+        yumemi "{i}The poster that my partner has worked on so far seems to have a 3D model of a gun of some sorts..."
+        yumemi "{i}I will report this back to the chief"
+        $daily_summary += "We might be able to construct weapons.\n"
+        $weaponsCheck_3dModelFromPoster = True;
+
     return
 
 label english_course:
@@ -86,7 +99,12 @@ label media_course:
     return
 
 label cad_course:
-    lynx "This class doesn't seem to be very interesting"
+    if course.currentClass == 3:
+        if weaponsCheck_3dModelFromPoster:
+            "{i}Blueprints! This is what the chief needs!"
+            $daily_summary += "I have converted the 3D model to a blueprint.\n"
+
+
     return
 
 label math1_course:
@@ -124,7 +142,7 @@ label courseIntro:
 
     return
 label courseOutro:
-    if(course.currentClass+1 >= course.numClasses):
+    if(course.currentClass == course.numClasses):
         "Congratulations on finishing course [course.name]. I wish you all the best"
         #completed courses cannot be taken again.
         $course.unlocked = False

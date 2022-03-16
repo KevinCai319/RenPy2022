@@ -1,12 +1,13 @@
 default davidAffinity = 0
 default davidKnows = False
+default animalSuggestionReceived = False
 
 label dating_prologue:
     $askedWhoIsHe = False #just for some future dialogue in truth, that's about it for this variable's usage
     show david_img at left with fade
     show mc_img at right
-    
-    
+
+
     david "Hey, [MC]! Over here!"
     "You see a boy smiling across the road, waving his hand."
     "He seems to be about your age, with glasses that perfectly frame his face to suggest a sense of maturity mixed with youthfulness."
@@ -51,7 +52,7 @@ label dating_prologue:
     "{i}That course is indeed in the catalog..."
 
     yumemi "I'll keep an eye out for that."
-
+    $animalSuggestionReceived = True;
     "You eventually finish \"petting\" all the dogs in that area and decide to call it a day."
     "But right before you were about to leave..."
     david "Hey, why don't we watch the new Marvel movie that just came out tonight? I heard so much hype about it from all my friends."
