@@ -1,6 +1,6 @@
 image course_select_background = "Backgrounds/Meta_University.png"
 label course_select:
-    play music campus
+    play music campus volume 0.4
     scene course_select_background with fade
     call screen course_select_menu
     $course_select_choice = _return[1]

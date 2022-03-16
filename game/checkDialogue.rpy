@@ -1,7 +1,11 @@
 label waterMilestone2FixAttemptFail:
     chief "That is exceptional news! Why don't you go and give it a try."
     "With a toolkit in hand, you and the chief approach the purifier"
-    #Scene purifier
+    scene Water_Purifier_damaged
+    show chief_img at right
+    show lynx_img at left
+    with fade
+    play music fixing
     lynx "There seems to be a wiring issue that is causing the outputs to not register correctly within the computer."
     "After reconfiguring the wires, you find that the problem was much simpler."
     "Due to the nature of the machinery progressing through new updates, the CPU was no longer able to handle the stress."
@@ -12,27 +16,28 @@ label waterMilestone2FixAttemptFail:
     chief "I'm confident that you will come up with a solution."
     "More courses it is..."
     "You head back to the throne room."
+    stop music
+    scene chief_room
+    show chief_img at right
+    show lynx_img at left
+    with fade
     return
 
 label waterMilestone4FixAttemptSuccess:
     chief "Now this is truly some exceptional news. We shall take another shot at the purifier."
-    hide chief_room
-    hide lynx_img
-    hide chief_img
+    scene Water_Purifier_damaged
     show chief_img at right
     show lynx_img at left
-    show Water_Purifier_damaged with fade
+    with fade
     play music fixing
     "With a toolkit, and a newly configured CPUs constructed with the original one used by the purifier and spares laying around, you and the chief approach the purifier."
     #Scene purifier
     "The CPU fits in."
     lynx "And now, the moment of truth..."
-    hide Water_Purifier_damaged
-    hide lynx_img
-    hide chief_img
+    scene Water_Purifier_fixed
     show chief_img at right
     show lynx_img at left
-    show Water_Purifier_fixed with fade
+    with fade
     "The system slowly comes back to life as it takes in water from the nearby river."
     "Before you knew it, the output tank begins to fill with crystal clear water."
     "You did it."
@@ -40,12 +45,10 @@ label waterMilestone4FixAttemptSuccess:
     $purifier_success = True
     $end_state+=1
     stop music
-    hide Water_Purifier_fixed
-    hide lynx_img
-    hide chief_img
+    scene chief_room
     show chief_img at right
     show lynx_img at left
-    show chief_room with fade
+    with fade
     return
 
 label fixGenerator:
@@ -54,34 +57,28 @@ label fixGenerator:
     chief "Let's see if you got any value out of it then."
 
     "You and the chief head over to the generator."
-    hide lynx_img
-    hide chief_img
-    hide chief_room
-    show Generator_damaged 
+    scene Generator_damaged 
     show chief_img at right
-    show lynx_img at left with fade
+    show lynx_img at left
+    with fade
     play music fixing
     "The generator that used to churn with life now lays silent."
     "Time to repair!"
     "You recall the steps from the YouTube video: Coolant, Fuel Levels, Oil Levels, Shutoff Valve, and Air Filter."
     "You check and repair each of the components."
-    hide Generator_damaged
-    hide chief_img
-    hide lynx_img
-    show Generator_fixed 
+    scene Generator_fixed
     show chief_img at right
-    show lynx_img at left with fade
+    show lynx_img at left
+    with fade
     "After some additional simple wiring, the generator sputters back to life."
     chief "Now, we will have energy for years to come. We all owe you one, Lynx."
     $generator_success = True
     $end_state+=1
     stop music
-    hide Generator_fixed
-    hide chief_img
-    hide lynx_img
-    show chief_room
+    scene chief_room
     show chief_img at right
-    show lynx_img at left with fade
+    show lynx_img at left
+    with fade
     return
 
 label weaponsModelFound:

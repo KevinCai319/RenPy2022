@@ -133,7 +133,7 @@ label decline:
     #You will either have 0 or -1 by this point
     return
 
-label ordinaryDay
+label ordinaryDay:
     yumemi "Let's head over to the Cafe to chat!"
 
 
