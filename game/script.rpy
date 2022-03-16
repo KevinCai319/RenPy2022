@@ -66,7 +66,7 @@ default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, 
 
 # The game starts here.
 label start:
-    #call prologue
+    call prologue
     call day_reset
     label .day_cycle:
         call day_start
