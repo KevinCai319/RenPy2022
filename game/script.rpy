@@ -7,6 +7,8 @@ define lynx = Character("Lynx")
 define chief = Character("chief")
 define FAST_FADE = Fade(0.25,0.0,0.25)
 define SLOW_FADE = Fade(0.75,0.0,0.75)
+define enter_meta = Dissolve(1.0)
+
 
 image chief_img = im.Scale("images/Chief/chief.PNG",600,800)
 image lynx_img = im.Scale("images/Lynx/lynx.PNG",600,800)
