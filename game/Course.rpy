@@ -25,4 +25,4 @@ init python:
                 if(self.currentClass < self.numClasses):
                     self.currentClass += 1
                 if(self.currentClass >= self.numRequiredComplete):
-                    self.complete = True;
+                    self.complete = True
