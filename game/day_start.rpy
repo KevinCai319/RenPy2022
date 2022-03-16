@@ -58,6 +58,6 @@ label day_start:
     show headset_glowing at truecenter with fade
     #scene vrDevice
     lynx "Hello Meta"
-    "*click*"
     hide headset_glowing
+    "*click*"
     return

@@ -8,7 +8,8 @@ label meta_home:
         if not started_before:
             $started_before = True
         return
-    
+    if actions_done_for_day == 0:
+        play sound "audio/VR_startup.ogg"
     if started_before:
         "Welcome back to the Metaverse, [MC] !"
     else:
@@ -20,12 +21,14 @@ label meta_home:
 
         # TODO: add Lynx's monologue 
 
-        
+        #Lynx is confused on why he is in a girls's room
+        #is Lynx in heaven?
+        #
+
+        #Lynx realizes he is girl
 
 
 
-
-        
     label .select:
         "What would you like to do?"
     menu:
