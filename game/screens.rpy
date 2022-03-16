@@ -360,11 +360,12 @@ style navigation_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
 screen main_menu():
+    $rndBackground = ["Backgrounds/Classroom.png", "Backgrounds/mc_Room.png", "Backgrounds/Cafe.png", "Backgrounds/Meta_University.png"]
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
+    add rndBackground[renpy.random.randint(0,3)]
 
     ## This empty frame darkens the main menu.
     frame:
@@ -375,15 +376,14 @@ screen main_menu():
     use navigation
 
     if gui.show_name:
-
         vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            # text "[config.name!t]":
+            #     style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            # text "[config.version]":
+            #     style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -396,14 +396,11 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
-    xoffset -30
-    xmaximum 1200
-    yalign 1.0
-    yoffset -30
+    xalign 1
+    yalign 1
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)

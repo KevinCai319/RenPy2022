@@ -3,12 +3,12 @@ label day_start:
     show lynx_img at left
     with fade
     play music "audio/music/Strong-Wind-Blowing.ogg"
-    lynx "It's a start of a new day. Better go visit Chief again."
+    lynx "A new day starts. Better go visit Chief again."
 
-    "{i} You make your daily trip to the chief's place.{\i}"
+    "{i}You make your daily trip to the chief's place.{\i}"
 
     if WINTER_DAY-day < 3:
-        lynx "Brrrr... It's pretty chilly today, I'm not sure how things will turn out..."
+        lynx "Brrrr... It's pretty chilly today, I hope we will be prepared soon."
     elif WINTER_DAY-day <= 5:
         lynx "... It's a bit colder than usual"
     else:
@@ -24,16 +24,20 @@ label day_start:
 
     #Chief gives additional text based on the day.
     if day == 2:
-        chief "It gets colder and colder, but the only generator the tribe relies on doesn't sound good. Please find a way to fix this, or else our tribe might not last much longer."
+        chief "The days are growing colder but the only generator the tribe relies on doesn't sound good."
+        chief "Find a way to fix it, or our tribe might not last much longer."
         $goal_generator = True
-    elif day == 3:
-        chief "Our tribe has lost people due to a conflict with another tribe. Things are starting to look grim."
     elif day == 4:
-        chief "Our water purifer has broken down. People were sent to find other water sources, but they were ambushed. We do not know how to fix the purifier."
-        $goal_purifier = True
-    elif day == 5:
-        chief "Not good. We are running out of food. We need weapons to hunt for food, and defend our tribe."
+        chief "We have been invaded by a neighboring tribe and have lost many people."
+        chief "We mustn't let our tribe fall into the hands of the enemy the next time an invasion occurs."
+        chief "Find a way to construct more potent weapons so that we may better defend ourselves."
         $goal_weapons = True
+    elif day == 6:
+        chief "I have just receieved news that our water purifier has broken down."
+        chief "I therefore sent out a reconnaissance team to evaluate the extent of the issue, but they have been ambushed."
+        chief "Thankfully, one of the members made it back and he told us that there is an issue with the circuitry."
+        chief "As you may know, clean water is absoultely essential to our survival. Find a way to repair the purifier."
+        $goal_purifier = True
     else: 
         # if 0 out of 3 are done
         #end state is how many of the goals you finished
