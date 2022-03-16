@@ -26,6 +26,7 @@ image Generator_fixed = "Backgrounds/Generator_fixed.png"
 image Water_Purifier_damaged = "Backgrounds/Water_Purifier_damaged.png"
 image Water_Purifier_fixed = "Backgrounds/Water_Purifier_fixed.png"
 image blank = "Backgrounds/black.jpg"
+image WHITE = "Backgrounds/white.jpg"
 
 
 
@@ -114,6 +115,7 @@ label start:
     return
 #Day end, reset
 label day_reset:
+   scene blank with fade
    if day >= WINTER_DAY:
       #game ends.
       $day+=1

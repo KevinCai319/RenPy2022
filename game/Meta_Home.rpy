@@ -1,17 +1,24 @@
 label meta_home:
-    #scene bg meta_homescreen
-    #check if running out of power..
+    #check if first time launching or not.
     if not started_before:
+        #special case, so we can easily have the character remove helemet without much code.
+        if actions_done_for_day == 0:
+            window hide
+            play sound "audio/VR_startup.ogg"
+            show blank
+            show WHITE with Dissolve(2.0)
+            show blank with Dissolve(1.5)
         show meta_room with fade
     else:
         scene meta_room with fade
+
+    #check if running out of power..
     if actions_done_for_day >= MAX_ACTIONS_PER_DAY:
         "The battery is too low... cannot continue... shutting down"
         if not started_before:
             $started_before = True
         return
-    if actions_done_for_day == 0:
-        play sound "audio/VR_startup.ogg"
+    play music "audio/music/Yumemi_Room.ogg"
     if started_before:
         "Welcome back to the Metaverse, [MC] !"
     else:
@@ -29,7 +36,9 @@ label meta_home:
         yumemi "Is this what they call heaven?"
         yumemi "No, this can't be."
         "You feel for the head straps and take the headset off."
+        $renpy.music.set_pause(True)
         hide meta_room
+        hide WHITE
         pause 0.75
         show blank at screen_top
         with moveinbottom
@@ -37,6 +46,7 @@ label meta_home:
         show blank at truecenter
         with moveintop
         scene meta_room with enter_meta
+        $renpy.music.set_pause(False)
         yumemi "{i}Okay, I'm still alive."
         "You decide to walk around a bit and investigate the room further."
         yumemi "Everything is so pink and jovial."
@@ -53,7 +63,6 @@ label meta_home:
         yumemi "{i}That's weird."
         "You close it and go through the other door."
         "..."
-
         # He's a girl now, am I in heaven? How do I
 
     label .select:
