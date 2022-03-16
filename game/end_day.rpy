@@ -13,6 +13,7 @@ label end_day:
         if len(daily_summary) > 0:
             $summary_list = daily_summary.split('\n')
             $summary_length = len(summary_list)
+            $summary_length-=1
             while summary_length > 0:
                 $item = summary_list[summary_length-1]
                 lynx "[item]"
@@ -29,21 +30,9 @@ label end_day:
                 show chief_room with fade
             #if, in case you finish multiple in a day
             if daily_summary.find("I have the solution to the water purifier!") != -1:
-                hide chief_room
-                show Water_Purifier_damaged with fade
-                play music fixing
                 call waterMilestone4FixAttemptSuccess
-                stop music
-                hide Water_Purifier_fixed
-                show chief_room with fade
             if daily_summary.find("I beleive I can fix the generator!") != -1:
-                hide chief_room
-                show Generator_damaged with fade
-                play music fixing
                 call fixGenerator
-                stop music
-                hide Generator_fixed
-                show chief_room with fade
             if daily_summary.find("We might be able to construct weapons.") != -1:
                 hide chief_room
                 call weaponsModelFound

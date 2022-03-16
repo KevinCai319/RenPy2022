@@ -1,13 +1,12 @@
 default pingPongAttendance = 0
 define tableTennisAI = Character("Club Member")
-
 label ping_pong:
     $pingPongAttendance+=1;
 
     $rand = renpy.random.randint(0,1) == 1
     if (pingPongAttendance == 1):
         call pingPongPrologue
-    elif rand or pingPongAttendance >= 3:
+    elif rand or (pingPongAttendance >= 3 and (not generatorCheck_pingPongClubChat)):
             call pingPongSessionSpecial
     else:
         call pingPongSessionNormal
