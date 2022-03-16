@@ -18,6 +18,7 @@ label meta_home:
         if not started_before:
             $started_before = True
         return
+    stop sound
     play music "audio/music/Yumemi_Room.ogg"
     if started_before:
         "Welcome back to the Metaverse, [MC] !"
@@ -80,7 +81,6 @@ label meta_home:
         yumemi "{i}That's weird."
         "You close it and go through the other door."
         "..."
-        # He's a girl now, am I in heaven? How do I
 
     label .select:
         "What would you like to do?"

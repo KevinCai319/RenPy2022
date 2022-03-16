@@ -52,9 +52,15 @@ screen course_select_menu():
         $goals += "-None for Now"
     frame:
         xalign 0.0
-        yalign 0.8
+        yalign 0.7
         background "#00000098"
         vbox:
+            $time_left = WINTER_DAY-day
+            text "{u}Days Until\nWinter{/u}:[time_left]":
+                color "#7df0ff"
+                bold True
+                size 60 
+            null height 30
             text "{u}Goals{/u}":
                 color "#7df0ff"
                 bold True

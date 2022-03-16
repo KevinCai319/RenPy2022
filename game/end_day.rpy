@@ -16,7 +16,7 @@ label end_day:
             $summary_length = len(summary_list)
             while summary_length > 0:
                 $item = summary_list[summary_length-1]
-                if not item.isspace():
+                if not item.isspace() and len(item) != 0:
                     lynx "[item]"
                 $summary_length-=1
             #adjust penalty based on certain key words in daily summary.

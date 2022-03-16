@@ -58,6 +58,7 @@ default MAX_ACTIONS_PER_DAY = 4
 default daily_summary = ""
 default course = 0
 
+default game_end = False
 #animations
 
 #Variables for generator complete
@@ -84,7 +85,7 @@ default weaponsCheck_obtainBlueprint = False #from CAD course 3
 default animalBehaviorAndWelfare = Course("Animal Behavior and Welfare","animal_course", 4, animal_course_content, True)
 default englishPoetry = Course("English Poetry","english_course", 4,english_course_content, True)
 default circuitsAndElectronics = Course("Circuits and Electronics","circuits_course",  9,circuits_course_content, True)
-default electricEngeering = Course("Electric Engineering","ee_course", 16, ee_course_content, True, "Electrical engineering can be helpful for fixing things...")
+default electricEngeering = Course("Electrical Engineering","ee_course", 16, ee_course_content, True, "Electrical engineering can be helpful for fixing things...")
 default socialMediaMarketing = Course("Social Media Marketing","media_course", 5, media_course_content, False)
 default cadAndDigital = Course("CAD And Digital", "cad_course", 10, cad_course_content, True)
 default calc1 = Course("Calculus I", "math1_course", 10, math1_course_content, True)
@@ -96,27 +97,29 @@ default foodAndBeverage = Course("Food & Beverage Management","food_course", 7, 
 
 # The game starts here.
 label start:
-    call prologue
-    if not started_before:
-        "Unfortunately, you were not the chosen one."
-        scene irl_background with SLOW_FADE
-        "[WINTER_DAY] days later, winter arrives, and your tribe freezes to death."
-        return
-    call day_reset
-    label .day_cycle:
-        call day_start
-        "Time to login"
-        call meta_home
-        scene irl_background with fade
-        "I think it's time to report to chief."
-        call end_day
-        #scene transition
-        call day_reset
-        jump start.day_cycle
-    return
+   call course_select
+   call prologue
+   if not started_before:
+      "Unfortunately, you were not the chosen one."
+      scene irl_background with SLOW_FADE
+      "[WINTER_DAY] days later, winter arrives, and your tribe freezes to death."
+      return
+   call day_reset
+   label .day_cycle:
+      if game_end:
+         return
+      call day_start
+      "Time to login"
+      call meta_home
+      "I think it's time to report to chief."
+      call end_day
+      #scene transition
+      call day_reset
+      jump start.day_cycle
+   return
 #Day end, reset
 label day_reset:
-   scene blank with fade
+   scene blank
    if day >= WINTER_DAY:
       #game ends.
       $day+=1
@@ -141,18 +144,22 @@ label game_end:
       else:
          "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
    elif end_state == 2:
+      scene blank
       #Check if all 3 objectives are done, or only 2 of the 3.
       #TODO: edit dialogue
       if (weapons_success and purifier_success):
          "The damaged generator has stopped working."
          "Huge sacrifice was made. You lost your leg. But your tribe control the enemy tribe’s facilities"
-         #chief "With weapons and the water purifier working, our tribe can still survive the winter."
+         "OK ENDING"
       if (weapons_success and generator_success):
          "Huge sacrifice was made. You lost your leg. But your tribe control the enemy tribe’s facilities"
+         "OK ENDING"
       if(purifier_success and generator_success):
          "Being greedy on your tribe’s winter reservation, the enemy tribe launched a raid. Your tribe hardly defended the besiege. People cannot get out for food. Many people might die during the winter"
          "OK ENDING"
    else:
+      scene blank
       "You tribe has enough reservation for the winter and defend well against enemy tribe. You decide to slaughter the tribe or not"
       "GOOD ENDING"
+   $game_end = True
    return
