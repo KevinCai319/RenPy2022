@@ -363,24 +363,30 @@ screen main_menu():
 
     ## This empty frame darkens the main menu.
     frame:
-        style "main_menu_frame"
-
+        xalign 0.0
+        yalign 0.0
+        # style "main_menu_frame"
+        xmaximum 600
+        yminimum 1080
+        background "#000000AA"
+        vbox:
+            text "University of Future-Past\n\nMade by:":
+                size 50
+                color "#d37000"
+            text "Kelvin Chang, Wenhan Guo, Kevin Cai":
+                size 30
+                color "#d37000"
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
-
+        
     if gui.show_name:
-
         vbox:
             style "main_menu_vbox"
 
-            text "University of Future-Past":
-                style "main_menu_title"
 
-            
-            
-            #text "[config.version]":
-            #   style "main_menu_version"
+            text "[config.version]":
+                style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -429,21 +435,16 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         add gui.main_menu_background
     else:
         add gui.game_menu_background
-
     frame:
         style "game_menu_outer_frame"
-
         hbox:
 
             ## Reserve space for the navigation section.
             frame:
                 style "game_menu_navigation_frame"
-
             frame:
                 style "game_menu_content_frame"
-
                 if scroll == "viewport":
-
                     viewport:
                         yinitial yinitial
                         scrollbars "vertical"
@@ -508,7 +509,7 @@ style game_menu_outer_frame:
     background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
-    xsize 234
+    xsize 600
     yfill True
 
 style game_menu_content_frame:

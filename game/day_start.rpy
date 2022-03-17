@@ -40,6 +40,10 @@ label day_start:
         chief "Thankfully, one of the members made it back and he told us that there is an issue with the circuitry."
         chief "As you may know, clean water is absoultely essential to our survival. Find a way to repair the purifier."
         $goal_purifier = True
+        if (waterCheck_milestone1 and waterCheck_milestone2):
+            $daily_summary += "I think we can fix the purifier now\n"
+        if (waterCheck_milestone3 and waterCheck_milestone4):
+            $daily_summary += "I have the solution to the water purifier!\n"
     else: 
         # if 0 out of 3 are done
         #end state is how many of the goals you finished
@@ -53,7 +57,7 @@ label day_start:
             if day < ((WINTER_DAY-day) * 0.75):
                 chief "Doing well"
             else:
-                chief "Doing alright, keep up the good work."
+                chief "Not the best, but keep up the good work."
         else:
             # in this case already done 2/3, so you technically already won something.
             chief "Doing great, hope you're doing well."
