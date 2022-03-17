@@ -42,7 +42,7 @@ label prologue:
     "The harsh winter is just around the corner, however, the shelter is on nearing the end of its food and supply."
     "To make matters worse is the condition of the generator. The clan relies on its heat for the freezing climate."
     "As you approached your shelter, the clan chief appeared and called you."
-    stop music fadeout 1.0
+
     
     #scene vrDevice
     #show headset at truecenter
