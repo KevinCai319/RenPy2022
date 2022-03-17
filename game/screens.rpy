@@ -361,22 +361,28 @@ screen main_menu():
 
     ## This empty frame darkens the main menu.
     frame:
-        style "main_menu_frame"
-
+        xalign 0.0
+        yalign 0.0
+        # style "main_menu_frame"
+        xmaximum 600
+        yminimum 1080
+        background "#000000AA"
+        vbox:
+            text "University of Future-Past\n\nMade by:":
+                size 50
+                color "#d37000"
+            text "Kelvin Chang, Wenhan Guo, Kevin Cai":
+                size 30
+                color "#d37000"
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
-
+        
     if gui.show_name:
-
         vbox:
             style "main_menu_vbox"
 
-            text "University of Future-Past":
-                style "main_menu_title"
 
-            
-            
             #text "[config.version]":
             #   style "main_menu_version"
 
