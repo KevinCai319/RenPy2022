@@ -42,7 +42,7 @@ label end_day:
             if daily_summary.find("I have converted the 3D model to a blueprint.") != -1:
                 stop music fadeout 0.5
                 call weaponsComplete
-            if cadAndDigital.currentClass >= 3 and goal_weapons and (not weaponsCheck_3dModelFromPoster):
+            if cadAndDigital.currentClass >= 3 and goal_weapons and (not weaponsCheck_3dModelFromPoster) and (not weapons_success):
                 stop music fadeout 0.5
                 lynx "In addition, I also have some weapon blueprints that we can use."
                 call weaponsComplete
@@ -55,7 +55,6 @@ label end_day:
             play music "audio/music/Strong-Wind-Blowing.ogg"
         if(weapons_success and purifier_success and generator_success):
             lynx "Everything is fully operational!"
-            chief "<YOU WIN GAME>"
             return
         #Check of either of the 3 objectives are done.
         if generator_success:

@@ -132,6 +132,8 @@ label day_reset:
       $daily_summary = ""
       $day+=1
    "The sun rises again... DAY [day]"
+   if(generator_success and purifier_success and weapons_success):
+      jump end
    return
 label game_end:
    if end_state == 0:

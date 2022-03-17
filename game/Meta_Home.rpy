@@ -3,6 +3,9 @@ label meta_home:
     if not started_before:
         #special case, so we can easily have the character remove helemet without much code.
         if actions_done_for_day == 0:
+            $playing = renpy.music.is_playing()
+            if not playing:
+                stop music
             window hide
             play sound "audio/VR_startup.ogg"
             show blank
@@ -55,12 +58,9 @@ label meta_home:
         "..."
         "Most of the books seem standard, but you pick up one up anyway."
         "Opening the cover, you see the name again:."
-        show mc_img at center
-        with fade
         "{b}{i}[MC]"
-        hide mc_img
-        with fade
-        yumemi "[MC]. So this is [MC]'s metaverse. This is [MC]'s room. This is [MC]'s world."
+        yumemi "[MC]. So this is [MC]'s VR headset. This is [MC]'s world. This is [MC]'s room."
+        yumemi "I {i}am{/i} [MC]! And this must be the metaverse."
 
         "You turn your head towards the right and see an odd reflection in the mirror."
         "Who is that?"
@@ -85,10 +85,6 @@ label meta_home:
         "You close it and go through the other door."
         "..."
 
-    #just some text to have the user interested in checking out dating sim and ping pong club
-    if day == 2:
-        "{i}Yumemi...I wonder who she is?"
-
     label .select:
         "What would you like to do?"
         if not started_before:
@@ -101,21 +97,21 @@ label meta_home:
                 "You should probably check out what the device does before leaving."
             jump meta_home.select
             return
-        "Go to MetaCampus":
+        "Course Select":
             #Go to course select screen.
             call course_select
             $started_before = True
             jump meta_home
             return
-        "Read Diary":
-            #check if diary is unlocked
-            if diary_unlock_level == 0:
-                "Due to security precautions, the diary is not available at this time."
-                jump meta_home.select
-            else:
-                hide meta_room with fade
-                "To be continued..."
-                #call diary
-            jump meta_home
-            return
+        # "Read Diary":
+        #     #check if diary is unlocked
+        #     if diary_unlock_level == 0:
+        #         "Due to security precautions, the diary is not available at this time."
+        #         jump meta_home.select
+        #     else:
+        #         hide meta_room with fade
+        #         "<PLALCEHOLDER SCENE>"
+        #         #call diary
+        #     jump meta_home
+        #     return
     return
