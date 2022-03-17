@@ -122,7 +122,7 @@ label day_reset:
    scene blank
    if day >= WINTER_DAY:
       #game ends.
-      $day+=1
+      # $day+=1
       "The sun rises again... DAY [day]"
       "Winter has arrived. The enemy tribe has come to attack."
       jump game_end
@@ -136,30 +136,64 @@ label day_reset:
 label game_end:
    if end_state == 0:
       show irl_background with SLOW_FADE
-      "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
+      chief "I am very disappointed in you."
+      chief "We all had our hopes out for you, but not once did you repay them."
+      chief "Now, we have no choice but to let our tribe be conquered and vanquish into the sands of time."
+      "After all the time in the metaverse, you weren't able to gain anything of value."
+      "How could you have spent so much effort with no return?"
    elif end_state == 1:
       show irl_background with SLOW_FADE
-      if weapons_success:
-         "Your tribemen are ill, the battle is very unsuccessful. Although your tribe eliminated the enemy, they destroied the facilities"
-      else:
-         "After all the time spent in the Metaverse, nothing of value was gained. The tribe has collapsed."
+      if weapons_success: #purifier and energy don't worked
+         "Although the your tribe has gained the ability to produce war-ready weapons, it wasn't enough to keep your tribe in good health."
+         chief "A tribe's success does not depend on armaments alone. You should know that."
+         chief "We have no energy to heat our shelters, nor clean water to use for agriculture or ourselves."
+         chief "We may be safe from our enemies, but not from the winter."
+         "Better luck next time"
+      elif purifier_success #weapons and energy don't work
+         "Your tribe has clean water. That'll be essential for maintaining good health and planting crops."
+         "But what are you to do without energy or water."
+         chief "I appreciate having a nice bath by the end of the day. But do you expect me to bathe in cold water by winter?"
+         chief "We are also still in danger of being attacked from other tribes. Water alone won't help us any bit."
+         chief "I expect more from you, Lynx"
+         "Mastering the arduous course of Electrical Engineering, was simply not enough."
+         "Unfortunate."
+      else #only energy
+         "Your tribe has energy to light up the their shelters and heat to survive through the winter."
+         "Nevertheless, the welfare of your tribe is compromised."
+         chief "Without weapons and clean water, our soldeirs' health will suffer significantly in war."
+         chief "They deserve better than that."
+         "Despite the miracle of the YouTube video, your fortune ended there."
    elif end_state == 2:
-      scene blank
-      #Check if all 3 objectives are done, or only 2 of the 3.
-      #TODO: edit dialogue
       if (weapons_success and purifier_success):
-         "The damaged generator has stopped working."
-         "Huge sacrifice was made. You lost your leg. But your tribe control the enemy tribe’s facilities"
-         "OK ENDING"
+         "You have successfully found the blueprint to the weapons and fixed the water purifier."
+         chief "With weapons and clean water, our troops should fare well against tribes in the winter."
+         chief "Even though we have no generator to keep us warm, we are safe from invasions."
+         chief "Whoever survives through the winter will survive. Who ever doesn't doesn't."
+         chief "That's the hard truth."
+         chief "But at the very least, our tribe will continue."
+         chief "Thank you Lynx, your efforts are commendable."
       if (weapons_success and generator_success):
-         "Huge sacrifice was made. You lost your leg. But your tribe control the enemy tribe’s facilities"
-         "OK ENDING"
+         "You have succesfully recovered the blue print and returned electricity to your tribe."
+         chief "Not bad, Lynx. We will have heat for the winter and weapons to fare off the enemies."
+         chief "In fact, we may be able to commandeer our neighboring tribes water purifier."
+         chief "How does that sound?"
+         "The chief seems to be in happy spirits."
+         "While you are not entirely sure of that prospect, at least you have helped your tribe avert a major crisis."
       if(purifier_success and generator_success):
-         "Being greedy on your tribe’s winter reservation, the enemy tribe launched a raid. Your tribe hardly defended the besiege. People cannot get out for food. Many people might die during the winter"
-         "OK ENDING"
+         "Choosing to prioritize on your tribe's well being over the winter, you also risk a possible invasion from the enemy tribe."
+         chief "Our tribe will have enough resources to comfortably survive through the winter."
+         chief "While we won't be able to fend off enemy tribes, it is unlucky that they will launch an attack during such harsh conditions."
+         chief "In the mean time, we will focus on strengthening ourselves internally."
+         chief "We appreciate your contributions."
    else:
-      scene blank
-      "You tribe has enough reservation for the winter and defend well against enemy tribe. You decide to slaughter the tribe or not"
-      "GOOD ENDING"
-   $game_end = True
+      "You have managed to complete all the tasks."
+      chief "What can I say Lynx?"
+      chief "Where would our tribe be without you? Where would I be?"
+      "The chief takes a moment to gather his thoughts."
+      chief "This is a momentous occasion. Our tribe shall henceforth flourish!"
+      chief "No more enemies to make fools of ourselves, no more diseases to ravage our populations, no more unbearable nights in the cold."
+      chief "Today, We shall celebrate!"
+      "Walking out of the throne room, he holds your hand."
+      "Together, you proudly raise them up in triumph."
+
    return

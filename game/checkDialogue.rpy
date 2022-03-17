@@ -85,7 +85,7 @@ label weaponsModelFound:
     chief "That's good news, but there is nothing we can do with a 3D model."
     chief "Do you know what would be usefull? A blueprint."
     if cadAndDigital.currentClass >= 3:
-        "That I can do, thanks to the blueprint lecture! Give me a moment"
+        "That I can do, thanks to the blueprint lecture from CAD and Digital! Give me a moment"
         "..."
         $weaponsCheck_obtainBlueprint = True
         call weaponsComplete #directly call this if you already can make the blue print
