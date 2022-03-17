@@ -360,12 +360,14 @@ style navigation_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
 screen main_menu():
-    $rndBackground = ["Backgrounds/Classroom.png", "Backgrounds/mc_Room.png", "Backgrounds/Cafe.png", "Backgrounds/Meta_University.png"]
+    #$rndBackground = 
+    #["Backgrounds/Classroom.png", "Backgrounds/mc_Room.png", "Backgrounds/Cafe.png", "Backgrounds/Meta_University.png"]
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add rndBackground[renpy.random.randint(0,3)]
+    add "/gui/main_menu.png"
+    #rndBackground[renpy.random.randint(0,3)]
 
     ## This empty frame darkens the main menu.
     frame:
@@ -396,7 +398,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    # background "gui/overlay/main_menu.png"
+    background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1

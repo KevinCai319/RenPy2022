@@ -72,7 +72,7 @@ label pingPongSessionSpecial:
     tableTennisAI "And if you seriously don't know what YouTube is, consider taking Social Media Marketing."
     tableTennisAI "It will catch you up real easily."
 
-    "Social Media and Marketing. Was that previously available?"
+    "Social Media and Marketing. I should check that out."
 
     yumemi "Honestly, I haven't. I'll check the course out, though."
     "The club member looks at you with a gaze of amazement, but you proceed to rally as usual."
