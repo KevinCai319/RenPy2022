@@ -223,7 +223,7 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 405
+    ypos 225
     yanchor 0.5
 
     spacing gui.choice_spacing
@@ -234,13 +234,6 @@ style choice_button is default:
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
 
-style course_select_button is button
-style course_select_button_text is button_text
-
-style course_select_button is default:
-    properties gui.button_properties("course_select_button")
-style course_select_button_text is default:
-    properties gui.button_text_properties("course_select_button")
 
 ## Quick Menu screen ###########################################################
 ##
@@ -360,14 +353,11 @@ style navigation_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
 screen main_menu():
-    #$rndBackground = 
-    #["Backgrounds/Classroom.png", "Backgrounds/mc_Room.png", "Backgrounds/Cafe.png", "Backgrounds/Meta_University.png"]
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add "/gui/main_menu.png"
-    #rndBackground[renpy.random.randint(0,3)]
+    add "Backgrounds/Meta_University.png"
 
     ## This empty frame darkens the main menu.
     frame:
@@ -378,14 +368,17 @@ screen main_menu():
     use navigation
 
     if gui.show_name:
+
         vbox:
             style "main_menu_vbox"
 
-            # text "[config.name!t]":
-            #     style "main_menu_title"
+            text "University of Future-Past":
+                style "main_menu_title"
 
-            # text "[config.version]":
-            #     style "main_menu_version"
+            
+            
+            #text "[config.version]":
+            #   style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -395,14 +388,17 @@ style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
 style main_menu_frame:
-    xsize 420
+    xsize 234
     yfill True
 
     background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1
-    yalign 1
+    xalign 1.0
+    xoffset -16
+    xmaximum 667
+    yalign 1.0
+    yoffset -16
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
@@ -504,32 +500,32 @@ style return_button is navigation_button
 style return_button_text is navigation_button_text
 
 style game_menu_outer_frame:
-    bottom_padding 45
-    top_padding 180
+    bottom_padding 25
+    top_padding 100
 
     background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
-    xsize 420
+    xsize 234
     yfill True
 
 style game_menu_content_frame:
-    left_margin 60
-    right_margin 30
-    top_margin 15
+    left_margin 34
+    right_margin 17
+    top_margin 9
 
 style game_menu_viewport:
-    xsize 1380
+    xsize 767
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
 
 style game_menu_side:
-    spacing 15
+    spacing 9
 
 style game_menu_label:
-    xpos 75
-    ysize 180
+    xpos 42
+    ysize 100
 
 style game_menu_label_text:
     size gui.title_text_size
@@ -539,7 +535,7 @@ style game_menu_label_text:
 style return_button:
     xpos gui.navigation_xpos
     yalign 1.0
-    yoffset -45
+    yoffset -24
 
 
 ## About screen ################################################################
@@ -690,8 +686,8 @@ style slot_time_text is slot_button_text
 style slot_name_text is slot_button_text
 
 style page_label:
-    xpadding 75
-    ypadding 5
+    xpadding 42
+    ypadding 3
 
 style page_label_text:
     text_align 0.5
@@ -834,13 +830,13 @@ style mute_all_button_text is check_button_text
 
 style pref_label:
     top_margin gui.pref_spacing
-    bottom_margin 3
+    bottom_margin 2
 
 style pref_label_text:
     yalign 1.0
 
 style pref_vbox:
-    xsize 338
+    xsize 188
 
 style radio_vbox:
     spacing gui.pref_button_spacing
@@ -863,18 +859,18 @@ style check_button_text:
     properties gui.button_text_properties("check_button")
 
 style slider_slider:
-    xsize 525
+    xsize 292
 
 style slider_button:
     properties gui.button_properties("slider_button")
     yalign 0.5
-    left_margin 15
+    left_margin 9
 
 style slider_button_text:
     properties gui.button_text_properties("slider_button")
 
 style slider_vbox:
-    xsize 675
+    xsize 375
 
 
 ## History screen ##############################################################
@@ -986,7 +982,7 @@ screen help():
         style_prefix "help"
 
         vbox:
-            spacing 23
+            spacing 13
 
             hbox:
 
@@ -1116,14 +1112,14 @@ style help_text is gui_text
 
 style help_button:
     properties gui.button_properties("help_button")
-    xmargin 12
+    xmargin 7
 
 style help_button_text:
     properties gui.button_text_properties("help_button")
 
 style help_label:
-    xsize 375
-    right_padding 30
+    xsize 209
+    right_padding 17
 
 style help_label_text:
     size gui.text_size
@@ -1160,7 +1156,7 @@ screen confirm(message, yes_action, no_action):
         vbox:
             xalign .5
             yalign .5
-            spacing 45
+            spacing 25
 
             label _(message):
                 style "confirm_prompt"
@@ -1168,7 +1164,7 @@ screen confirm(message, yes_action, no_action):
 
             hbox:
                 xalign 0.5
-                spacing 150
+                spacing 84
 
                 textbutton _("Yes") action yes_action
                 textbutton _("No") action no_action
@@ -1215,7 +1211,7 @@ screen skip_indicator():
     frame:
 
         hbox:
-            spacing 9
+            spacing 5
 
             text _("Skipping")
 
@@ -1420,7 +1416,7 @@ style nvl_button_text:
 
 style pref_vbox:
     variant "medium"
-    xsize 675
+    xsize 375
 
 ## Since a mouse may not be present, we replace the quick menu with a version
 ## that uses fewer and bigger buttons that are easier to touch.
@@ -1469,7 +1465,7 @@ style game_menu_outer_frame:
 
 style game_menu_navigation_frame:
     variant "small"
-    xsize 510
+    xsize 284
 
 style game_menu_content_frame:
     variant "small"
@@ -1477,7 +1473,7 @@ style game_menu_content_frame:
 
 style pref_vbox:
     variant "small"
-    xsize 600
+    xsize 334
 
 style bar:
     variant "small"
@@ -1521,4 +1517,4 @@ style slider_vbox:
 
 style slider_slider:
     variant "small"
-    xsize 900
+    xsize 500
