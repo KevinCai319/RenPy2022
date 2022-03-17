@@ -97,7 +97,7 @@ label meta_home:
                 "You should probably check out what the device does before leaving."
             jump meta_home.select
             return
-        "Course Select":
+        "Go to MetaCampus":
             #Go to course select screen.
             call course_select
             $started_before = True
