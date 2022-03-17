@@ -1,12 +1,13 @@
 default davidAffinity = 0
 default davidKnows = False
+default keyGiven = False
+default conversationCount = 0
 default animalSuggestionReceived = False
 
 label dating_prologue:
     $askedWhoIsHe = False #just for some future dialogue in truth, that's about it for this variable's usage
     show david_img at left with fade
     show mc_img at right
-
 
     david "Hey, [MC]! Over here!"
     "You see a boy smiling across the road, waving his hand."
@@ -70,6 +71,8 @@ label dating_prologue:
             call decline
     hide david_img
     hide mc_img
+
+    $conversationCount += 1
     return
 
 label greetDavid:
@@ -133,30 +136,89 @@ label decline:
     #You will either have 0 or -1 by this point
     return
 
+label whenDavidKnows: 
+    yumemi "Let's head over to the Cafe to chat!"
+    david "Okay, though there isn't much that I would want to discuss."
+    yumemi "I suppose you can tell a little about who Yumemi was."
+    david "She was a very sweet person who knew how to appreciate the little things in life."
+    "{i}totally not generic**"
+    david "Well if you want to know to know more about Yumemi, I think it would be worth checking out her diary."
+    yumemi "The Diary! I recall seeing that."
+    david "After we began talking for several months, she told me: \"If I were to die, please don't feel sad for me. Take this:\""
+    david "And she gave me a unique passcode to her diary."
+    david "Now, I will hand it to you. All I want is to know if she mentions anything about her parents."
+    "You copy the code."
+    yumemi "I won't let you down."
+    "David lifts his eyes halfway to your gaze, sighs, and proceeds to stare at the ground."
+    $diary_unlock_level = 1
+    $keyGiven = True
+    $conversationCount += 1
+    return
+
+label ordinaryDaydKnows:
+    yumemi "Let's head over to the Cafe to chat!"
+    david "Okay, though there isn't much that I would want to discuss."
+    david "I just want to know where Yumemi went."
+    $conversationCount += 1
+
+    return
+
+
 label ordinaryDay:
     yumemi "Let's head over to the Cafe to chat!"
+    david "Sure, is there anything on your mind?"
+    yumemi "Hey, I wanted to hear what you had to say..."
+    $theme = renpy.random.randint(0,1);
+    $title = renpy.random.randint(0,2);
+    $headline = headlines[theme][title]
+    david "Oh okay. In that case, have you read of: \"[headline]\"?"
+    if theme == 0:
+        yumemi "Wow, that's interesting. That man must be crazy."
+        david "Right? Imagine if that was me!"
+        yumemi "Well I don't even have to imagine."
+        david "Heyyy that's not nice."
+    if theme == 1:
+        yumemi "That's pretty funny."
+        yumemi "I know right? Where do you even find this?"
+        david "That's a secret."
+        yumemi "Come on! I want to know..."
+    $conversationCount += 1
+    return
 
-
-default currentHeadline = 0
+default headlines = [
+    [
+        "Florida man tries to rob a bank wearing a 'Sonic The Hedgehog' mask",
+        "Florida man blames Putin for why he was speeding during traffic stop",
+        "Florida Man Accidentally Buys City Water Tower"
+    ],
+    #the onion OGN
+    [
+        "Apple announces the release of the Iphone 22 Max Pro SE Lite Pro Red Max Pro Red Pro Plus. Newest leaks suggest a back panel covered with an array of twenty state of the art cameras.",
+        "Be Cool, For Once, Gamers: Mrs. Thompson Said We Might Get to Play 'Minecraft' If We Finish The Quiz By 11:45",
+        "Airbnb Tests New Feature That Allows Black Guests"
+    ],
+    [
+        
+    ]  #cute headlines 
+]
 
 default floridaHeadlines = [
     "Florida man accused of stealing 18 turtles worth $30,000 from breeder while fixing his fridge",
     "Florida man calls police to verify his meth is authentic, cops claim",
     "Two Florida Women Attack Man With Glitter, Face Felony Charges",
-    "South Florida man allegedly bites off hospital security guard’s finger",
+    "South Florida man allegedly bites off hospital security guard's finger",
     "Florida Man Has Growing God Complex",
     "Florida Man Guilty of Using Twin's ID for Veterans Benefits",
     "Florida man wins $1M from scratch-off ticket, plans to surprise spouse: 'I haven't even told my wife yet'",
     "Catch of the day: Florida man, grandson reel in sniper rifles while magnet fishing near Miami",
     "Florida man steals car; train sends it crashing into house",
-    "Florida man tries to rob a bank wearing a ‘Sonic The Hedgehog’ mask",
-    "Florida man told police he was ‘high and happy’",
+    "Florida man tries to rob a bank wearing a 'Sonic The Hedgehog' mask",
+    "Florida man told police he was 'high and happy'",
     "Florida man stuffs stolen crossbow down his pants",
     "Florida Man Unwillingly Faces Drawbrige, Barely Makes It Out",
     "Florida man blames Putin for why he was speeding during traffic stop",
     "Florida man breaks beer bottle over his head",
     "Florida Man Gets Prison For Illegally Shipping Turtles And Snakes",
-    "Florida man crashes stolen police car, takes another one during wild pursuit",
     "South Florida man frustrated with plastic pollution along our beaches",
     "Lawn police trim $30,000 from Florida man who violates the 10-inch rule",
     "UFO sightings on the rise: Florida man describes orbs he caught on camera",
