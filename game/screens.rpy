@@ -327,6 +327,8 @@ screen navigation():
 
             ## Help isn't necessary or relevant to mobile devices.
             textbutton _("Help") action ShowMenu("help")
+        
+        textbutton _("Credits") action ShowMenu("credits")
 
         if renpy.variant("pc"):
 
@@ -567,7 +569,47 @@ screen about():
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
+screen credits():
 
+    tag menu
+
+    ## This use statement includes the game_menu screen inside this one. The
+    ## vbox child is then included inside the viewport inside the game_menu
+    ## screen.
+    use game_menu(_("About"), scroll="viewport"):
+
+        style_prefix "about"
+
+        vbox:
+            text _('''Developers: Kevin Cai, Kelvin Cheng
+                \nArt and Music: Haiwen Guo
+                \nSpecial thanks to the following websites for course lecture content: 
+                \nhttps://animal.ifas.ufl.edu/teaching/2018_fall_syllabi/docs/3008_miller_cushon.pdf
+                \nhttps://web-app.usc.edu/soc/syllabus/20183/32872.pdf
+                \nhttps://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-002-circuits-and-electronics-spring-2007/lecture-notes/
+                \nhttps://www.stonybrook.edu/commcms/eeonline/academics/curriculum.php
+                \nhttps://www.westga.edu/share/documents/syllabi_new/MKTG-3810_2016-3_E01.pdf
+                \nhttps://umaine.edu/mechanical-engineering-mee120/syllabus/
+                \nhttps://www.khanacademy.org/math/calculus-1
+                \nhttps://www.khanacademy.org/math/calculus-2
+                \nhttps://home.adelphi.edu/~stemkoski/courses/M243-S09/topics-hw.html
+                \nhttps://canvas.harvard.edu/courses/59787/assignments/syllabus
+                \nhttp://www.chem.cmu.edu/courses/09-106/info/syllabus.pdf
+                \nhttps://www.fgcu.edu/cob/syllabi/2017fa/81825__HFT3806__2017fall.pdf
+                \n
+                \nThanks to the following websites for news headlines: 
+                \nnme.com\nnypost.com\ntheonion.com
+                \n
+                \nSpecial Thanks to Polyperfect and  Synth Studio for select 3d Unity models
+                \n
+                \nThanks to the following for audio assets:
+                \nfreesound.org for Table Tennis sounds
+                \nFearverb and BurghRecords(YouTube) for ambient sounds."
+                \n
+                \n"And we shall not forget: Real Engineering (YouTube) lol"
+                ''')
+
+            
 style about_label is gui_label
 style about_label_text is gui_label_text
 style about_text is gui_text
