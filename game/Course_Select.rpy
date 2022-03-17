@@ -8,12 +8,14 @@ label course_select:
         stop music fadeout 0.5
         if conversationCount == 0:
             call dating_prologue
-        elif davidKnows and not keyGiven:
-            call whenDavidKnows
-        elif davidKnows: 
-            call ordinaryDaydKnows
-        else: # he doesn't know
-            call ordinaryDay
+        else:
+            yumemi "Let's head over to the Cafe to chat!"
+            if davidKnows and not keyGiven:
+                call whenDavidKnows
+            elif davidKnows: 
+                call ordinaryDaydKnows
+            else: # he doesn't know
+                call ordinaryDay
         jump course_select.event_done
     if course_select_choice == "ping_pong":
         stop music fadeout 0.5

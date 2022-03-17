@@ -5,7 +5,7 @@ default conversationCount = 0
 default animalSuggestionReceived = False
 
 label dating_prologue:
-    $askedWhoIsHe = False #just for some future dialogue in truth, that's about it for this variable's usage
+    $askedWhoIsHe = False #just for some future dialogue in truth label, that's about it for this variable's usage
     show david_img at left with fade
     show mc_img at right
 
@@ -137,7 +137,10 @@ label decline:
     return
 
 label whenDavidKnows: 
-    yumemi "Let's head over to the Cafe to chat!"
+    scene cafe_room 
+    show david_img at left
+    show mc_img at right
+    with fade
     david "Okay, though there isn't much that I would want to discuss."
     yumemi "I suppose you can tell a little about who Yumemi was."
     david "She was a very sweet person who knew how to appreciate the little things in life."
@@ -156,7 +159,11 @@ label whenDavidKnows:
     return
 
 label ordinaryDaydKnows:
-    yumemi "Let's head over to the Cafe to chat!"
+    scene cafe_room 
+    show david_img at left
+    show mc_img at right
+    with FAST_FADE
+
     david "Okay, though there isn't much that I would want to discuss."
     david "I just want to know where Yumemi went."
     $conversationCount += 1
@@ -165,7 +172,11 @@ label ordinaryDaydKnows:
 
 
 label ordinaryDay:
-    yumemi "Let's head over to the Cafe to chat!"
+    scene cafe_room 
+    show david_img at left
+    show mc_img at right
+    with FAST_FADE
+
     david "Sure, is there anything on your mind?"
     yumemi "Hey, I wanted to hear what you had to say..."
     $theme = renpy.random.randint(0,1);
