@@ -383,8 +383,8 @@ screen main_menu():
             style "main_menu_vbox"
 
 
-            #text "[config.version]":
-            #   style "main_menu_version"
+            text "[config.version]":
+                style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -433,21 +433,16 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         add gui.main_menu_background
     else:
         add gui.game_menu_background
-
     frame:
         style "game_menu_outer_frame"
-
         hbox:
 
             ## Reserve space for the navigation section.
             frame:
                 style "game_menu_navigation_frame"
-
             frame:
                 style "game_menu_content_frame"
-
                 if scroll == "viewport":
-
                     viewport:
                         yinitial yinitial
                         scrollbars "vertical"
@@ -512,7 +507,7 @@ style game_menu_outer_frame:
     background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
-    xsize 234
+    xsize 600
     yfill True
 
 style game_menu_content_frame:
