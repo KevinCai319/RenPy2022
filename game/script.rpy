@@ -122,7 +122,7 @@ label day_reset:
    scene blank
    if day >= WINTER_DAY:
       #game ends.
-      # $day+=1
+      #$day+=1
       "The sun rises again... DAY [day]"
       "Winter has arrived. The enemy tribe has come to attack."
       jump game_end
@@ -133,7 +133,7 @@ label day_reset:
       $day+=1
    "The sun rises again... DAY [day]"
    if(generator_success and purifier_success and weapons_success):
-      jump end
+      jump game_end
    return
 label game_end:
    if end_state == 0:
@@ -197,5 +197,5 @@ label game_end:
       chief "Today, We shall celebrate!"
       "Walking out of the throne room, he holds your hand."
       "Together, you proudly raise them up in triumph."
-
+   $game_end = True
    return
