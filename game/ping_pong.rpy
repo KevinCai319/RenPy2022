@@ -2,7 +2,9 @@ default pingPongAttendance = 0
 define tableTennisAI = Character("Club Member")
 label ping_pong:
     $pingPongAttendance+=1;
-
+    $playing = renpy.music.is_playing()
+    if not playing:
+        play music "audio/music/pong.ogg"
     $rand = renpy.random.randint(0,1) == 1
     if (pingPongAttendance == 1):
         call pingPongPrologue
@@ -17,6 +19,7 @@ label ping_pong:
 label pingPongPrologue:
     "You decide to check out the table tennis club... what's table tennis?"
     #scene gym?
+    play music "audio/music/pong.ogg"
     tableTennisAI "Heyyy look he showed up."
     "You see a student holding some tiny board in his right hand, identical to the one in yours."
     tableTennisAI "Let's rally."
@@ -46,6 +49,7 @@ label pingPongPrologue:
     return
 
 label pingPongSessionNormal:
+    play music "audio/music/pong.ogg"
     "That same AI is there again."
     tableTennisAI "Hey, let's rally."
     yumemi "Sure."
@@ -58,6 +62,7 @@ label pingPongSessionNormal:
     return
 
 label pingPongSessionSpecial:
+    play music "audio/music/pong.ogg"
     "That same AI is there again."
     tableTennisAI "Hey, let's rally."
     yumemi "Sure."

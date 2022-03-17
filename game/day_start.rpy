@@ -3,7 +3,9 @@ label day_start:
     
     show lynx_img at left
     with fade
-    play music "audio/music/Strong-Wind-Blowing.ogg"
+    $playing = renpy.music.is_playing()
+    if not playing:
+        play music "audio/music/Strong-Wind-Blowing.ogg"
     lynx "A new day starts. Better go visit Chief again."
 
     "{i}You make your daily trip to the chief's place.{\i}"

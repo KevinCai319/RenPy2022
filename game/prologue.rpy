@@ -114,6 +114,9 @@ label prologue:
     scene chief_room
     show chief_img at center
     with SLOW_FADE
+    $playing = renpy.music.is_playing()
+    if not playing:
+        play music "audio/music/Strong-Wind-Blowing.ogg"
     chief "What's your name?"
     menu:
         "Lynx":
@@ -189,6 +192,9 @@ label first_end_day:
     show chief_img at right
     show lynx_img at left
     with SLOW_FADE
+    $playing = renpy.music.is_playing()
+    if not playing:
+        play music "audio/music/Strong-Wind-Blowing.ogg"
     #continue conversation with chief
     chief "Welcome back, [MC], what did you see?"
     call end_day.summary

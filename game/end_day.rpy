@@ -18,11 +18,12 @@ label end_day:
         if len(daily_summary) > 0:
             $summary_list = daily_summary.split('\n')
             $summary_length = len(summary_list)
-            while summary_length > 0:
-                $item = summary_list[summary_length-1]
+            $counter = 0
+            while counter < summary_length:
+                $item = summary_list[counter]
                 if not item.isspace() and len(item) != 0:
                     lynx "[item]"
-                $summary_length-=1
+                $counter+=1
             #adjust penalty based on certain key words in daily summary.
             #this is a special dialogue for when you acheive milestone 2 of water check
             if daily_summary.find("I think we can fix the purifier now") != -1:
