@@ -55,9 +55,12 @@ label meta_home:
         "..."
         "Most of the books seem standard, but you pick up one up anyway."
         "Opening the cover, you see the name again:."
+        show mc_img at center
+        with fade
         "{b}{i}[MC]"
-        yumemi "[MC]. So this is [MC]'s VR headset. This is [MC]'s world. This is [MC]'s room."
-        yumemi "I {i}am{/i} [MC]! And this must be the metaverse."
+        hide mc_img
+        with fade
+        yumemi "[MC]. So this is [MC]'s metaverse. This is [MC]'s room. This is [MC]'s world."
 
         "You turn your head towards the right and see an odd reflection in the mirror."
         "Who is that?"

@@ -130,7 +130,7 @@ label prologue:
         "Then it's totally useless. I don't want to go to the metaverse.":
             chief "No, you don't understand ancient people."
             chief "Their power comes from creation."
-        "So that's the purpose of metaverse?":
+        "Ancient people won't create a thing of no use. What's the purpose of metaverse?":
             chief "Creation"
     chief "Lynx, listen. Deep inside the metaverse lies knowledge of how ancient technologies are created."
     lynx "Does it means we can know how to fix the generator and make ancient firearms?"
