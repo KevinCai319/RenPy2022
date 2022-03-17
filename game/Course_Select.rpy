@@ -6,7 +6,14 @@ label course_select:
     $course_select_choice = _return[1]
     if course_select_choice == "dating_prologue":
         stop music fadeout 0.5
-        call dating_prologue
+        if conversationCount == 0:
+            call dating_prologue
+        elif davidKnows and not keyGiven:
+            call whenDavidKnows
+        elif davidKnows: 
+            call ordinaryDaydKnows
+        else: # he doesn't know
+            call ordinaryDay
         jump course_select.event_done
     if course_select_choice == "ping_pong":
         stop music fadeout 0.5
@@ -59,7 +66,7 @@ label circuits_course:
 
 label ee_course:
     if course.currentClass == 1:
-        yumemi "This course seems to contain just the right information on how to fix the water purifier."
+        yumemi "This course seems to contain some pretty useful information."
         yumemi "It does seem to be slightly lengthy, though."
         yumemi "Let's see where this goes."
         $waterCheck_milestone1 = True
@@ -110,8 +117,7 @@ label cad_course:
             "{i}Those Blueprints might be helpful."
     return
 
-label math1_course:
-
+label math1_course:    
     return
 label math2_course:
 

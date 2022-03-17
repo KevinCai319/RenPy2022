@@ -85,6 +85,10 @@ label meta_home:
         "You close it and go through the other door."
         "..."
 
+    #just some text to have the user interested in checking out dating sim and ping pong club
+    if day == 2:
+        "{i}Yumemi...I wonder who she is?"
+
     label .select:
         "What would you like to do?"
         if not started_before:
@@ -103,15 +107,15 @@ label meta_home:
             $started_before = True
             jump meta_home
             return
-        # "Read Diary":
-        #     #check if diary is unlocked
-        #     if diary_unlock_level == 0:
-        #         "Due to security precautions, the diary is not available at this time."
-        #         jump meta_home.select
-        #     else:
-        #         hide meta_room with fade
-        #         "<PLALCEHOLDER SCENE>"
-        #         #call diary
-        #     jump meta_home
-        #     return
+        "Read Diary":
+            #check if diary is unlocked
+            if diary_unlock_level == 0:
+                "Due to security precautions, the diary is not available at this time."
+                jump meta_home.select
+            else:
+                hide meta_room with fade
+                "To be continued..."
+                #call diary
+            jump meta_home
+            return
     return
