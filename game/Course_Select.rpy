@@ -50,7 +50,7 @@ label animal_course:
 label english_course:
     if course.currentClass == 1:
         yumemi "How much do you want to bet we'll read Romeo and Juliet?"
-    if course.currentClass == 1:
+    if course.currentClass == 6:
         yumemi "HMmmmmmmm?"
     return
 
@@ -59,27 +59,31 @@ label circuits_course:
 
 label ee_course:
     if course.currentClass == 1:
-        yumemi "This course seems to contain just the right information on how to fix the water purifier."
-        yumemi "It does seem to be slightly lengthy, though."
-        yumemi "Let's see where this goes."
+        if goal_purifier:
+            yumemi "This course seems to contain just the right information on how to fix the water purifier."
+            yumemi "It does seem to be slightly lengthy, though."
+            yumemi "Let's see where this goes."
         $waterCheck_milestone1 = True
     if course.currentClass == 6:
-        yumemi "Hold on, this is exaclty what we need!"
-        yumemi "All the sensors have been functioning properly, but the output devices were faulty."
+        if goal_purifier:
+            yumemi "Hold on, this is exaclty what we need!"
+            yumemi "All the sensors have been functioning properly, but the output devices were faulty."
+            $daily_summary += "I think we can fix the purifier now\n"
         $waterCheck_milestone2 = True
-        $daily_summary += "I think we can fix the purifier now\n"
     if course.currentClass == 11:
-        yumemi "Wow, this course has costed me an equivalent of 11 days worth of studying."
-        yumemi "{i}That's pretty fast if you ask me{/i}, but time is of the essence."
-        yumemi "Is it worth pursueing this track even further?"
-        yumemi "Well, {color=#00ff00}there's only 5 more classes remaining...{/color}"
+        if goal_purifier:
+            yumemi "Wow, this course has costed me an equivalent of 11 days worth of studying."
+            yumemi "{i}That's pretty fast if you ask me{/i}, but time is of the essence."
+            yumemi "Is it worth pursueing this track even further?"
+            yumemi "Well, {color=#00ff00}there's only 5 more classes remaining...{/color}"
         $waterCheck_milestone3 = True
     if course.currentClass == 15:
         yumemi "This is some useful stuff."
     if course.currentClass == 16:
-        yumemi "Eureka! To increase the power of the CPU, I could chain them together, since the property of their computational power follows an additive relation if done correctly."
+        if goal_purifier:
+            yumemi "Eureka! To increase the power of the CPU, I could chain them together, since the property of their computational power follows an additive relation if done correctly."
+            $daily_summary += "I have the solution to the water purifier!\n"
         $waterCheck_milestone4 = True
-        $daily_summary += "I have the solution to the water purifier!\n"
     return
 
 label media_course:
