@@ -4,7 +4,7 @@ label meta_home:
         #special case, so we can easily have the character remove helemet without much code.
         if actions_done_for_day == 0:
             $playing = renpy.music.is_playing()
-            if not playing:
+            if playing:
                 stop music
             window hide
             play sound "audio/VR_startup.ogg"

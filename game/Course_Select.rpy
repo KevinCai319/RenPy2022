@@ -50,8 +50,9 @@ label animal_course:
     if course.currentClass == 5:
         "You should all have a fresh draft of the poster. You will continue while receiving peer feedback."
         yumemi "{i}The poster that my partner has worked on so far seems to have a 3D model of a gun of some sorts..."
-        yumemi "{i}I will report this back to the chief"
-        $daily_summary += "We might be able to construct weapons.\n"
+        if not weapons_success:
+            yumemi "{i}I will report this back to the chief"
+            $daily_summary += "We might be able to construct weapons.\n"
         $weaponsCheck_3dModelFromPoster = True;
 
     return

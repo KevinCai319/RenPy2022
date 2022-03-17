@@ -36,10 +36,10 @@ label end_day:
             if daily_summary.find("I beleive I can fix the generator!") != -1:
                 stop music fadeout 0.5
                 call fixGenerator
-            if daily_summary.find("We might be able to construct weapons.") != -1:
+            if daily_summary.find("We might be able to construct weapons.") != -1 and (not weapons_success):
                 stop music fadeout 0.5
                 call weaponsModelFound
-            if daily_summary.find("I have converted the 3D model to a blueprint.") != -1:
+            if daily_summary.find("I have converted the 3D model to a blueprint.") != -1 and (not weapons_success):
                 stop music fadeout 0.5
                 call weaponsComplete
             if cadAndDigital.currentClass >= 3 and goal_weapons and (not weaponsCheck_3dModelFromPoster) and (not weapons_success):

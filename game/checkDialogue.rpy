@@ -42,8 +42,9 @@ label waterMilestone4FixAttemptSuccess:
     "Before you knew it, the output tank begins to fill with crystal clear water."
     "You did it."
     chief "Congratulations lynx. I might have doubted you for a single moment, but in the end, you did well."
+    if not purifier_success:
+        $end_state+=1
     $purifier_success = True
-    $end_state+=1
     stop music
     scene chief_room
     show chief_img at right
@@ -72,8 +73,9 @@ label fixGenerator:
     with fade
     "After some additional simple wiring, the generator sputters back to life."
     chief "Now, we will have energy for years to come. We all owe you one, Lynx."
+    if not generator_success:
+        $end_state+=1
     $generator_success = True
-    $end_state+=1
     stop music
     scene chief_room
     show chief_img at right
@@ -99,6 +101,7 @@ label weaponsComplete:
     hide blueprint
     chief "Perfect. With this new design, we will be able to protect our tribe from neighboring agressors."
     chief "Your contributions are truly invaluable."
-    $end_state+=1
+    if not weapons_success:
+        $end_state+=1
     $weapons_success = True
     return
