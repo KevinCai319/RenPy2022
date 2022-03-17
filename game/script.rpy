@@ -149,7 +149,7 @@ label game_end:
          chief "We have no energy to heat our shelters, nor clean water to use for agriculture or ourselves."
          chief "We may be safe from our enemies, but not from the winter."
          "Better luck next time"
-      elif purifier_success #weapons and energy don't work
+      elif purifier_success: #weapons and energy don't work
          "Your tribe has clean water. That'll be essential for maintaining good health and planting crops."
          "But what are you to do without energy or water."
          chief "I appreciate having a nice bath by the end of the day. But do you expect me to bathe in cold water by winter?"
@@ -157,7 +157,7 @@ label game_end:
          chief "I expect more from you, Lynx"
          "Mastering the arduous course of Electrical Engineering, was simply not enough."
          "Unfortunate."
-      else #only energy
+      else: #only energy
          "Your tribe has energy to light up the their shelters and heat to survive through the winter."
          "Nevertheless, the welfare of your tribe is compromised."
          chief "Without weapons and clean water, our soldeirs' health will suffer significantly in war."

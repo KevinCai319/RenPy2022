@@ -17,9 +17,9 @@ label ping_pong:
     return
 
 label pingPongPrologue:
+    play music "audio/music/pong.ogg"
     "You decide to check out the table tennis club... what's table tennis?"
     #scene gym?
-    play music "audio/music/pong.ogg"
     tableTennisAI "Heyyy look he showed up."
     "You see a student holding some tiny board in his right hand, identical to the one in yours."
     tableTennisAI "Let's rally."
@@ -46,6 +46,7 @@ label pingPongPrologue:
 
     "You know what? Ping pong is actually pretty fun."
     #maybe add to the dialogue text and have talk to the chief about how ping pong was
+    stop music
     return
 
 label pingPongSessionNormal:
@@ -59,6 +60,7 @@ label pingPongSessionNormal:
         tableTennisAI "I'm just kidding, who are we in the grand scheme of ping pong professionals."
 
     "You and the club member continue to rally and proceed with the small talk as usual."
+    stop music
     return
 
 label pingPongSessionSpecial:
@@ -83,4 +85,5 @@ label pingPongSessionSpecial:
     "The club member looks at you with a gaze of amazement, but you proceed to rally as usual."
     $socialMediaMarketing.unlocked = True
     $generatorCheck_pingPongClubChat = True
+    stop music
     return
