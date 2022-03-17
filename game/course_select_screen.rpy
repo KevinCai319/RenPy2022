@@ -56,8 +56,9 @@ screen course_select_menu():
                 color "#7df0ff"
                 bold True
                 size 60
+            $gen_text =  "-Generator successfully restored.\n" if generator_success else "-Find a way to restore generator.\n"
             if goal_generator:
-                text "-Find a way to restore generator.\n":
+                text gen_text:
                     xalign 0.0
                     yalign 0.75
                     if generator_success:
@@ -65,8 +66,9 @@ screen course_select_menu():
                     else:
                         color "#7df0ff"
                     size 50
+            $pur_text =  "-Purifier is up and running.\n" if purifier_success else  "-Find a way to restore the purifier.\n"
             if goal_purifier:
-                text "-Find a way to restore the purifier.\n":
+                text pur_text:
                     xalign 0.0
                     yalign 0.75
                     if purifier_success:
@@ -74,8 +76,9 @@ screen course_select_menu():
                     else:
                         color "#7df0ff"
                     size 50
+            $wea_text =  "-Your tribe has enough weapons.\n" if weapons_success else "-Find a way to help produce weapons.\n"
             if goal_weapons:
-                text "-Find a way to help produce weapons.\n":
+                text wea_text:
                     xalign 0.0
                     yalign 0.75
                     if weapons_success:

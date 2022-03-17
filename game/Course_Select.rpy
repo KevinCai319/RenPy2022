@@ -94,7 +94,7 @@ label media_course:
         "As an adendum to the our 2nd lecture, we will also be examining the archives belonging to Reddit"
     if course.currentClass == 5:
         "As an adendum to the our 2nd lecture, we will also be examining the archives belonging to YouTube"
-        "Due to the popularity of Real Engineering in recent weeks, we will be analyzing the techniques he utilizes in his video: {color=#00ff00} \"Repairing a Generator SIMPLIFIED\" {\color}"
+        "Due to the popularity of Real Engineering in recent weeks, we will be analyzing the techniques he utilizes in his video: {color=#00ff00} \"Repairing a Generator SIMPLIFIED\" {/color}"
         "{i}No way this is true. All I have to do is remember the steps and report back to the chief."
         "This concludes our mini unit on specific social media platforms."
         $daily_summary += "I beleive I can fix the generator!\n"
