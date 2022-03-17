@@ -47,7 +47,7 @@ label dating_prologue:
 
     yumemi "This is amazing!"
 
-    david "Right? Speaking of animals, have you heard of the new \"Animal Behaviour and Welfare\" course being offered?"
+    david "Right? Speaking of animals, have you heard of the new {color=#00ff00}\"Animal Behaviour and Welfare\" course{/color} being offered?"
     david "I think you would love it."
 
     "{i}That course is indeed in the catalog..."

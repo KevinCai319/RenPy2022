@@ -41,15 +41,6 @@ screen course_select_menu():
         xalign 0.99
         size 80
         bold True
-    $goals = ""
-    if goal_generator and (not generator_success):
-        $goals += "-Find a way to restore generator.\n"
-    if goal_purifier and (not purifier_success):
-        $goals += "-Find a way to restore the purifier.\n"
-    if goal_weapons and (not weapons_success):
-        $goals += "-Find a way to help produce weapons.\n"
-    if goals == "":
-        $goals += "-None for Now"
     frame:
         xalign 0.0
         yalign 0.7
@@ -64,11 +55,43 @@ screen course_select_menu():
             text "{u}Goals{/u}":
                 color "#7df0ff"
                 bold True
-                size 60 
-            text goals:
-                xalign 0.0
-                yalign 0.75
-                color "#7df0ff"
-                size 50
+                size 60
+            $gen_text =  "-Generator successfully restored.\n" if generator_success else "-Find a way to restore generator.\n"
+            if goal_generator:
+                text gen_text:
+                    xalign 0.0
+                    yalign 0.75
+                    if generator_success:
+                        color "#00ff00"
+                    else:
+                        color "#7df0ff"
+                    size 50
+            $pur_text =  "-Purifier is up and running.\n" if purifier_success else  "-Find a way to restore the purifier.\n"
+            if goal_purifier:
+                text pur_text:
+                    xalign 0.0
+                    yalign 0.75
+                    if purifier_success:
+                        color "#00ff00"
+                    else:
+                        color "#7df0ff"
+                    size 50
+            $wea_text =  "-Your tribe has enough weapons.\n" if weapons_success else "-Find a way to help produce weapons.\n"
+            if goal_weapons:
+                text wea_text:
+                    xalign 0.0
+                    yalign 0.75
+                    if weapons_success:
+                        color "#00ff00"
+                    else:
+                        color "#7df0ff"
+                    size 50
+            if not (goal_weapons or goal_generator or goal_purifier):
+                text "-None for now.\n":
+                    xalign 0.0
+                    yalign 0.75
+                    color "#7df0ff"
+                    size 50
+            
 
         

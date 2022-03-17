@@ -79,7 +79,7 @@ label ee_course:
         yumemi "Wow, this course has costed me an equivalent of 11 days worth of studying."
         yumemi "{i}That's pretty fast if you ask me{/i}, but time is of the essence."
         yumemi "Is it worth pursueing this track even further?"
-        yumemi "Well, there's only 5 more classes remaining..."
+        yumemi "Well, {color=#00ff00}there's only 5 more classes remaining...{/color}"
         $waterCheck_milestone3 = True
     if course.currentClass == 15:
         yumemi "This is some useful stuff."
@@ -101,7 +101,7 @@ label media_course:
         "As an adendum to the our 2nd lecture, we will also be examining the archives belonging to Reddit"
     if course.currentClass == 5:
         "As an adendum to the our 2nd lecture, we will also be examining the archives belonging to YouTube"
-        "Due to the popularity of Real Engineering in recent weeks, we will be analyzing the techniques he utilizes in his video: \"Repairing a Generator SIMPLIFIED\""
+        "Due to the popularity of Real Engineering in recent weeks, we will be analyzing the techniques he utilizes in his video: {color=#00ff00} \"Repairing a Generator SIMPLIFIED\" {/color}"
         "{i}No way this is true. All I have to do is remember the steps and report back to the chief."
         "This concludes our mini unit on specific social media platforms."
         $daily_summary += "I beleive I can fix the generator!\n"
@@ -117,13 +117,15 @@ label cad_course:
             "{i}Those Blueprints might be helpful."
     return
 
-label math1_course:    
+label math1_course:
+    if course.currentClass == course.numClasses:
+        $calc2.unlocked = True
     return
 label math2_course:
-
+    if course.currentClass == course.numClasses:
+        $calc3.unlocked = True
     return
 label math3_course:
-
     return
 
 label physics_course:

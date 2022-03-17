@@ -42,6 +42,10 @@ label end_day:
             if daily_summary.find("I have converted the 3D model to a blueprint.") != -1:
                 stop music fadeout 0.5
                 call weaponsComplete
+            if cadAndDigital.currentClass >= 3 and goal_weapons and (not weaponsCheck_3dModelFromPoster):
+                stop music fadeout 0.5
+                lynx "In addition, I also have some weapon blueprints that we can use."
+                call weaponsComplete
         else:
             lynx "Nothing of note."
             #chief gets more pissed if nothing happened
