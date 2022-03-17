@@ -1,8 +1,11 @@
 label day_start:
     scene irl_background 
+    
     show lynx_img at left
     with fade
-    play music "audio/music/Strong-Wind-Blowing.ogg"
+    $playing = renpy.music.is_playing()
+    if not playing:
+        play music "audio/music/Strong-Wind-Blowing.ogg"
     lynx "A new day starts. Better go visit Chief again."
 
     "{i}You make your daily trip to the chief's place.{\i}"
@@ -13,7 +16,6 @@ label day_start:
         lynx "... It's a bit colder than usual"
     else:
         lynx "..."
-    stop music
 
     #<Lynx arrives at the Chief's place>
     scene chief_room
@@ -58,7 +60,7 @@ label day_start:
     show headset_glowing at truecenter with fade
     chief "It's time to enter the Metaverse."
     hide headset_glowing
-    
+    stop music
     show blank at truecenter with moveintop
     #scene vrDevice
     lynx "Hello Meta"

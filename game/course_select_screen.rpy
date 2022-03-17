@@ -11,7 +11,7 @@ screen course_select_menu():
             if canPrint:
                 options.append((Course.course_listing[count].name + " " + str(Course.course_listing[count].currentClass-1) + "/" + str(Course.course_listing[count].numClasses),count))
             count+=1
-        options.append(("Dating", "dating_prologue"))
+        options.append(("Dating Simulator", "dating_prologue"))
         options.append(("Ping Pong", "ping_pong"))
         gridHeight = (limit+2)*2
     $batt_left = int((float(MAX_ACTIONS_PER_DAY-actions_done_for_day)/MAX_ACTIONS_PER_DAY)*100)
@@ -52,9 +52,15 @@ screen course_select_menu():
         $goals += "-None for Now"
     frame:
         xalign 0.0
-        yalign 0.8
+        yalign 0.7
         background "#00000098"
         vbox:
+            $time_left = WINTER_DAY-day
+            text "{u}Days Until\nWinter{/u}:[time_left]":
+                color "#7df0ff"
+                bold True
+                size 60 
+            null height 30
             text "{u}Goals{/u}":
                 color "#7df0ff"
                 bold True

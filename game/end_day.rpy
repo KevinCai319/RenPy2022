@@ -7,36 +7,48 @@ label end_day:
     show chief_img at right
     show lynx_img at left
     with fade
+    play music "audio/music/Strong-Wind-Blowing.ogg"
     chief "So what happened today?"
     label .summary:
+        $playing = renpy.music.is_playing()
+        if not playing:
+            play music "audio/music/Strong-Wind-Blowing.ogg"
         lynx "Here's a summary of what happened:"
         $penalty = 0
         if len(daily_summary) > 0:
             $summary_list = daily_summary.split('\n')
             $summary_length = len(summary_list)
-            while summary_length > 0:
-                $item = summary_list[summary_length-1]
-                if not item.isspace():
+            $counter = 0
+            while counter < summary_length:
+                $item = summary_list[counter]
+                if not item.isspace() and len(item) != 0:
                     lynx "[item]"
-                $summary_length-=1
+                $counter+=1
             #adjust penalty based on certain key words in daily summary.
             #this is a special dialogue for when you acheive milestone 2 of water check
             if daily_summary.find("I think we can fix the purifier now") != -1:
+                stop music fadeout 0.5
                 call waterMilestone2FixAttemptFail
             #if, in case you finish multiple in a day
             if daily_summary.find("I have the solution to the water purifier!") != -1:
+                stop music fadeout 0.5
                 call waterMilestone4FixAttemptSuccess
             if daily_summary.find("I beleive I can fix the generator!") != -1:
+                stop music fadeout 0.5
                 call fixGenerator
             if daily_summary.find("We might be able to construct weapons.") != -1:
+                stop music fadeout 0.5
                 call weaponsModelFound
             if daily_summary.find("I have converted the 3D model to a blueprint.") != -1:
+                stop music fadeout 0.5
                 call weaponsComplete
         else:
             lynx "Nothing of note."
             #chief gets more pissed if nothing happened
             $penalty = 2
-
+        $playing = renpy.music.is_playing()
+        if not playing:
+            play music "audio/music/Strong-Wind-Blowing.ogg"
         if(weapons_success and purifier_success and generator_success):
             lynx "Everything is fully operational!"
             chief "<YOU WIN GAME>"

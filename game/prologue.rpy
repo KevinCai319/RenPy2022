@@ -42,7 +42,7 @@ label prologue:
     "The harsh winter is just around the corner, however, the shelter is on nearing the end of its food and supply."
     "To make matters worse is the condition of the generator. The clan relies on its heat for the freezing climate."
     "As you approached your shelter, the clan chief appeared and called you."
-    stop music fadeout 1.0
+
     
     #scene vrDevice
     #show headset at truecenter
@@ -114,6 +114,9 @@ label prologue:
     scene chief_room
     show chief_img at center
     with SLOW_FADE
+    $playing = renpy.music.is_playing()
+    if not playing:
+        play music "audio/music/Strong-Wind-Blowing.ogg"
     chief "What's your name?"
     menu:
         "Lynx":
@@ -130,7 +133,7 @@ label prologue:
         "Then it's totally useless. I don't want to go to the metaverse.":
             chief "No, you don't understand ancient people."
             chief "Their power comes from creation."
-        "So that's the purpose of metaverse?":
+        "Ancient people won't create a thing of no use. What's the purpose of metaverse?":
             chief "Creation"
     chief "Lynx, listen. Deep inside the metaverse lies knowledge of how ancient technologies are created."
     lynx "Does it means we can know how to fix the generator and make ancient firearms?"
@@ -189,6 +192,9 @@ label first_end_day:
     show chief_img at right
     show lynx_img at left
     with SLOW_FADE
+    $playing = renpy.music.is_playing()
+    if not playing:
+        play music "audio/music/Strong-Wind-Blowing.ogg"
     #continue conversation with chief
     chief "Welcome back, [MC], what did you see?"
     call end_day.summary

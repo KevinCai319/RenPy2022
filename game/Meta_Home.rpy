@@ -18,6 +18,7 @@ label meta_home:
         if not started_before:
             $started_before = True
         return
+    stop sound
     play music "audio/music/Yumemi_Room.ogg"
     if started_before:
         "Welcome back to the Metaverse, [MC] !"
@@ -54,9 +55,12 @@ label meta_home:
         "..."
         "Most of the books seem standard, but you pick up one up anyway."
         "Opening the cover, you see the name again:."
+        show mc_img at center
+        with fade
         "{b}{i}[MC]"
-        yumemi "[MC]. So this is [MC]'s VR headset. This is [MC]'s world. This is [MC]'s room."
-        yumemi "I {i}am{/i} [MC]! And this must be the metaverse."
+        hide mc_img
+        with fade
+        yumemi "[MC]. So this is [MC]'s metaverse. This is [MC]'s room. This is [MC]'s world."
 
         "You turn your head towards the right and see an odd reflection in the mirror."
         "Who is that?"
@@ -80,7 +84,6 @@ label meta_home:
         yumemi "{i}That's weird."
         "You close it and go through the other door."
         "..."
-        # He's a girl now, am I in heaven? How do I
 
     label .select:
         "What would you like to do?"
@@ -94,7 +97,7 @@ label meta_home:
                 "You should probably check out what the device does before leaving."
             jump meta_home.select
             return
-        "Course Select":
+        "Go to MetaCampus":
             #Go to course select screen.
             call course_select
             $started_before = True
