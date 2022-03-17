@@ -74,7 +74,7 @@ label pingPongSessionSpecial:
     tableTennisAI "DO YOU LIVE UNDER A ROCK?"
     yumemi "Perhaps I do."
     tableTennisAI "Bruh...Anyway, his name is RealEngineer. You should check him out."
-    tableTennisAI "And if you seriously don't know what YouTube is, consider taking Social Media Marketing."
+    tableTennisAI "And if you seriously don't know what YouTube is, {color=#00ff00}consider taking Social Media Marketing.{/color}"
     tableTennisAI "It will catch you up real easily."
 
     "Social Media and Marketing. Was that previously available?"
